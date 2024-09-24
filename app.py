@@ -8,23 +8,23 @@ def home():
 
 @app.route('/documentacao')
 def documentacao():
-    return render_template('documentacao.html')
+    return render_template('documentacao/documentacao.html')
 
 @app.route('/documentacao/microservicos')
 def microservicos():
-    return render_template('microservicos.html')
+    return render_template('documentacao/microservicos.html')
 
 @app.route('/documentacao/gateway')
 def gateway():
-    return render_template('gateway.html')
+    return render_template('documentacao/gateway.html')
 
 @app.route('/documentacao/api')
 def api():
-    return render_template('api.html')
+    return render_template('documentacao/api.html')
 
 @app.route('/modulos')
 def modulos():
-    return render_template('modulos.html')
+    return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
 def cpp():
@@ -50,9 +50,6 @@ def banco_de_dados():
 def processamento():
     return render_template('processamento.html')
 
-@app.route('/interface')
-def interface():
-    return render_template('interface.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
