@@ -49,7 +49,6 @@ def banco_de_dados():
 @app.route('/modulos/processamento')
 def processamento():
     return render_template('modulos/processamento.html')
-
-
+    
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,17 +2,424 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50c878;
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --title-color: #2c3e50;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, rgba(74, 144, 226, 0.3) 0%, rgba(80, 200, 120, 0.3) 100%);
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: titleAnimation 5s ease-in-out infinite;
+        }
+
+        @keyframes titleAnimation {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(2deg); }
+            75% { transform: translateY(10px) rotate(-2deg); }
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out 0.5s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: relative;
+        }
+
+        li {
+            transition: var(--transition);
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: moveParticle 15s infinite linear;
+        }
+
+        @keyframes moveParticle {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100vh) translateX(100vw); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transition: 0.1s;
+            z-index: 9999;
+        }
+
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transition: 0.15s;
+            z-index: 9999;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        .interactive-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transition: width 0.5s ease-out;
+        }
+
+        .easter-egg {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            nav {
+                padding: 1.5rem;
+            }
+
+            ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            a {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Projeto</h1>
-    <nav>
-        <ul>
-            <li><a href="/documentacao">Documentação</a></li>
-            <li><a href="/modulos">Módulos</a></li>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="background"></div>
+    <div class="interactive-bg"></div>
+    <div class="loading-bar"></div>
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+    </div>
+    <button class="theme-toggle">🌓</button>
+    <div class="container">
+        <h1>Bem-vindo ao Projeto</h1>
+        <nav>
+            <ul>
+                <li><a href="/documentacao">Documentação</a></li>
+                <li><a href="/modulos">Módulos</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="easter-egg">🥚</div>
 
-        </ul>
-    </nav>
+    <script>
+        // Movimento do fundo
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            document.querySelector('.background').style.transform = `translate(${mouseX * 50}px, ${mouseY * 50}px)`;
+        });
+
+        // Cursor personalizado
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+            
+            follower.style.top = e.pageY + 'px';
+            follower.style.left = e.pageX + 'px';
+        });
+
+        // Alternador de tema
+        const themeToggle = document.querySelector('.theme-toggle');
+        let isDarkTheme = false;
+
+        themeToggle.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            if (isDarkTheme) {
+                document.documentElement.style.setProperty('--background-color', '#1a1a1a');
+                document.documentElement.style.setProperty('--text-color', '#f0f0f0');
+                document.documentElement.style.setProperty('--title-color', '#ffffff');
+                document.documentElement.style.setProperty('--card-bg', 'rgba(40, 40, 40, 0.9)');
+            } else {
+                document.documentElement.style.setProperty('--background-color', '#f0f4f8');
+                document.documentElement.style.setProperty('--text-color', '#333');
+                document.documentElement.style.setProperty('--title-color', '#2c3e50');
+                document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.9)');
+            }
+        });
+
+        // Efeito de hover nos links
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                follower.style.transform = 'scale(1.5)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                follower.style.transform = 'scale(1)';
+            });
+        });
+
+        // Fundo interativo
+        const interactiveBg = document.querySelector('.interactive-bg');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.style.position = 'absolute';
+            star.style.width = '2px';
+            star.style.height = '2px';
+            star.style.background = 'white';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animation = `twinkle ${Math.random() * 5 + 5}s linear infinite`;
+            interactiveBg.appendChild(star);
+        }
+
+        // Barra de carregamento
+        window.addEventListener('load', () => {
+            const loadingBar = document.querySelector('.loading-bar');
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+            }, 1000);
+        });
+
+        // Easter egg
+        const easterEgg = document.querySelector('.easter-egg');
+        let clickCount = 0;
+        easterEgg.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 5) {
+                alert('Você encontrou o easter egg! 🎉');
+                document.body.style.animation = 'rainbow 5s linear infinite';
+            }
+        });
+
+        // Animação de arco-íris
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Animação de digitação para o título
+        const title = document.querySelector('h1');
+        const text = title.textContent;
+        title.textContent = '';
+        for (let i = 0; i < text.length; i++) {
+            setTimeout(() => {
+                title.textContent += text[i];
+            }, i * 100);
+        }
+    </script>
 </body>
 </html>
