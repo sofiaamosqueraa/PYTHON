@@ -28,27 +28,27 @@ def modulos():
 
 @app.route('/modulos/cpp')
 def cpp():
-    return render_template('cpp.html')
+    return render_template('modulos/cpp.html')
 
 @app.route('/modulos/python')
 def python():
-    return render_template('python.html')
+    return render_template('modulos/python.html')
 
 @app.route('/modulos/java')
 def java():
-    return render_template('java.html')
+    return render_template('modulos/java.html')
 
 @app.route('/modulos/redes')
 def redes():
-    return render_template('redes.html')
+    return render_template('modulos/redes.html')
 
 @app.route('/modulos/banco-de-dados')
 def banco_de_dados():
-    return render_template('banco_de_dados.html')
+    return render_template('modulos/banco_de_dados.html')
 
 @app.route('/modulos/processamento')
 def processamento():
-    return render_template('processamento.html')
+    return render_template('modulos/processamento.html')
 
 
 if __name__ == '__main__':
