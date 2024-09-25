@@ -227,6 +227,18 @@ footer {
     margin-top: 40px;
 }
 
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 10px 0;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content h1 {
