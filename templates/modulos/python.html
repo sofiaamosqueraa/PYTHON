@@ -1,16 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>modulos</title>
-=======
-    <title>Interface do Projeto</title>
->>>>>>> c39b1da (error apos do pull)
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Programação que Capacita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylespython.css') }}">
 </head>
 <body>
-    <h1>Interface do Projeto</h1>
-    <p>Aqui você pode adicionar informações sobre a interface do projeto.</p>
-    <a href="/">Voltar para a página inicial</a>
+    <header>
+        <div class="header-content">
+            <h1>Python</h1>
+            <p>Programação que Capacita</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#sintaxe">Sintaxe Básica</a></li>
+            <li><a href="#estruturas">Estruturas de Dados</a></li>
+            <li><a href="#funcoes">Funções</a></li>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#docs">Documentação</a></li>
+            <li><a href="#pip">Pip e PyPI</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="introducao">
+            <h2>Introdução ao Python</h2>
+            <p>Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Criada por Guido van Rossum em 1991, é conhecida por sua simplicidade e versatilidade.</p>
+            <a href="#" class="button">Aprenda Python</a>
+        </section>
+        
+        <section id="sintaxe">
+            <h2>Sintaxe Básica</h2>
+            <p>A sintaxe do Python é simples e clara. Aqui estão alguns exemplos básicos:</p>
+            <pre><code>
+# Isto é um comentário
+print("Olá, Mundo!")
+
+# Variáveis e tipos de dados
+x = 5
+y = "Texto"
+z = 3.14
+
+# Estruturas de controlo
+if x > 0:
+    print("x é positivo")
+elif x < 0:
+    print("x é negativo")
+else:
+    print("x é zero")
+            </code></pre>
+        </section>
+        
+        <section id="estruturas">
+            <h2>Estruturas de Dados</h2>
+            <p>Python oferece várias estruturas de dados embutidas, incluindo:</p>
+            <ul>
+                <li>Listas: Coleções ordenadas e mutáveis</li>
+                <li>Tuplos: Coleções ordenadas e imutáveis</li>
+                <li>Dicionários: Coleções não ordenadas de pares chave-valor</li>
+                <li>Conjuntos: Coleções não ordenadas de elementos únicos</li>
+            </ul>
+        </section>
+        
+        <section id="funcoes">
+            <h2>Funções</h2>
+            <p>As funções em Python são definidas usando a palavra-chave 'def'. Elas podem ter argumentos posicionais, argumentos nomeados e valores padrão.</p>
+            <pre><code>
+def saudacao(nome, saudacao="Olá"):
+    return f"{saudacao}, {nome}!"
+
+print(saudacao("Maria"))  # Saída: Olá, Maria!
+print(saudacao("João", "Bom dia"))  # Saída: Bom dia, João!
+            </code></pre>
+        </section>
+        
+        <section id="modulos">
+            <h2>Módulos</h2>
+            <p>Os módulos permitem organizar o código Python em ficheiros separados. Você pode importar módulos inteiros ou funções específicas de módulos.</p>
+            <pre><code>
+# Importar um módulo inteiro
+import math
+
+# Importar funções específicas
+from random import randint, choice
+
+# Usar funções importadas
+print(math.pi)
+print(randint(1, 10))
+            </code></pre>
+        </section>
+
+        <section id="pip">
+            <h2>Pip e PyPI</h2>
+            <p>Pip é o gerenciador de pacotes para Python, usado para instalar e gerenciar pacotes adicionais que não fazem parte da biblioteca padrão. PyPI (Python Package Index) é o repositório de software para a comunidade Python.</p>
+            <pre><code>
+# Instalar um pacote usando pip
+pip install nome_do_pacote
+            </code></pre>
+        </section>
+
+        <section id="docs">
+            <h2>Documentação</h2>
+            <p>A documentação completa do Python, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
+            <a href="https://www.python.org/" class="button" target="_blank">Ver Documentação</a>
+        </section>
+        
+        
+        <section id="download">
+            <h2>Download Python</h2>
+            <p>Baixe a versão mais recente do Python para o seu sistema operacional.</p>
+            <a href="https://www.python.org/downloads/" class="button" target="_blank">Baixar Python</a>
+        </section>
+
+       
+        <div class="back-to-top">
+            <a href="/" class="button">Voltar ao Início</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 Python </p>
+    </footer>
 </body>
 </html>
