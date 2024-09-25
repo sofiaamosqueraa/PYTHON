@@ -1,16 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-
-    <title>modulos</title>
-
-    <title>Interface do Projeto</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Bases de Dados para Programadores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesbanco.css') }}">
 </head>
 <body>
-    <h1>Interface do Projeto</h1>
-    <p>Aqui você pode adicionar informações sobre a interface do projeto.</p>
-    <a href="/">Voltar para a página inicial</a>
+    <header>
+        <h1>Administração de Bases de Dados para Programadores</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#fundamentos">Fundamentos</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#boas-praticas">Boas Práticas</a></li>
+            <li><a href="#seguranca">Segurança</a></li>
+            <li><a href="#recuperacao">Recuperação</a></li>
+            <li><a href="#modelagem">Modelagem</a></li>
+            <li><a href="#linguagens">Linguagens</a></li>
+            <li><a href="#otimizacao">Otimização</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="fundamentos">
+            <h2>1. Fundamentos de Sistemas de Gestão de Bases de Dados (SGBD)</h2>
+            <p><strong>Definição:</strong> Um SGBD é um software que gerencia o armazenamento, manipulação e pesquisa de dados.</p>
+            <p><strong>Funções:</strong> Criar, proteger, atualizar e eliminar dados numa base de dados.</p>
+            <p><strong>Vantagens:</strong> Integração de dados, redução de redundâncias, integridade dos dados, flexibilidade e segurança.</p>
+            <h3>Exemplo: Criação de uma tabela em SQL</h3>
+            <pre><code>
+CREATE TABLE Clientes (
+    ID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Email VARCHAR(100),
+    DataCadastro DATE
+);
+            </code></pre>
+            <h3>Exemplo: Criação de uma coleção em MongoDB</h3>
+            <pre><code>
+db.createCollection("clientes")
+db.clientes.insertOne({
+    nome: "João Silva",
+    email: "joao@example.com",
+    dataCadastro: new Date()
+})
+            </code></pre>
+        </section>
+
+        <section id="componentes">
+            <h2>2. Componentes Principais de um SGBD</h2>
+            <ul>
+                <li><strong>Motor:</strong> Responsável pelo armazenamento de dados a nível do sistema operativo.</li>
+                <li><strong>Catálogo de Metadados:</strong> Armazena informações sobre objetos da base de dados.</li>
+                <li><strong>Linguagem de Acesso:</strong> Geralmente SQL, para definir e manipular dados.</li>
+                <li><strong>Motor de Otimização:</strong> Analisa e otimiza consultas.</li>
+                <li><strong>Processador de Consultas:</strong> Executa consultas e retorna resultados.</li>
+                <li><strong>Administrador de Bloqueio:</strong> Gerencia acessos simultâneos.</li>
+                <li><strong>Administrador de Registos:</strong> Garante a integridade dos dados durante operações.</li>
+            </ul>
+            <h3>Exemplo: Consulta ao catálogo de metadados em PostgreSQL</h3>
+            <pre><code>
+SELECT * FROM information_schema.tables
+WHERE table_schema = 'public';
+            </code></pre>
+            <h3>Exemplo: Listagem de coleções em MongoDB</h3>
+            <pre><code>
+db.getCollectionNames()
+            </code></pre>
+        </section>
+
+        <section id="boas-praticas">
+            <h2>3. Boas Práticas para Programadores</h2>
+            <ul>
+                <li><strong>Avaliação da Infraestrutura:</strong> Escolha entre sistemas on-premise, na nuvem ou híbridos.</li>
+                <li><strong>Estratégia e Governança de Dados:</strong> Implemente uma estratégia clara e políticas de governança.</li>
+                <li><strong>Otimização de Acesso:</strong> Facilite o acesso aos dados de forma segura e eficiente.</li>
+                <li><strong>Automação:</strong> Automatize tarefas repetitivas para aumentar a eficiência.</li>
+            </ul>
+            <h3>Exemplo: Script de backup automatizado para PostgreSQL</h3>
+            <pre><code>
+#!/bin/bash
+DATE=$(date +%Y%m%d)
+PGPASSWORD=sua_senha pg_dump -U seu_usuario -d sua_base > backup_$DATE.sql
+            </code></pre>
+            <h3>Exemplo: Backup automatizado com Python e MongoDB</h3>
+            <pre><code>
+import subprocess
+from datetime import datetime
+
+def backup_mongodb():
+    date = datetime.now().strftime("%Y%m%d")
+    subprocess.run(["mongodump", "--out", f"backup_{date}"])
+
+if __name__ == "__main__":
+    backup_mongodb()
+            </code></pre>
+        </section>
+
+        <section id="seguranca">
+            <h2>4. Segurança e Integridade</h2>
+            <ul>
+                <li>Implemente mecanismos de segurança para proteger contra acessos não autorizados.</li>
+                <li>Garanta a integridade dos dados através de validações e controles.</li>
+                <li>Gerencie o controle de concorrência para acessos simultâneos.</li>
+            </ul>
+            <h3>Exemplo: Criação de um usuário com permissões limitadas em PostgreSQL</h3>
+            <pre><code>
+CREATE USER leitura_usuario WITH PASSWORD 'senha_segura';
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO leitura_usuario;
+            </code></pre>
+            <h3>Exemplo: Criação de um usuário em MongoDB</h3>
+            <pre><code>
+db.createUser(
+  {
+    user: "leitura_usuario",
+    pwd: "senha_segura",
+    roles: [ { role: "read", db: "sua_base" } ]
+  }
+)
+            </code></pre>
+        </section>
+
+        <section id="recuperacao">
+            <h2>5. Recuperação e Backup</h2>
+            <ul>
+                <li>Desenvolva estratégias de backup e recuperação de dados.</li>
+                <li>Utilize logs de transações para restaurar a integridade após falhas.</li>
+            </ul>
+            <h3>Exemplo: Restauração de um backup PostgreSQL</h3>
+            <pre><code>
+psql -U seu_usuario -d sua_base < backup_20240101.sql
+            </code></pre>
+            <h3>Exemplo: Restauração de um backup MongoDB</h3>
+            <pre><code>
+mongorestore --db sua_base backup_20240101/sua_base
+            </code></pre>
+        </section>
+
+        <section id="modelagem">
+            <h2>6. Modelagem de Dados</h2>
+            <ul>
+                <li>Compreenda modelos de dados, especialmente o modelo relacional.</li>
+                <li>Utilize operações de álgebra relacional como projeção e junção.</li>
+            </ul>
+            <h3>Exemplo: Criação de uma relação entre tabelas em SQL</h3>
+            <pre><code>
+CREATE TABLE Pedidos (
+    ID INT PRIMARY KEY,
+    ClienteID INT,
+    DataPedido DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
+);
+            </code></pre>
+            <h3>Exemplo: Modelagem de dados em MongoDB (Documento Embutido)</h3>
+            <pre><code>
+db.clientes.insertOne({
+    nome: "Maria Silva",
+    email: "maria@example.com",
+    pedidos: [
+        { id: 1, data: new Date(), total: 100.00 },
+        { id: 2, data: new Date(), total: 150.00 }
+    ]
+})
+            </code></pre>
+        </section>
+
+        <section id="linguagens">
+            <h2>7. Linguagens e Ferramentas</h2>
+            <ul>
+                <li>Domine SQL para definição (DDL) e manipulação (DML) de dados.</li>
+                <li>Familiarize-se com interfaces gráficas como QBE para consultas.</li>
+                <li>Aprenda linguagens de consulta para bancos NoSQL.</li>
+            </ul>
+            <h3>Exemplo: Consulta SQL com junção</h3>
+            <pre><code>
+SELECT c.Nome, p.DataPedido
+FROM Clientes c
+JOIN Pedidos p ON c.ID = p.ClienteID
+WHERE p.DataPedido > '2024-01-01';
+            </code></pre>
+            <h3>Exemplo: Consulta em MongoDB</h3>
+            <pre><code>
+db.clientes.aggregate([
+    { $unwind: "$pedidos" },
+    { $match: { "pedidos.data": { $gt: new Date("2024-01-01") } } },
+    { $project: { nome: 1, "pedidos.data": 1 } }
+])
+            </code></pre>
+        </section>
+
+        <section id="otimizacao">
+            <h2>8. Otimização de Desempenho</h2>
+            <ul>
+                <li>Aprenda a otimizar consultas e estruturas de dados para melhor performance.</li>
+                <li>Utilize índices e outras técnicas de otimização de banco de dados.</li>
+            </ul>
+            <h3>Exemplo: Criação de um índice em PostgreSQL</h3>
+            <pre><code>
+CREATE INDEX idx_cliente_nome ON Clientes(Nome);
+            </code></pre>
+            <h3>Exemplo: Criação de um índice em MongoDB</h3>
+            <pre><code>
+db.clientes.createIndex({ nome: 1 })
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Administração de Bases de Dados</p>
+    </footer>
+
+    <div class="back-to-top">
+        <a href="/" class="button">Voltar ao Início</a>
+    </div>
 </body>
 </html>
