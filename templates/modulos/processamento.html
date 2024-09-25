@@ -1,15 +1,197 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
 
     <title>modulos</title>
 
     <title>Interface do Projeto</title>
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processamento Computacional para Programadores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesprocessamento.css') }}">
+>>>>>>> b5f01901f7177e1808a89e9b92d84f6a8b68e5e6
 </head>
 <body>
-    <h1>Interface do Projeto</h1>
-    <p>Aqui você pode adicionar informações sobre a interface do projeto.</p>
-    <a href="/">Voltar para a página inicial</a>
+    <header>
+        <h1>Processamento Computacional para Programadores</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#fundamentos">Fundamentos</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#tipos">Tipos de Processamento</a></li>
+            <li><a href="#arquiteturas">Arquiteturas</a></li>
+            <li><a href="#otimizacao">Otimização</a></li>
+            <li><a href="#linguagens">Linguagens</a></li>
+            <li><a href="#tendencias">Tendências</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="fundamentos">
+            <h2>1. Fundamentos do Processamento Computacional</h2>
+            <p><strong>Definição:</strong> Processamento computacional refere-se à manipulação e transformação de dados por um computador, seguindo um conjunto de instruções (programa).</p>
+            <p><strong>Elementos Básicos:</strong> Entrada de dados, processamento, saída de resultados.</p>
+            <p><strong>Importância:</strong> Fundamental para todas as operações computacionais, desde cálculos simples até análises complexas de big data.</p>
+            <h3>Exemplo: Cálculo simples em Python</h3>
+            <pre><code>
+def calcular_media(numeros):
+    return sum(numeros) / len(numeros)
+
+dados = [10, 20, 30, 40, 50]
+media = calcular_media(dados)
+print(f"A média é: {media}")
+            </code></pre>
+        </section>
+
+        <section id="componentes">
+            <h2>2. Componentes Principais do Processamento</h2>
+            <ul>
+                <li><strong>CPU (Unidade Central de Processamento):</strong> Realiza operações lógicas e aritméticas.</li>
+                <li><strong>Memória:</strong> Armazena dados e instruções temporariamente.</li>
+                <li><strong>Unidade de Controle:</strong> Coordena as operações do computador.</li>
+                <li><strong>Unidade Lógica e Aritmética (ULA):</strong> Executa cálculos e comparações.</li>
+                <li><strong>Dispositivos de E/S:</strong> Permitem a entrada e saída de dados.</li>
+            </ul>
+            <h3>Exemplo: Verificação de uso de CPU em Python</h3>
+            <pre><code>
+import psutil
+
+print(f"Uso de CPU: {psutil.cpu_percent()}%")
+print(f"Memória disponível: {psutil.virtual_memory().available / (1024 * 1024):.2f} MB")
+            </code></pre>
+        </section>
+
+        <section id="tipos">
+            <h2>3. Tipos de Processamento</h2>
+            <ul>
+                <li><strong>Processamento em Lote (Batch):</strong> Processa grandes volumes de dados sem intervenção do usuário.</li>
+                <li><strong>Processamento em Tempo Real:</strong> Processa dados imediatamente após sua recepção.</li>
+                <li><strong>Processamento Paralelo:</strong> Divide tarefas em subtarefas para processamento simultâneo.</li>
+                <li><strong>Processamento Distribuído:</strong> Utiliza múltiplos computadores para processar tarefas.</li>
+            </ul>
+            <h3>Exemplo: Processamento Paralelo com Python</h3>
+            <pre><code>
+from multiprocessing import Pool
+
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+    with Pool(5) as p:
+        print(p.map(f, [1, 2, 3]))
+            </code></pre>
+        </section>
+
+        <section id="arquiteturas">
+            <h2>4. Arquiteturas de Processamento</h2>
+            <ul>
+                <li><strong>Von Neumann:</strong> Arquitetura clássica com memória única para dados e instruções.</li>
+                <li><strong>Harvard:</strong> Separa memória de dados e instruções.</li>
+                <li><strong>RISC (Reduced Instruction Set Computing):</strong> Conjunto reduzido de instruções simples.</li>
+                <li><strong>CISC (Complex Instruction Set Computing):</strong> Conjunto amplo de instruções complexas.</li>
+            </ul>
+            <h3>Exemplo: Comparação de Desempenho</h3>
+            <pre><code>
+import time
+
+def operacao_complexa():
+    return sum(i*i for i in range(10**6))
+
+start = time.time()
+resultado = operacao_complexa()
+end = time.time()
+
+print(f"Tempo de execução: {end - start:.2f} segundos")
+            </code></pre>
+        </section>
+
+        <section id="otimizacao">
+            <h2>5. Otimização de Processamento</h2>
+            <ul>
+                <li><strong>Algoritmos Eficientes:</strong> Escolha de algoritmos com melhor complexidade.</li>
+                <li><strong>Paralelização:</strong> Uso de múltiplos núcleos ou GPUs.</li>
+                <li><strong>Caching:</strong> Armazenamento de dados frequentemente acessados em memória rápida.</li>
+                <li><strong>Compilação Just-In-Time (JIT):</strong> Otimização de código durante a execução.</li>
+            </ul>
+            <h3>Exemplo: Otimização com Caching</h3>
+            <pre><code>
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(100))
+            </code></pre>
+        </section>
+
+        <section id="linguagens">
+            <h2>6. Linguagens de Processamento</h2>
+            <ul>
+                <li><strong>Baixo Nível:</strong> Assembly, linguagem de máquina.</li>
+                <li><strong>Alto Nível:</strong> Python, Java, C++, etc.</li>
+                <li><strong>Específicas de Domínio:</strong> SQL para bancos de dados, R para estatística.</li>
+                <li><strong>Funcionais:</strong> Haskell, Lisp, para processamento de dados complexos.</li>
+            </ul>
+            <h3>Exemplo: Comparação de Linguagens</h3>
+            <pre><code>
+# Python
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+// C++
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="tendencias">
+            <h2>7. Tendências em Processamento Computacional</h2>
+            <ul>
+                <li><strong>Computação Quântica:</strong> Uso de princípios quânticos para processamento.</li>
+                <li><strong>Inteligência Artificial e Machine Learning:</strong> Processamento avançado de dados.</li>
+                <li><strong>Edge Computing:</strong> Processamento próximo à fonte de dados.</li>
+                <li><strong>Computação Verde:</strong> Foco em eficiência energética.</li>
+            </ul>
+            <h3>Exemplo: Processamento com TensorFlow (IA)</h3>
+            <pre><code>
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Processamento Computacional</p>
+    </footer>
+
+    <div class="back-to-top">
+        <a href="/" class="button">Voltar ao Início</a>
+    </div>
 </body>
 </html>

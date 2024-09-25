@@ -1,16 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
 
     <title>modulos</title>
 
     <title>Interface do Projeto</title>
 
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java - Programação Multiplataforma e Robusta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesjava.css') }}">
+>>>>>>> b5f01901f7177e1808a89e9b92d84f6a8b68e5e6
 </head>
-<body>
-    <h1>Interface do Projeto</h1>
-    <p>Aqui você pode adicionar informações sobre a interface do projeto.</p>
-    <a href="/">Voltar para a página inicial</a>
+<body id="top">
+    <header>
+        <div class="header-content">
+            <h1>Java</h1>
+            <p>Programação Multiplataforma, Robusta e Segura</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#sintaxe">Sintaxe</a></li>
+            <li><a href="#oop">POO</a></li>
+            <li><a href="#plataformas">Plataformas</a></li>
+            <li><a href="#jvm">JVM</a></li>
+            <li><a href="#frameworks">Frameworks</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introducao">
+            <h2>Introdução ao Java</h2>
+            <p>Java é uma linguagem de programação e plataforma computacional lançada pela primeira vez pela Sun Microsystems em 1995. Desenvolvida por James Gosling e sua equipe, Java rapidamente se tornou uma das linguagens mais populares e amplamente utilizadas no mundo, conhecida por sua portabilidade, segurança e robustez.</p>
+            <p>Com o slogan "Write Once, Run Anywhere" (WORA), Java permite que os desenvolvedores escrevam código uma vez e o executem em qualquer dispositivo que suporte a plataforma Java, sem a necessidade de recompilação.</p>
+        </section>
+
+        <section id="historia">
+            <h2>História do Java</h2>
+            <ul>
+                <li><strong>1991:</strong> O projeto Green inicia o desenvolvimento do que se tornaria Java.</li>
+                <li><strong>1995:</strong> Java 1.0 é lançado publicamente.</li>
+                <li><strong>2006:</strong> Java se torna open source.</li>
+                <li><strong>2010:</strong> Oracle adquire a Sun Microsystems e se torna a mantenedora do Java.</li>
+                <li><strong>2014:</strong> Java SE 8 é lançado, introduzindo expressões lambda e a API de data/hora.</li>
+                <li><strong>2018:</strong> Java SE 11 é lançado como a primeira versão LTS (Long Term Support) sob o novo ciclo de lançamento semestral.</li>
+                <li><strong>2021:</strong> Java SE 17 é lançado, a mais recente versão LTS.</li>
+            </ul>
+        </section>
+
+        <section id="caracteristicas">
+            <h2>Características Principais</h2>
+            <ul>
+                <li><strong>Orientada a objetos:</strong> Baseada no modelo de programação orientada a objetos, facilitando o desenvolvimento de software modular e reutilizável.</li>
+                <li><strong>Independente de plataforma:</strong> O bytecode Java pode ser executado em qualquer dispositivo que tenha uma Máquina Virtual Java (JVM) instalada.</li>
+                <li><strong>Segura:</strong> Com o Security Manager, Java oferece um ambiente de execução seguro, protegendo contra códigos maliciosos.</li>
+                <li><strong>Robusta:</strong> Forte verificação de tipos em tempo de compilação e execução, gerenciamento automático de memória e tratamento de exceções.</li>
+                <li><strong>Multithreaded:</strong> Suporte nativo para programação concorrente, permitindo a criação de aplicações eficientes e responsivas.</li>
+                <li><strong>Alto desempenho:</strong> Com o JIT (Just-In-Time) compiler, o código Java é otimizado em tempo de execução.</li>
+                <li><strong>Distribuída:</strong> Suporte integrado para protocolos de rede como TCP/IP, facilitando o desenvolvimento de aplicações distribuídas.</li>
+                <li><strong>Dinâmica:</strong> Capacidade de carregar classes em tempo de execução, permitindo atualizações de código sem reiniciar a aplicação.</li>
+            </ul>
+        </section>
+
+        <section id="sintaxe">
+            <h2>Sintaxe Básica</h2>
+            <p>A sintaxe do Java é similar a C e C++, mas com menos recursos de baixo nível. Aqui está um exemplo básico:</p>
+            <pre><code>
+public class OlaMundo {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+            </code></pre>
+            <p>Elementos fundamentais da sintaxe Java incluem:</p>
+            <ul>
+                <li>Declaração de variáveis com tipos estáticos</li>
+                <li>Estruturas de controle como if-else, switch, for, while</li>
+                <li>Métodos e classes como unidades básicas de organização</li>
+                <li>Pacotes para organização de código em namespaces</li>
+                <li>Modificadores de acesso para controle de visibilidade</li>
+            </ul>
+        </section>
+
+        <section id="oop">
+            <h2>Programação Orientada a Objetos (POO)</h2>
+            <p>Java é uma linguagem fortemente orientada a objetos. Seus principais conceitos incluem:</p>
+            <ul>
+                <li><strong>Classes e Objetos:</strong> Classes são modelos para objetos, que são instâncias de classes.</li>
+                <li><strong>Herança:</strong> Permite que uma classe herde atributos e métodos de outra classe.</li>
+                <li><strong>Polimorfismo:</strong> Capacidade de um objeto assumir múltiplas formas, fundamental para o design flexível de software.</li>
+                <li><strong>Encapsulamento:</strong> Ocultação de detalhes internos da implementação, promovendo a segurança e manutenibilidade do código.</li>
+                <li><strong>Abstração:</strong> Simplificação de sistemas complexos, focando apenas nos aspectos relevantes.</li>
+                <li><strong>Interfaces:</strong> Contratos que classes podem implementar, permitindo múltipla herança de tipo.</li>
+            </ul>
+        </section>
+
+        <section id="plataformas">
+            <h2>Plataformas Java</h2>
+            <p>Java oferece diferentes plataformas para diversos tipos de aplicações:</p>
+            <ul>
+                <li><strong>Java SE (Standard Edition):</strong> Para desenvolvimento de aplicações desktop e servidores. Inclui as APIs core da linguagem.</li>
+                <li><strong>Java EE (Enterprise Edition):</strong> Para desenvolvimento de aplicações empresariais em larga escala. Inclui APIs para web services, componentes distribuídos, e mais.</li>
+                <li><strong>Java ME (Micro Edition):</strong> Para desenvolvimento de aplicações para dispositivos móveis e embarcados com recursos limitados.</li>
+                <li><strong>JavaFX:</strong> Para criação de aplicações de interface gráfica ricas e interativas, com suporte a efeitos visuais avançados.</li>
+            </ul>
+        </section>
+
+        <section id="jvm">
+            <h2>Máquina Virtual Java (JVM)</h2>
+            <p>A JVM é o coração da plataforma Java, responsável por:</p>
+            <ul>
+                <li>Carregar, verificar e executar o bytecode Java</li>
+                <li>Gerenciar memória automaticamente (garbage collection)</li>
+                <li>Otimizar o código em tempo de execução (JIT compilation)</li>
+                <li>Fornecer portabilidade entre diferentes sistemas operacionais</li>
+                <li>Garantir segurança através do Security Manager</li>
+            </ul>
+        </section>
+
+        <section id="frameworks">
+            <h2>Frameworks e Bibliotecas Populares</h2>
+            <ul>
+                <li><strong>Spring:</strong> Framework para desenvolvimento de aplicações empresariais</li>
+                <li><strong>Hibernate:</strong> Framework ORM (Object-Relational Mapping) para persistência de dados</li>
+                <li><strong>Apache Struts:</strong> Framework para desenvolvimento de aplicações web</li>
+                <li><strong>JavaServer Faces (JSF):</strong> Framework para construção de interfaces de usuário para aplicações web</li>
+                <li><strong>JUnit:</strong> Framework para testes unitários</li>
+                <li><strong>Log4j:</strong> Biblioteca para logging</li>
+                <li><strong>Apache Maven:</strong> Ferramenta de automação de compilação e gerenciamento de dependências</li>
+            </ul>
+        </section>
+
+        <section id="recursos">
+            <h2>Recursos</h2>
+            <p>Acesse a documentação oficial e baixe o Java para começar a desenvolver:</p>
+            <div class="button-group">
+                <a href="https://docs.oracle.com/en/java/" class="button" target="_blank">Documentação Java</a>
+                <a href="https://www.java.com/download/" class="button" target="_blank">Baixar Java</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="back-to-top">
+        <a href="/" class="button">Voltar ao Início</a>
+    </div>
+
+    <footer>
+        <p>© 2024 Java</p>
+    </footer>
 </body>
 </html>
