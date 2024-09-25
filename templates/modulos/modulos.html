@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #50c878;
-            --background-color: #f0f4f8;
-            --text-color: #333;
-            --card-bg: rgba(255, 255, 255, 0.8);
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --card-bg: rgba(255, 255, 255, 0.9);
         }
 
         * {
@@ -21,41 +22,63 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .container {
             background: var(--card-bg);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             max-width: 800px;
             width: 100%;
+            position: relative;
+            overflow: hidden;
             backdrop-filter: blur(10px);
         }
 
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            transform: rotate(30deg);
+            animation: shimmer 15s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         h1 {
+            font-size: 3em;
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2.5em;
             position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         h1::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 100px;
             height: 4px;
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         nav ul {
@@ -73,9 +96,10 @@
             text-decoration: none;
             border-radius: 10px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         nav ul li a::before {
@@ -85,20 +109,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            transition: 0.6s;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
         }
 
         nav ul li a:hover::before {
-            transform: translateX(100%);
+            opacity: 1;
         }
 
         nav ul li a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background: var(--primary-color);
             color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .back-link {
@@ -107,21 +131,45 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .back-link:hover::before {
+            left: 0;
         }
 
         .back-link:hover {
-            color: var(--secondary-color);
+            color: white;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            z-index: -1;
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .container {
-            animation: float 6s ease-in-out infinite;
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         @media (max-width: 600px) {
@@ -154,12 +202,32 @@
         </nav>
         <a href="/" class="back-link">Voltar para a página inicial</a>
     </div>
+
+    <script>
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animation = `float ${Math.random() * 3 + 2}s ease-in-out infinite`;
+            document.body.appendChild(particle);
+        }
+
+        for (let i = 0; i < 50; i++) {
+            createParticle();
+        }
+
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = `translateY(-5px) rotate(${Math.random() * 5 - 2.5}deg)`;
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'translateY(0) rotate(0deg)';
+            });
+        });
+    </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-
-</html>
-
-
->>>>>>> b5f01901f7177e1808a89e9b92d84f6a8b68e5e6

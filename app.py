@@ -23,11 +23,7 @@ def api():
     return render_template('documentacao/api.html')
 
 @app.route('/modulos')
-<<<<<<< HEAD
-def modulos_lista():  # Renomeado para evitar conflito
-=======
 def modulos():
->>>>>>> b5f01901f7177e1808a89e9b92d84f6a8b68e5e6
     return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
@@ -53,11 +49,6 @@ def banco_de_dados():
 @app.route('/modulos/processamento')
 def processamento():
     return render_template('modulos/processamento.html')
-
-<<<<<<< HEAD
-if __name__ == '__main__':  # Corrigido aqui
-=======
-
+    
 if __name__ == '__main__':
->>>>>>> b5f01901f7177e1808a89e9b92d84f6a8b68e5e6
     app.run(debug=True)
