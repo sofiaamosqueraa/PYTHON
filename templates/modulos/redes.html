@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Redes Locais para Programadores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesredes.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Administração de Redes Locais para Programadores</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#fundamentos">Fundamentos</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#topologias">Topologias</a></li>
+            <li><a href="#protocolos">Protocolos</a></li>
+            <li><a href="#seguranca">Segurança</a></li>
+            <li><a href="#monitoramento">Monitoramento</a></li>
+            <li><a href="#boas-praticas">Boas Práticas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="fundamentos">
+            <h2>1. Fundamentos de Redes Locais</h2>
+            <p><strong>Definição:</strong> Uma rede local (LAN) é um conjunto de dispositivos interconectados que compartilham recursos em uma área geográfica limitada.</p>
+            <p><strong>Importância:</strong> Fundamental para a comunicação e compartilhamento de recursos em ambientes corporativos e domésticos.</p>
+            <h3>Exemplo: Configuração básica de IP em Linux</h3>
+            <pre><code>
+sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+            </code></pre>
+        </section>
+
+        <section id="componentes">
+            <h2>2. Componentes Principais de uma Rede Local</h2>
+            <ul>
+                <li><strong>Switches:</strong> Direcionam o tráfego entre dispositivos na mesma rede.</li>
+                <li><strong>Roteadores:</strong> Conectam diferentes redes e gerenciam o tráfego entre elas.</li>
+                <li><strong>Servidores:</strong> Fornecem serviços centralizados como DHCP, DNS, e compartilhamento de arquivos.</li>
+                <li><strong>Estações de Trabalho:</strong> Computadores dos usuários finais.</li>
+                <li><strong>Cabos e Conectores:</strong> Infraestrutura física para conexão dos dispositivos.</li>
+            </ul>
+            <h3>Exemplo: Verificação de conectividade</h3>
+            <pre><code>
+ping 192.168.1.1
+            </code></pre>
+        </section>
+
+        <section id="topologias">
+            <h2>3. Topologias de Rede</h2>
+            <ul>
+                <li><strong>Estrela:</strong> Todos os dispositivos conectados a um ponto central.</li>
+                <li><strong>Barramento:</strong> Todos os dispositivos conectados a um cabo principal.</li>
+                <li><strong>Anel:</strong> Dispositivos conectados em um loop fechado.</li>
+                <li><strong>Malha:</strong> Cada dispositivo conectado a vários outros dispositivos.</li>
+            </ul>
+            <h3>Exemplo: Visualização de conexões de rede</h3>
+            <pre><code>
+netstat -an
+            </code></pre>
+        </section>
+
+        <section id="protocolos">
+            <h2>4. Protocolos de Rede</h2>
+            <ul>
+                <li><strong>TCP/IP:</strong> Conjunto de protocolos base para comunicação na Internet e em muitas LANs.</li>
+                <li><strong>DHCP:</strong> Atribuição automática de endereços IP.</li>
+                <li><strong>DNS:</strong> Resolução de nomes de domínio para endereços IP.</li>
+                <li><strong>HTTP/HTTPS:</strong> Protocolos para transferência de dados na web.</li>
+            </ul>
+            <h3>Exemplo: Configuração de DNS</h3>
+            <pre><code>
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+            </code></pre>
+        </section>
+
+        <section id="seguranca">
+            <h2>5. Segurança de Rede</h2>
+            <ul>
+                <li><strong>Firewalls:</strong> Controlam o tráfego de entrada e saída da rede.</li>
+                <li><strong>VPNs:</strong> Criam conexões seguras através de redes públicas.</li>
+                <li><strong>Antivírus:</strong> Protegem contra software malicioso.</li>
+                <li><strong>Políticas de Acesso:</strong> Definem quem pode acessar quais recursos.</li>
+            </ul>
+            <h3>Exemplo: Configuração básica de firewall</h3>
+            <pre><code>
+sudo ufw enable
+sudo ufw allow 22
+            </code></pre>
+        </section>
+
+        <section id="monitoramento">
+            <h2>6. Monitoramento de Rede</h2>
+            <ul>
+                <li><strong>Análise de Tráfego:</strong> Identifica gargalos e problemas de desempenho.</li>
+                <li><strong>Logs de Sistema:</strong> Registram eventos e erros para diagnóstico.</li>
+                <li><strong>Alertas:</strong> Notificam administradores sobre problemas críticos.</li>
+                <li><strong>Ferramentas de Monitoramento:</strong> Nagios, Zabbix, PRTG, etc.</li>
+            </ul>
+            <h3>Exemplo: Monitoramento de tráfego com tcpdump</h3>
+            <pre><code>
+sudo tcpdump -i eth0
+            </code></pre>
+        </section>
+
+        <section id="boas-praticas">
+            <h2>7. Boas Práticas em Administração de Redes</h2>
+            <ul>
+                <li><strong>Documentação:</strong> Manter registros atualizados da infraestrutura de rede.</li>
+                <li><strong>Backups:</strong> Realizar backups regulares de configurações e dados críticos.</li>
+                <li><strong>Atualizações:</strong> Manter sistemas e softwares atualizados.</li>
+                <li><strong>Treinamento:</strong> Capacitar a equipe em novas tecnologias e práticas de segurança.</li>
+                <li><strong>Planejamento de Capacidade:</strong> Antecipar necessidades futuras de crescimento da rede.</li>
+            </ul>
+            <h3>Exemplo: Script de backup de configurações</h3>
+            <pre><code>
+#!/bin/bash
+DATE=$(date +%Y%m%d)
+tar -czf network_configs_$DATE.tar.gz /etc/network/
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Administração de Redes Locais</p>
+    </footer>
+
+    <div class="back-to-top">
+        <a href="#top" class="button">Voltar ao Início</a>
+    </div>
+</body>
+</html>

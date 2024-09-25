@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>Documentação de Microserviços</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesmicro.css') }}">
+
+</head>
+<body>
+    <h1>Documentação de Microserviços</h1>
+    
+    <div class="section">
+        <h4>Introdução</h4>
+        <p>
+            Microserviços são um estilo de arquitetura de software onde uma aplicação é construída como uma coleção de pequenos serviços independentes. Cada serviço se concentra em fazer uma coisa bem, executa em seu próprio processo e se comunica com outros serviços através de interfaces simples e bem definidas (geralmente APIs). Essa abordagem permite maior flexibilidade, escalabilidade e manutenção mais fácil em comparação com arquiteturas monolíticas tradicionais. Os microserviços permitem que as equipes desenvolvam, implantem e escalem diferentes partes de uma aplicação de forma independente, frequentemente usando diferentes tecnologias mais adequadas para cada serviço específico.
+        </p>
+    </div>
+
+    <div class="section">
+        <h4>Pontos Principais:</h4>
+        <ul>
+            <li>Serviços Independentes: Cada serviço é responsável por uma função única, como gestão de usuários ou pagamentos.</li>
+            <li>Baixo Acoplamento: Os serviços podem ser desenvolvidos, implantados e escalados de forma independente.</li>
+            <li>Comunicação: Os serviços se comunicam entre si usando APIs (ex.: REST, gRPC).</li>
+            <li>Resiliência: Se um serviço falhar, os outros continuam funcionando.</li>
+            <li>Escalabilidade: Escale apenas os serviços que precisam, não a aplicação inteira.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Vantagens:</h4>
+        <ul>
+            <li>Escalabilidade: Serviços podem ser escalados individualmente.</li>
+            <li>Flexibilidade tecnológica: Diferentes serviços podem usar diferentes tecnologias.</li>
+            <li>Implantação independente: Cada serviço pode ser atualizado separadamente.</li>
+            <li>Resiliência: Falhas em um serviço não necessariamente afetam toda a aplicação.</li>
+            <li>Manutenção simplificada: Bases de código menores são mais fáceis de manter.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Desafios:</h4>
+        <ul>
+            <li>Complexidade distribuída: Gerenciar múltiplos serviços pode ser desafiador.</li>
+            <li>Consistência de dados: Manter dados consistentes entre serviços requer atenção.</li>
+            <li>Monitoramento: É necessário monitorar múltiplos serviços.</li>
+            <li>Testes: Testar interações entre serviços pode ser complexo.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Implementação:</h4>
+        <ul>
+            <li>Frequentemente utiliza-se containerização (ex: Docker) para implantação.</li>
+            <li>Orquestração de containers (ex: Kubernetes) para gerenciamento.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Contraste com arquitetura monolítica:</h4>
+        <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
+    </div>
+
+    <div class="section">
+        <h4>Padrões comuns:</h4>
+        <p><li>API Gateway </li>
+            <li> Service Discovery </li>
+            <li> Circuit Breaker </li>
+            <li>Event Sourcing</li></p>
+    </div>
+
+    <div class="section">
+        <h4> Contraste com arquitetura monolítica:</h4>
+        <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.
+        </p>
+    </div>
+
+    <div class="section">
+        <h4>Ferramentas e tecnologias associadas:</h4>
+        <p>
+            <li>Spring Boot, Node.js (para desenvolvimento)</li>
+            <li>Docker, Kubernetes (para implantação e orquestração)</li>
+            <li>Kafka, RabbitMQ (para mensageria)</li>
+            <li>Prometheus, ELK Stack (para monitoramento e logging)</li>
+        </p>
+        
+        <div class="section">
+            <h4> Evolução e manutenção:</h4>
+            <p>Facilita a evolução contínua da aplicação
+                Permite atualizações e substituições graduais de serviços</p>
+                </div>
+                       
+</body>
+</html>
