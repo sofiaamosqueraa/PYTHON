@@ -246,9 +246,33 @@ ul li > span::after {
     z-index: 2;
 }
 
+
 ul li::after {
     animation-delay: 0.3s;
 }
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 3em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
 
 ul li > span::before {
     left: 0.2em;
