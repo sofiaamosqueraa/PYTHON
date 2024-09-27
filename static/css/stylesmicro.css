@@ -1,39 +1,375 @@
+/* Modern color scheme with CSS variables */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --highlight-color: #03264e;
+  --background-color: #f4f7f9;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #333; /* Fallback color */
+  -webkit-text-fill-color: #333; /* Fallback color for webkit browsers */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
 }
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+
+/* Background effect for the entire page */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f6f8fa 25%, transparent 25%) -50px 0,
+              linear-gradient(225deg, #f6f8fa 25%, transparent 25%) -50px 0,
+              linear-gradient(315deg, #f6f8fa 25%, transparent 25%),
+              linear-gradient(45deg, #f6f8fa 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: var(--background-color);
+  opacity: 0.5;
+  z-index: -1;
 }
-h4 {
-    color: #2980b9;
-    margin-top: 20px;
-    font-size: 4vh;
+
+.moving-title {
+  background: linear-gradient(-45deg, #3498db, #2c3e50, #2980b9, #34495e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-p {
-    margin-bottom: 15px;
+
+.moving-title h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(45deg, #f1c40f, #e74c3c, #3498db, #2ecc71);
+  background-size: 300% 300%;
+  animation: textGradient 8s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
-a {
-    color: #e74c3c;
-    text-decoration: none;
+
+.moving-title::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+  animation: ripple 15s linear infinite;
 }
-a:hover {
-    text-decoration: underline;
+
+.moving-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="2" stroke-dasharray="10 5"/></svg>') repeat;
+  background-size: 100px 100px;
+  opacity: 0.1;
+  animation: rotate 30s linear infinite;
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes textGradient { 
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ripple {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .section {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: rgba(245, 235, 235, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%233498db" stroke-width="2" stroke-dasharray="5 5"/></svg>') repeat;
+  background-size: 50px 50px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h4 {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+h4::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--highlight-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+h4::after {
+  
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  opacity: 0;
+  transition: right 0.3s ease, opacity 0.3s ease;
+  color: var(--highlight-color);
+}
+
+.section:hover h4 {
+  color: var(--highlight-color);
+}
+
+.section:hover h4::before {
+  transform: scaleX(1);
+}
+
+.section:hover h4::after {
+  right: 0;
+  opacity: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Adjust paragraph styles for better contrast with the new h4 */
+.section p {
+  color: var(--secondary-color);
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
 ul {
-    padding-left: 20px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+li:before {
+  content: '•';
+  color: #3498db;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.highlight {
+  background: linear-gradient(120deg, rgba(52, 152, 219, 0.2) 0%, rgba(52, 152, 219, 0.2) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 90%;
+  transition: background-size 0.25s ease-in;
+}
+
+.highlight:hover {
+  background-size: 100% 100%;
+}
+
+.info-box {
+  background-color: #e8f4fc;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .section {
+    padding: 15px;
+  }
+}
+
+/* Add this new rule for a hover effect */
+.your-text-class:hover {
+  background-image: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.title {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 4em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 20px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: linear-gradient(270deg, #ff6b6b, #4ecdc4, #45b7d1, #f7d794);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 10s ease infinite;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(10px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
+  }
+  0% {
+    text-shadow: 
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #0ff,
+      0 0 45px #0ff,
+      0 0 55px #0ff,
+      0 0 70px #0ff,
+      0 0 80px #0ff;
+  }
 }
