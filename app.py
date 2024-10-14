@@ -1,22 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, rendertemplate
 
-app = Flask(__name__)
+app = Flask(name)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
-
-@app.route('/projeito')
-def projeito():
-    return render_template('projeito/projeito.html')
+    return rendertemplate('home.html')
 
 @app.route('/documentacao')
 def documentacao():
-    return render_template('documentacao/documentacao.html')
+    return rendertemplate('documentacao/documentacao.html')
 
 @app.route('/documentacao/microservicos')
 def microservicos():
-    return render_template('documentacao/microservicos.html')
+    return rendertemplate('documentacao/microservicos.html')
 
 @app.route('/documentacao/gateway')
 def gateway():
@@ -28,6 +24,7 @@ def api():
 
 @app.route('/modulos')
 def modulos():
+    
     return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
@@ -53,6 +50,6 @@ def banco_de_dados():
 @app.route('/modulos/processamento')
 def processamento():
     return render_template('modulos/processamento.html')
-    
-if __name__ == '__main__':
+
+if __name == '__main':
     app.run(debug=True)
