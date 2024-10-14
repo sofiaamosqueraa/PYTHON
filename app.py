@@ -3,6 +3,7 @@ from flask import Flask, rendertemplate
 app = Flask(name)
 
 @app.route('/')
+def microservices_doc():
 def home():
     return rendertemplate('home.html')
 
@@ -52,4 +53,8 @@ def processamento():
     return render_template('modulos/processamento.html')
 
 if __name == '__main':
+    app.run(debug=True)
+    return render_template('documentacao/microservicos.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
