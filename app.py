@@ -1,10 +1,14 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/projeito')
+def projeito():
+    return render_template('projeito/projeito.html')
 
 @app.route('/documentacao')
 def documentacao():
@@ -24,6 +28,7 @@ def api():
 
 @app.route('/modulos')
 def modulos():
+
     return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
@@ -49,6 +54,6 @@ def banco_de_dados():
 @app.route('/modulos/processamento')
 def processamento():
     return render_template('modulos/processamento.html')
-    
+
 if __name__ == '__main__':
     app.run(debug=True)
