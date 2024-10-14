@@ -1,6 +1,7 @@
-from flask import Flask, rendertemplate
+from flask import Flask, render_template
 
-app = Flask(name)
+
+app = Flask(__name__) 
 
 @app.route('/')
 def home():
@@ -24,7 +25,7 @@ def api():
 
 @app.route('/modulos')
 def modulos():
-    
+
     return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
@@ -51,5 +52,5 @@ def banco_de_dados():
 def processamento():
     return render_template('modulos/processamento.html')
 
-if __name == '__main':
+if __name__ == '__main__':
     app.run(debug=True)
