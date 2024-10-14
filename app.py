@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app = Flask(__name__) 
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -28,7 +28,6 @@ def api():
 
 @app.route('/modulos')
 def modulos():
-
     return render_template('modulos/modulos.html')
 
 @app.route('/modulos/cpp')
