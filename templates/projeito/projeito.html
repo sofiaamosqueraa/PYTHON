@@ -1,183 +1,280 @@
-<style>
-    :root {
-        --primary-color: #ff6f61; /* Cor principal */
-        --secondary-color: #6a11cb; /* Cor secundária */
-        --text-color: #fff; /* Cor do texto */
-        --background-color: #f0f4f8; /* Cor de fundo */
-        --white: #ffffff; /* Cor branca */
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
-        color: var(--text-color);
-        line-height: 1.6;
-        overflow-x: hidden;
-        position: relative;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Integrado de Saúde e Solidariedade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 
-    header {
-        background: var(--primary-color);
-        color: var(--white);
-        padding: 40px 20px;
-        text-align: center;
-        box-shadow: var(--shadow);
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-    }
+        :root {
+            --primary-color: #6A4C93;
+            --secondary-color: #1982C4;
+            --accent-color: #8AC926;
+            --background-color: #F3F3F3;
+            --text-color: #333333;
+        }
 
-    h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        animation: fadeIn 1s ease forwards;
-    }
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            background-image: linear-gradient(45deg, #f3f3f3 25%, transparent 25%),
+                              linear-gradient(-45deg, #f3f3f3 25%, transparent 25%),
+                              linear-gradient(45deg, transparent 75%, #f3f3f3 75%),
+                              linear-gradient(-45deg, transparent 75%, #f3f3f3 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-    }
+        h1 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .section {
-        background: rgba(255, 255, 255, 0.9);
-        margin: 20px 0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: var(--shadow);
-        transition: transform 0.3s, box-shadow 0.3s;
-        position: relative;
-        overflow: hidden;
-        text-align: left;
-    }
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-color);
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
 
-    h2, h3 {
-        color: var(--primary-color);
-        margin-bottom: 10px;
-        position: relative;
-    }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(30deg);
+            transition: transform 0.5s ease;
+        }
 
-    h2::after, h3::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 4px;
-        background: var(--secondary-color);
-        margin-top: 5px;
-        border-radius: 5px;
-        transition: width 0.3s ease;
-    }
+        .section:hover::before {
+            transform: rotate(0deg);
+        }
 
-    h2:hover::after, h3:hover::after {
-        width: 100px;
-    }
+        .section:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
 
-    ul, ol {
-        margin-bottom: 20px;
-        padding-left: 20px;
-    }
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
 
-    ul li {
-        position: relative;
-        padding-left: 25px;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-        transition: transform 0.3s;
-    }
+        li {
+            margin-bottom: 15px;
+            position: relative;
+        }
 
-    ul li:hover {
-        transform: scale(1.05);
-    }
+        li::before {
+            content: '✦';
+            color: var(--secondary-color);
+            position: absolute;
+            left: -25px;
+            transition: all 0.3s ease;
+        }
 
-    ul li::before {
-        content: '🌟';
-        position: absolute;
-        left: 0;
-        color: var(--secondary-color);
-        font-size: 1.2em;
-    }
+        li:hover::before {
+            transform: rotate(360deg) scale(1.2);
+        }
 
-    .highlight {
-        background-color: var(--secondary-color);
-        color: var(--white);
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-weight: bold;
-    }
+        .highlight {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
 
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: var(--primary-color);
-        color: var(--white);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-        box-shadow: var(--shadow);
-        opacity: 0;
-        visibility: hidden;
-    }
+        .highlight:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-    .back-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-    }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
 
-    .back-to-top:hover {
-        background-color: var(--secondary-color);
-        transform: translateY(-3px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: right;
+        }
 
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: var(--primary-color);
-        color: var(--white);
-        border-radius: 5px;
-    }
+        .section:hover h2::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
 
-    /* Efeitos de fundo */
-    #stars-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: url('https://www.transparenttextures.com/patterns/stardust.png');
-        opacity: 0.1;
-        animation: twinkle 1.5s infinite alternate;
-    }
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
 
-    @keyframes twinkle {
-        0% { opacity: 0.1; }
-        100% { opacity: 0.3; }
-    }
-</style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            .section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Projeto Integrado de Saúde e Solidariedade</h1>
+
+    <div class="section">
+        <h2>1. Visão Geral e Objetivos</h2>
+        <p>Nosso projeto é uma plataforma inovadora que integra serviços de saúde com um sistema de doações de
+            alimentos, utilizando uma combinação de tecnologias avançadas: Java, Python e C++. O objetivo principal é
+            criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar, alinhando-se
+            com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.</p>
+        <h3>Objetivos Específicos:</h3>
+        <ul>
+            <li>Facilitar o acesso a consultas médicas e orientações de saúde</li>
+            <li>Criar um sistema eficiente de doação e distribuição de alimentos</li>
+            <li>Promover a solidariedade e o engajamento comunitário</li>
+            <li>Desenvolver uma solução tecnológica escalável e segura</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Alinhamento com ODS da ONU</h2>
+        <ul>
+            <li><strong>ODS 2 (Fome Zero e Agricultura Sustentável):</strong> Sistema de doação de alimentos</li>
+            <li><strong>ODS 3 (Saúde e Bem-Estar):</strong> Acesso facilitado a profissionais de saúde</li>
+            <li><strong>ODS 10 (Redução das Desigualdades):</strong> Democratização do acesso à saúde e alimentação</li>
+            <li><strong>ODS 17 (Parcerias e Meios de Implementação):</strong> Colaboração entre setores da sociedade
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>6. Desafios Técnicos e Soluções Propostas</h2>
+        <ul>
+            <li><strong>Integração de Linguagens:</strong> Uso de microserviços e APIs bem definidas</li>
+            <li><strong>Segurança de Dados:</strong> Implementação de criptografia de ponta a ponta e conformidade com
+                LGPD</li>
+            <li><strong>Escalabilidade:</strong> Arquitetura em nuvem com balanceamento de carga</li>
+            <li><strong>UX/UI:</strong> Design responsivo e acessível para diversos dispositivos</li>
+            <li><strong>Verificação de Usuários:</strong> Sistema robusto de verificação para profissionais de saúde
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. Considerações Éticas e Legais</h2>
+        <ul>
+            <li>Conformidade com regulamentações de saúde </li>
+            <li>Proteção de dados pessoais e médicos </li>
+            <li>Transparência no uso e distribuição de doações</li>
+            <li>Políticas claras de uso e termos de serviço</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>8. Distribuição de Tarefas por Membro da Equipa</h2>
+        <h3>8.1 Sofia</h3>
+        <ul>
+            <li>Frontend: Componentes React para cadastro e atendimento de profissionais de saúde</li>
+            <li>Backend (Java): API RESTful para agendamento de consultas e verificação de credenciais</li>
+            <li>Python: Scripts para integração com sistemas externos de saúde</li>
+            <li>C++: Módulos de processamento de dados em tempo real para doações</li>
+        </ul>
+        <h3>8.2 Lara</h3>
+        <ul>
+            <li>Frontend: Componentes React para sistema de doação de alimentos</li>
+            <li>Backend (Java): API RESTful para doações e matching entre doadores e beneficiários</li>
+            <li>Python: Algoritmos de análise de dados para políticas públicas</li>
+            <li>C++: Componentes de segurança e criptografia</li>
+        </ul>
+        <h3>8.3 Vishwa</h3>
+        <ul>
+            <li>Frontend: Componentes React para painel de administração</li>
+            <li>Backend (Java): API RESTful para autenticação e gestão de utilizadores</li>
+            <li>Python: Scripts para integração com MongoDB e análise preditiva</li>
+            <li>C++: Algoritmos de otimização para matching e distribuição de recursos</li>
+        </ul>
+        <h3>8.4 Tarefas Comuns</h3>
+        <ul>
+            <li>Configuração e manutenção da infraestrutura de microserviços</li>
+            <li>Integração de componentes React com APIs backend</li>
+            <li>Implementação de design responsivo e acessível</li>
+            <li>Realização de testes unitários e de integração</li>
+            <li>Participação em code reviews e pair programming</li>
+            <li>Contribuição para documentação técnica e de utilizador</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
