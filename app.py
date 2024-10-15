@@ -54,5 +54,9 @@ def banco_de_dados():
 def processamento():
     return render_template('modulos/processamento.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Remova o bloco if __name__ == '__main__':
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+# Adicione esta linha no final do arquivo:
+app = app
