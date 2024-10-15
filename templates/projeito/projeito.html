@@ -1,23 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrado de Saúde e Solidariedade</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; max-width: 900px; margin: auto; color: #333; }
-        h1, h2, h3 { color: #2c3e50; }
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #6A4C93;
+            --secondary-color: #1982C4;
+            --accent-color: #8AC926;
+            --background-color: #F3F3F3;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            background-image: linear-gradient(45deg, #f3f3f3 25%, transparent 25%),
+                              linear-gradient(-45deg, #f3f3f3 25%, transparent 25%),
+                              linear-gradient(45deg, transparent 75%, #f3f3f3 75%),
+                              linear-gradient(-45deg, transparent 75%, #f3f3f3 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-color);
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(30deg);
+            transition: transform 0.5s ease;
+        }
+
+        .section:hover::before {
+            transform: rotate(0deg);
+        }
+
+        .section:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        li::before {
+            content: '✦';
+            color: var(--secondary-color);
+            position: absolute;
+            left: -25px;
+            transition: all 0.3s ease;
+        }
+
+        li:hover::before {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .highlight:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: right;
+        }
+
+        .section:hover h2::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            .section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+        }
         ul, ol { margin-bottom: 20px; }
         .section { background-color: #f9f9f9; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
         .highlight { background-color: #e74c3c; color: white; padding: 2px 5px; border-radius: 3px; }
-    </style>
-</head>
-<body>
-    <h1>Projeto Integrado de Saúde e Solidariedade</h1>
+        #google_translate_element { float: right; }
 
+    </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+
+    <div id="google_translate_element"></div>
+    
+    <h1>Projeto Integrado de Saúde e Solidariedade</h1>
+    
     <div class="section">
         <h2>1. Visão Geral e Objetivos</h2>
-        <p>Nosso projeto é uma plataforma inovadora que integra serviços de saúde com um sistema de doações de alimentos, utilizando uma combinação de tecnologias avançadas: Java, Python e C++. O objetivo principal é criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar, alinhando-se com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.</p>
+        <p>Nosso projeto é uma plataforma inovadora que integra serviços de saúde com um sistema de doações de
+            alimentos, utilizando uma combinação de tecnologias avançadas: Java, Python e C++. O objetivo principal é
+            criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar, alinhando-se
+            com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.</p>
         <h3>Objetivos Específicos:</h3>
         <ul>
             <li>Facilitar o acesso a consultas médicas e orientações de saúde</li>
@@ -28,121 +221,74 @@
     </div>
 
     <div class="section">
-        <h2>2. Arquitetura do Sistema</h2>
-        <h3>2.1 Sistema de Cadastro e Atendimento de Profissionais de Saúde</h3>
-        <ul>
-            <li>Cadastro diferenciado para profissionais de saúde e usuários comuns</li>
-            <li>Verificação de credenciais dos profissionais de saúde</li>
-            <li>Sistema de agendamento de consultas online</li>
-            <li>Plataforma para responder dúvidas dos pacientes</li>
-            <li>Histórico de atendimentos e acompanhamento de pacientes</li>
-        </ul>
-        <h3>2.2 Sistema de Doação de Alimentos</h3>
-        <ul>
-            <li>Cadastro de doadores (profissionais de saúde e público geral)</li>
-            <li>Opções flexíveis de doação:
-                <ul>
-                    <li>Doação regular (mensal, semanal)</li>
-                    <li>Doação única</li>
-                    <li>Oferta de refeições diárias em residência</li>
-                </ul>
-            </li>
-            <li>Sistema de matching entre doadores e beneficiários</li>
-            <li>Rastreamento e logística de doações</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>3. Tecnologias Utilizadas</h2>
-        <h3>3.1 Java</h3>
-        <ul>
-            <li>Desenvolvimento do backend robusto e escalável</li>
-            <li>Implementação de APIs RESTful para comunicação entre módulos</li>
-            <li>Gerenciamento de threads para operações concorrentes</li>
-        </ul>
-        <h3>3.2 Python</h3>
-        <ul>
-            <li>Processamento e análise de dados</li>
-            <li>Implementação de algoritmos de matching para doações</li>
-            <li>Integração com sistemas externos de saúde</li>
-            <li>Desenvolvimento de scripts para automação de tarefas</li>
-        </ul>
-        <h3>3.3 C++</h3>
-        <ul>
-            <li>Desenvolvimento de componentes de alto desempenho</li>
-            <li>Otimização de algoritmos críticos</li>
-            <li>Implementação de módulos de segurança e criptografia</li>
-        </ul>
-    </div>
-
-    <div class="section">
         <h2>4. Alinhamento com ODS da ONU</h2>
         <ul>
             <li><strong>ODS 2 (Fome Zero e Agricultura Sustentável):</strong> Sistema de doação de alimentos</li>
             <li><strong>ODS 3 (Saúde e Bem-Estar):</strong> Acesso facilitado a profissionais de saúde</li>
             <li><strong>ODS 10 (Redução das Desigualdades):</strong> Democratização do acesso à saúde e alimentação</li>
-            <li><strong>ODS 17 (Parcerias e Meios de Implementação):</strong> Colaboração entre setores da sociedade</li>
+            <li><strong>ODS 17 (Parcerias e Meios de Implementação):</strong> Colaboração entre setores da sociedade
+            </li>
         </ul>
     </div>
-
-    <div class="section">
-        <h2>5. Impacto Social e Inovação</h2>
-        <ul>
-            <li>Redução de barreiras no acesso à saúde</li>
-            <li>Combate direto à insegurança alimentar em comunidades vulneráveis</li>
-            <li>Criação de uma rede de solidariedade digital</li>
-            <li>Uso de tecnologia para otimizar a distribuição de recursos</li>
-            <li>Coleta de dados para informar políticas públicas de saúde e alimentação</li>
-        </ul>
-    </div>
-
+    
     <div class="section">
         <h2>6. Desafios Técnicos e Soluções Propostas</h2>
         <ul>
             <li><strong>Integração de Linguagens:</strong> Uso de microserviços e APIs bem definidas</li>
-            <li><strong>Segurança de Dados:</strong> Implementação de criptografia de ponta a ponta e conformidade com LGPD</li>
+            <li><strong>Segurança de Dados:</strong> Implementação de criptografia de ponta a ponta e conformidade com
+                LGPD</li>
             <li><strong>Escalabilidade:</strong> Arquitetura em nuvem com balanceamento de carga</li>
             <li><strong>UX/UI:</strong> Design responsivo e acessível para diversos dispositivos</li>
-            <li><strong>Verificação de Usuários:</strong> Sistema robusto de verificação para profissionais de saúde</li>
+            <li><strong>Verificação de Usuários:</strong> Sistema robusto de verificação para profissionais de saúde
+            </li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>7. Metodologia de Desenvolvimento</h2>
+        <h2>7. Considerações Éticas e Legais</h2>
         <ul>
-            <li>Adoção de metodologias ágeis (Scrum/Kanban)</li>
-            <li>Desenvolvimento orientado a testes (TDD)</li>
-            <li>Integração e entrega contínuas (CI/CD)</li>
-            <li>Code reviews e pair programming para garantia de qualidade</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>8. Plano de Implementação</h2>
-        <ol>
-            <li>Fase 1: Prototipagem e validação do conceito</li>
-            <li>Fase 2: Desenvolvimento do MVP (Minimum Viable Product)</li>
-            <li>Fase 3: Testes beta com um grupo controlado de usuários</li>
-            <li>Fase 4: Lançamento oficial e expansão gradual</li>
-            <li>Fase 5: Iterações baseadas no feedback dos usuários</li>
-        </ol>
-    </div>
-
-    <div class="section">
-        <h2>9. Considerações Éticas e Legais</h2>
-        <ul>
-            <li>Conformidade com regulamentações de saúde (ex: CFM, CRM)</li>
-            <li>Proteção de dados pessoais e médicos (LGPD)</li>
+            <li>Conformidade com regulamentações de saúde </li>
+            <li>Proteção de dados pessoais e médicos </li>
             <li>Transparência no uso e distribuição de doações</li>
             <li>Políticas claras de uso e termos de serviço</li>
         </ul>
     </div>
 
+
     <div class="section">
-        <h2>10. Conclusão e Perspectivas Futuras</h2>
-        <p>Este projeto representa uma abordagem inovadora e multidisciplinar para desafios sociais complexos. Ao integrar tecnologias avançadas com objetivos humanitários, buscamos criar um impacto significativo e mensurável na saúde e bem-estar das comunidades. As perspectivas futuras incluem a expansão para outras regiões, integração com sistemas de saúde pública e desenvolvimento de funcionalidades adicionais baseadas em IA para otimizar a distribuição de recursos e o atendimento médico.</p>
+        <h2>8. Distribuição de Tarefas por Membro da Equipa</h2>
+        <h3>8.1 Sofia</h3>
+        <ul>
+            <li>Frontend: Componentes React para cadastro e atendimento de profissionais de saúde</li>
+            <li>Backend (Java): API RESTful para agendamento de consultas e verificação de credenciais</li>
+            <li>Python: Scripts para integração com sistemas externos de saúde</li>
+            <li>C++: Módulos de processamento de dados em tempo real para doações</li>
+        </ul>
+        <h3>8.2 Lara</h3>
+        <ul>
+            <li>Frontend: Componentes React para sistema de doação de alimentos</li>
+            <li>Backend (Java): API RESTful para doações e matching entre doadores e beneficiários</li>
+            <li>Python: Algoritmos de análise de dados para políticas públicas</li>
+            <li>C++: Componentes de segurança e criptografia</li>
+        </ul>
+        <h3>8.3 Vishwa</h3>
+        <ul>
+            <li>Frontend: Componentes React para painel de administração</li>
+            <li>Backend (Java): API RESTful para autenticação e gestão de utilizadores</li>
+            <li>Python: Scripts para integração com MongoDB e análise preditiva</li>
+            <li>C++: Algoritmos de otimização para matching e distribuição de recursos</li>
+        </ul>
+        <h3>8.4 Tarefas Comuns</h3>
+        <ul>
+            <li>Configuração e manutenção da infraestrutura de microserviços</li>
+            <li>Integração de componentes React com APIs backend</li>
+            <li>Implementação de design responsivo e acessível</li>
+            <li>Realização de testes unitários e de integração</li>
+            <li>Participação em code reviews e pair programming</li>
+            <li>Contribuição para documentação técnica e de utilizador</li>
+        </ul>
     </div>
 
-    <p class="highlight">Este projeto demonstra não apenas proficiência técnica em programação multicamada, mas também um compromisso com o desenvolvimento sustentável e a responsabilidade social, alinhando-se perfeitamente com os objetivos globais da ONU para 2030.</p>
 </body>
+
 </html>
