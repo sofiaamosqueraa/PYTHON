@@ -54,6 +54,5 @@ def banco_de_dados():
 def processamento():
     return render_template('modulos/processamento.html')
 
-#if __name__ == '__main__':
- #   app.run(debug=True)
- app = app
+if __name__ == '__main__':
+    app.run(debug=True)
