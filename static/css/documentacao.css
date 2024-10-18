@@ -160,3 +160,26 @@ nav ul li a:hover {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reduz o tamanho do título em telas menores */
+        margin-bottom: 15px; /* Ajusta a margem inferior para melhor espaçamento */
+    }
+
+    nav ul li {
+        flex-basis: 100%; /* Faz os itens do menu ocuparem toda a largura */
+        max-width: none; /* Remove a largura máxima */
+    }
+
+    .container {
+        padding: 20px; /* Reduz o padding da container em telas menores */
+    }
+
+    .button {
+        width: 100%; /* Faz o botão ocupar toda a largura disponível */
+        text-align: center; /* Centraliza o texto do botão */
+        padding: 10px; /* Ajusta o padding do botão para melhor aparência */
+        font-size: 1.1em; /* Diminui o tamanho da fonte do botão para melhor legibilidade */
+    }
+}

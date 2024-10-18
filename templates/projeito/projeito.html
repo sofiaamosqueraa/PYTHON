@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrado de Saúde e Solidariedade</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -264,6 +265,28 @@
         }
 
         
+        ul,
+        ol {
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        #google_translate_element {
+            float: right;
+        }
     </style>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -288,15 +311,28 @@
     </div>
     
 
+    <h1>Projeto Integrado de Saúde e Solidariedade</h1>
+
     <div class="section">
         <h2>1. Visão Geral e Objetivos</h2>
-        <p>Nosso projeto é uma plataforma inovadora que integra serviços de saúde com um sistema de doações de
-            alimentos, utilizando uma combinação de tecnologias avançadas: Java, Python e C++. O objetivo principal é
-            criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar, alinhando-se
-            com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.</p>
+        <p>
+            <li>Nosso projeto é uma plataforma inovadora que integra serviços de saúde mental com um sistema de doações
+                de
+                alimentos, utilizando uma combinação de tecnologias avançadas: Java, Python e C++. O objetivo principal
+                é
+                criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar,
+                alinhando-se
+                com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.</li>
+        </p>
+
+        <p>
+            <li>Durante o cadastro inicial, os pacientes terão a opção de indicar se precisam de assistência alimentar.
+                Esse dado será enviado ao microserviço de C++ (gerido por Vishwa), que processará os pedidos de doação.
+            </li>
+        </p>
         <h3>Objetivos Específicos:</h3>
         <ul>
-            <li>Facilitar o acesso a consultas médicas e orientações de saúde</li>
+            <li>Facilitar o acesso a consultas médicas e orientações de saúde mental</li>
             <li>Criar um sistema eficiente de doação e distribuição de alimentos</li>
             <li>Promover a solidariedade e o engajamento comunitário</li>
             <li>Desenvolver uma solução tecnológica escalável e segura</li>
@@ -318,8 +354,7 @@
         <h2>3. Desafios Técnicos e Soluções Propostas</h2>
         <ul>
             <li><strong>Integração de Linguagens:</strong> Uso de microserviços e APIs bem definidas</li>
-            <li><strong>Segurança de Dados:</strong> Implementação de criptografia de ponta a ponta e conformidade com
-                LGPD</li>
+
             <li><strong>Escalabilidade:</strong> Arquitetura em nuvem com balanceamento de carga</li>
             <li><strong>UX/UI:</strong> Design responsivo e acessível para diversos dispositivos</li>
             <li><strong>Verificação de Usuários:</strong> Sistema robusto de verificação para profissionais de saúde
@@ -340,35 +375,50 @@
 
     <div class="section">
         <h2>5. Distribuição de Tarefas por Membro da Equipa</h2>
-        <h3>5.1 Sofia</h3>
+
+     
+
+        <h3>5.1 Sofía (Java)</h3>
         <ul>
-            <li>Frontend: Componentes React para cadastro e atendimento de profissionais de saúde</li>
-            <li>Backend (Java): API RESTful para agendamento de consultas e verificação de credenciais</li>
-            <li>Python: Scripts para integração com sistemas externos de saúde</li>
-            <li>C++: Módulos de processamento de dados em tempo real para doações</li>
+            <li>
+                <h3>Responsabilidade principal: Gerenciar o sistema de consultas psicológicas e a comunicação entre
+                    pacientes e psicólogos.</h3>
+            </li>
         </ul>
-        <h3>5.2 Lara</h3>
         <ul>
-            <li>Frontend: Componentes React para sistema de doação de alimentos</li>
-            <li>Backend (Java): API RESTful para doações e matching entre doadores e beneficiários</li>
-            <li>Python: Algoritmos de análise de dados para políticas públicas</li>
-            <li>C++: Componentes de segurança e criptografia</li>
+            <li>Implementar o agendamento de consultas.</li>
+            <li>Criar o canal de comunicação entre pacientes e psicólogos via mensagens.</li>
+            <li>Integrar a visualização de informações sobre doações de alimentos no agendamento de consultas,
+                permitindo que o psicólogo veja se o paciente precisa de ajuda alimentar.</li>
         </ul>
-        <h3>5.3 Vishwa</h3>
+
+        <h3>5.2 Lara (Python/Flask)</h3>
+
         <ul>
-            <li>Frontend: Componentes React para painel de administração</li>
-            <li>Backend (Java): API RESTful para autenticação e gestão de utilizadores</li>
-            <li>Python: Scripts para integração com MongoDB e análise preditiva</li>
-            <li>C++: Algoritmos de otimização para matching e distribuição de recursos</li>
+            <li>
+                <h3>Responsabilidade principal: Desenvolver a interface de usuário e gerenciar o fluxo de registro de
+                    profissionais e pacientes.</h3>
+            </li>
         </ul>
-        <h3>8.4 Tarefas Comuns</h3>
         <ul>
-            <li>Configuração e manutenção da infraestrutura de microserviços</li>
-            <li>Integração de componentes React com APIs backend</li>
-            <li>Implementação de design responsivo e acessível</li>
-            <li>Realização de testes unitários e de integração</li>
-            <li>Participação em code reviews e pair programming</li>
-            <li>Contribuição para documentação técnica e de utilizador</li>
+            <li>Implementar o fluxo de registro, com opções para profissionais (psicólogos), pacientes, doadores e
+                admin.</li>
+            <li>Conectar o sistema de registro com a API de Vishwa (C++) para gerenciar as doações de alimentos.</li>
+            <li>Criar as interfaces.</li>
+            <li>Garantir que a autenticação e o fluxo de login sejam seguros.</li>
+        </ul>
+        <h3>5.3 Vishwa (C++)</h3>
+        <ul>
+            <li>
+                <h3>Responsabilidade principal: Implementar o sistema de doações de alimentos.</h3>
+            </li>
+        </ul>
+        <ul>
+            <li>Desenvolver a lógica para cadastrar e gerenciar doações de alimentos.</li>
+            <li>Criar uma API para o sistema de doações que se comunique com os outros microserviços (Python e Java).
+            </li>
+            <li>Implementar a lógica para que os pacientes possam solicitar alimentos.
+                Gerar relatórios sobre o status das doações e sua distribuição.</li>
         </ul>
     </div>
 
