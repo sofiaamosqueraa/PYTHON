@@ -6,6 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Integrado de Saúde e Solidariedade</title>
     <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        #google_translate_element {
+            float: right;
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 
         :root {
@@ -198,6 +238,34 @@
             }
         }
 
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            float: left; /* Alinha o botão à esquerda */
+            margin-right: 20px; /* Espaço entre o botão e o texto */
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .left-align {
+            float: left; /* Align the button to the left */
+            margin-right: 200px; /* Add some space between the button and the text */
+        }
+
+        
+
         .uml-button {
             display: inline-block;
             padding: 15px 30px;
@@ -217,6 +285,7 @@
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
+
 
 
         ul,
@@ -254,6 +323,16 @@
 <body>
 
     <div id="google_translate_element"></div>
+   
+    
+
+
+    <h1>Projeto Integrado de Saúde e Solidariedade</h1>
+    <div class="section">
+         <a href="https://www.figma.com/board/IZG4c1e4XvuLSsri1YNmhb/Untitled?node-id=0-1&node-type=canvas&t=JhE8qVWv5wnBWEkt-0" 
+           class="cta-button left-align" target="_blank">View on UML</a>
+    </div>
+    
 
     <h1>Projeto Integrado de Saúde e Solidariedade</h1>
 
@@ -324,6 +403,9 @@
 
     <div class="section">
         <h2>5. Distribuição de Tarefas por Membro da Equipa</h2>
+
+     
+
         <h3>5.1 Sofía (Java)</h3>
         <ul>
             <li>
@@ -337,7 +419,9 @@
             <li>Integrar a visualização de informações sobre doações de alimentos no agendamento de consultas,
                 permitindo que o psicólogo veja se o paciente precisa de ajuda alimentar.</li>
         </ul>
+
         <h3>5.2 Lara (Python/Flask)</h3>
+
         <ul>
             <li>
                 <h3>Responsabilidade principal: Desenvolver a interface de usuário e gerenciar o fluxo de registro de
