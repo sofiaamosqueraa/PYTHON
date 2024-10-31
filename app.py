@@ -52,7 +52,23 @@ def banco_de_dados():
 
 @app.route('/modulos/processamento')
 def processamento():
-    return render_template('modulos/processamento.html')
+    return render_template('modulos/processamento/index.html')
+
+@app.route('/modulos/processamento/organizacao')
+def processamento_organizacao():
+    return render_template('modulos/processamento/organizacao.html')
+
+@app.route('/modulos/processamento/componentes')
+def processamento_componentes():
+    return render_template('modulos/processamento/componentes.html')
+
+@app.route('/modulos/processamento/memoria')
+def processamento_memoria():
+    return render_template('modulos/processamento/memoria.html')
+
+@app.route('/modulos/processamento/processador')
+def processamento_processador():
+    return render_template('modulos/processamento/processador.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
