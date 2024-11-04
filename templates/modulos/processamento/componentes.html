@@ -6,107 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processamento</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/components.css">
     <style>
-        body {
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Gradient background */
-            color: #ffffff; /* White text color */
-            overflow-y: auto; /* Allow vertical scrolling */
-            position: relative;
-        }
-        .cyber-header {
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-        .glitch-text {
-            font-size: 3.5em; /* Larger font size for title */
-            color: #00ffcc; /* Neon color for title */
-            position: relative;
-            display: inline-block;
-            animation: glitch 1s infinite;
-        }
-        @keyframes glitch {
-            0% { text-shadow: 2px 0 red, -2px 0 blue; }
-            20% { text-shadow: -2px 0 red, 2px 0 blue; }
-            40% { text-shadow: 2px 0 red, -2px 0 blue; }
-            60% { text-shadow: -2px 0 red, 2px 0 blue; }
-            100% { text-shadow: 0 0 red, 0 0 blue; }
-        }
-        .terminal-text {
-            font-family: 'Source Code Pro', monospace;
-            font-size: 1.5em; /* Increased font size for terminal text */
-            color: #ffffff;
-            margin-top: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #00ffcc; /* Neon cursor */
-            animation: typing 3s steps(30, end) forwards;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        .cyber-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted min width */
-            gap: 20px;
-            padding: 20px;
-            z-index: 1;
-            position: relative;
-        }
-        .cyber-card {
-            background: rgba(0, 0, 0, 0.9); /* Darker card background */
-            border-radius: 15px; /* More rounded corners */
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #00ffcc; /* Neon border for cards */
-            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.5); /* Neon shadow for cards */
-        }
-        .cyber-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 255, 204, 0.7); /* Enhanced shadow on hover */
-        }
-        .holo-button {
-            display: inline-block;
-            padding: 12px 20px; /* Increased padding for buttons */
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #00ffcc; /* Neon button */
-            color: #000;
-            text-decoration: none;
-            font-weight: bold; /* Bold text for buttons */
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .holo-button:hover {
-            background-color: #00cc99; /* Darker neon on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
-        }
-        .language-switcher {
-            margin-top: 20px; /* Space above the buttons */
-        }
-        .language-switcher button {
-            padding: 10px 15px;
-            margin: 0 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0056b3; /* Darker blue for buttons */
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            font-size: 1em; /* Font size for buttons */
-        }
-        .language-switcher button:hover {
-            background-color: #004494; /* Darker shade on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
-        }
+       
     </style>
     <script>
         function switchLanguage(lang) {
@@ -122,8 +25,7 @@
 </head>
 <body>
     <div class="cyber-header">
-        <h1 class="glitch-text">Processamento</h1>
-        <p class="terminal-text">Iniciando sistema de processamento...</p>
+        <h1 class="glitch-text">Compenents of a Computer</h1>
         <div class="language-switcher">
             <button onclick="switchLanguage('en')">English</button>
             <button onclick="switchLanguage('pt')">Português</button>
@@ -180,6 +82,8 @@
             </div>
         </div>
     </main>
+    <div style="text-align: center;">
+        <a href="/" class="back-button">Return to Top</a>
+    </div>
 </body>
 </html>
-
