@@ -7,7 +7,7 @@
     <title>Processamento</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
     <style>
        
     </style>
@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="cyber-header">
-        <h1 class="glitch-text">Compenents of a Computer</h1>
+        <h1 class="glitch-text">Compenents of a Computer:</h1>
         <div class="language-switcher">
             <button onclick="switchLanguage('en')">English</button>
             <button onclick="switchLanguage('pt')">Português</button>

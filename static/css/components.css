@@ -57,7 +57,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
-    border: 1px solid #00ffcc; /* Neon border for cards */
+    border: 1px solid #00ffccef; /* Neon border for cards */
     box-shadow: 0 4px 20px rgba(0, 255, 204, 0.5); /* Neon shadow for cards */
     transform: rotate(2deg); /* Slight rotation for a dynamic look */
 }
