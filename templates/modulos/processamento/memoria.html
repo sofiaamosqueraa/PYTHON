@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade de Memória</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/memoria.css') }}">
+</head>
+
+<body>
+    <div class="container">
+    <h1>Unidade de Memória</h1>
+
+    <h2>Estrutura da Memória</h2>
+    <h3>Memória Primária (RAM)</h3>
+    <p>Também conhecida como memória principal ou RAM (Random Access Memory), a memória primária armazena dados e
+        instruções que a CPU precisa acessar rapidamente. Por ser volátil, seu conteúdo é perdido ao desligar o
+        computador. Isso significa que tudo o que está em RAM é temporário e precisa ser gravado em uma memória
+        secundária se precisar ser mantido.</p>
+
+    <h3>Memória Secundária</h3>
+    <p>A memória secundária é usada para o armazenamento permanente de dados, pois não perde seu conteúdo quando o computador é desligado. Exemplos comuns de memória secundária incluem discos rígidos (HDDs), unidades de estado sólido (SSDs), pen drives e cartões de memória. Ela permite que o sistema armazene arquivos e programas por longos períodos.</p>
+
+    <h2>Células de Memória e seu Funcionamento</h2>
+    <h3>Células de Memória</h3>
+    <p>A informação na memória é armazenada em células de memória, que são unidades básicas compostas de bits. Cada bit pode ter o valor 0 ou 1, representando estados de carga elétrica (corrente ou não corrente). O agrupamento de 8 bits forma um byte, e cada byte representa um pequeno pedaço de dados, como uma letra ou número</p>
+     
+    <h3>Funcionamento</h3>
+    <p>As células de memória operam armazenando dados em uma forma binária. Quando a CPU acessa dados, ela lê o estado dos bits na célula para interpretar a informação. Dessa forma, toda a informação armazenada no computador é composta por conjuntos de bits, organizados em bytes e outros múltiplos.</p>
+    
+    <h2>Modos de Endereçamento</h2>
+    <p>Os modos de endereçamento descrevem como a CPU identifica e acessa as células de memória onde os dados estão armazenados. Os três modos principais são:</p>
+    
+    <h3>Endereçamento Direto</h3>
+    <p>Nesse modo, a instrução inclui o endereço específico da célula de memória. Isso permite que a CPU acesse a célula diretamente, sem cálculos ou referências adicionais. Esse modo é direto, mas tem limitações em operações mais complexas.</p>
+
+    <h3>Endereçamento Indireto</h3>
+    <p>Aqui, a instrução contém um endereço que aponta para outra célula de memória, onde está o endereço final dos dados. Esse método é útil quando o endereço exato não é conhecido de antemão e pode ser determinado durante a execução do programa.</p>
+
+    <h3>Endereçamento Indexado</h3>
+    <p>O endereço é calculado somando-se o valor de um registrador (um contador, por exemplo) a um valor base. Esse modo é útil para acessar dados em estruturas de repetição, como vetores, onde é necessário acessar células consecutivas de memória.</p>
+
+    < <h2>Unidades de Medida de Memória</h2>
+    <p>Para medir a capacidade de uma memória, usamos diferentes unidades que indicam a quantidade de dados que podem ser armazenados. Cada unidade representa um valor maior que a anterior, em uma escala baseada no sistema binário (potências de 2).</p>
+
+    <h3>1. Bit</h3>
+    <p>É a unidade básica de dados na computação e representa um único valor binário, que pode ser 0 ou 1. Os bits são agrupados para formar unidades maiores de dados.</p>
+
+    <h3>2. Byte</h3>
+    <p>Um byte é composto por <strong>8 bits</strong> e é suficiente para armazenar um único caractere, como uma letra ou número. Ele é a unidade básica usada para medir o tamanho dos dados em sistemas computacionais.</p>
+
+    <h3>3. Kilobyte (KB)</h3>
+    <p>1 KB = 1.024 bytes. Esse é o primeiro nível de medida que ultrapassa o tamanho de um único caractere ou número. Em algumas aplicações, o valor arredondado de 1.000 bytes é usado, mas tecnicamente, em computação, 1 KB é 1.024 bytes (2<sup>10</sup>).</p>
+
+    <h3>4. Megabyte (MB)</h3>
+    <p>1 MB = 1.024 KB = 1.048.576 bytes. Esse valor representa uma quantidade maior, geralmente usada para medir arquivos, como fotos de baixa resolução ou documentos de texto grandes.</p>
+
+    <h3>5. Gigabyte (GB)</h3>
+    <p>1 GB = 1.024 MB = 1.073.741.824 bytes. Comumente usada para medir a capacidade de armazenamento em dispositivos de memória, como pen drives, discos rígidos e SSDs, bem como para medir arquivos de vídeo, software, entre outros.</p>
+
+    <h3>6. Terabyte (TB)</h3>
+    <p>1 TB = 1.024 GB = 1.099.511.627.776 bytes. É uma unidade comum para medir grandes volumes de dados, como os armazenados em servidores e bancos de dados. Um terabyte pode conter centenas de milhares de fotos, músicas ou documentos.</p>
+
+    <h2>Relação entre as Unidades</h2>
+    <p>Cada unidade é um múltiplo da anterior, usando a base de 1.024:</p>
+    <ul>
+        <li>1 KB = 1.024 bytes</li>
+        <li>1 MB = 1.024 KB</li>
+        <li>1 GB = 1.024 MB</li>
+        <li>1 TB = 1.024 GB</li>
+    </ul>
+    <h2>Tipos de Memória e Como São Usadas</h2>
+    <h3>RAM (Random Access Memory)</h3>
+    <p>A RAM é uma memória volátil usada para armazenar dados temporários que a CPU acessa durante a execução de programas. Ela oferece acesso rápido, essencial para a performance, mas seu conteúdo se perde ao desligar o computador.</p>
+
+    <h3>ROM (Read-Only Memory)</h3>
+    <p>A ROM é uma memória não volátil que armazena dados permanentes, como o firmware, que é o software básico necessário para iniciar o computador. A informação na ROM não é apagada ao desligar o computador e geralmente não pode ser alterada pelo usuário.</p>
+
+    <h3>Cache</h3>
+    <p>A cache é uma memória de alta velocidade que armazena dados e instruções frequentemente usados pela CPU, agilizando o acesso a esses dados e melhorando a performance do sistema. Ela é uma memória intermediária entre a RAM e a CPU, permitindo que o processador acesse dados com ainda mais rapidez.
+    </p>
+
+    <h3>Flash</h3>
+    <p>A memória flash é uma forma de armazenamento não volátil, usada em dispositivos como pen drives, SSDs, e outros dispositivos portáteis. Diferente da RAM, a memória flash retém dados mesmo quando o dispositivo está desligado. Ela permite leitura e gravação rápidas e é usada amplamente em dispositivos móveis e para armazenamento externo.
+    </p>
+
+      <a href="/" class="voltar-btn">Voltar</a>
+</div>
+</body>
+
+</html>

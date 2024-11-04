@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/processador.css') }}">
+    <title>Processador de um Computador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Processador de um Computador</h1>
+    </header>
+    <main>  
+        <section>
+            <h2>Estrutura Básica do Processador</h2>
+            <article>
+                <h3>Unidade Lógica e Aritmética (ULA ou ALU)</h3>
+                <p>A ULA é responsável por realizar as operações matemáticas, como adição e subtração, e também operações lógicas, como comparações.</p>
+                <p>Exemplo: Se o processador precisa comparar dois números para ver qual é o maior, ou somar dois números, essa tarefa é executada pela ULA.</p>
+            </article>
+            <article>
+                <h3>Unidade de Controle (UC ou CU)</h3>
+                <p>A UC é o "cérebro" do processador. Ela coordena todas as operações, organizando a execução das instruções.</p>
+                <p>A UC busca uma instrução na memória, decodifica para entender o que a ULA precisa fazer, e então executa a instrução.</p>
+            </article>
+        </section>
+        <section>
+            <h2>Funcionamento Interno de um Processador Simples</h2>
+            <p>Imagine que o processador recebe a instrução para somar dois números (2 + 3):</p>
+            <ol>
+                <li><strong>Busca da Instrução:</strong> A UC busca na memória a instrução para realizar essa soma.</li>
+                <li><strong>Decodificação:</strong> A UC decodifica a instrução, identificando que é uma operação de soma.</li>
+                <li><strong>Execução:</strong> A ULA recebe os números e faz a operação, retornando o resultado (5).</li>
+                <li><strong>Armazenamento do Resultado:</strong> A UC pode então armazenar o resultado em um registrador (área de memória dentro do processador).</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Informações Adicionais</h2>
+            <ul>
+                <li><strong>Clock:</strong> O processador tem um "clock" que determina a velocidade com que ele processa as instruções. Quanto maior o clock, mais rápido o processador realiza tarefas.</li>
+                <li><strong>Registradores:</strong> São pequenas áreas de memória dentro do processador que guardam dados temporários, como o resultado de uma soma.</li>
+                <li><strong>Cache:</strong> Pequena memória dentro do processador que armazena dados acessados com frequência para agilizar o processamento.</li>
+            </ul>
+        </section>
+        <section id="simulador">
+            <h2>Simulador de Processador</h2>
+            <div class="simulator">
+                <div class="calculator">
+                    <input type="number" id="num1" placeholder="Primeiro número">
+                    <select id="operacao">
+                        <option value="+">Adição (+)</option>
+                        <option value="-">Subtração (-)</option>
+                        <option value="*">Multiplicação (*)</option>
+                        <option value="/">Divisão (/)</option>
+                        <option value="&">AND</option>
+                        <option value="|">OR</option>
+                    </select>
+                    <input type="number" id="num2" placeholder="Segundo número">
+                    <button onclick="simular()">Simular Processamento</button>
+                </div>
+                <div class="simulation-steps">
+                    <div class="step" id="busca">1. Busca</div>
+                    <div class="step" id="decodificacao">2. Decodificação</div>
+                    <div class="step" id="execucao">3. Execução</div>
+                    <div class="step" id="resultado">4. Resultado</div>
+                </div>
+            </div>
+        </section>
+        <a href="/" class="voltar-btn">Voltar</a>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/processador.js') }}"></script>
+</body>
+</html>

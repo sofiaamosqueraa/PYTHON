@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Grid de fundo animado -->
+    <div class="cyber-grid-bg"></div>
+
+    <!-- Header com efeito glitch -->
+    <div class="cyber-header">
+        <div class="scanner"></div>
+        <h1 class="glitch-text">Processamento</h1>
+        <p class="terminal-text">Iniciando sistema de processamento...</p>
+    </div>
+
+    <!-- Grid de cards -->
+    <div class="cyber-grid">
+        <!-- Card 1 -->
+        <div class="cyber-card">
+            <h2>Organização de um Computador</h2>
+            <p>Entenda a estrutura e organização básica dos computadores modernos</p>
+            <a href="/modulos/processamento/organizacao" class="holo-button">Explorar</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cyber-card">
+            <h2>Componentes de um Computador</h2>
+            <p>Conheça os principais componentes que formam um sistema computacional</p>
+            <a href="/modulos/processamento/componentes" class="holo-button">Explorar</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cyber-card">
+            <h2>Unidade de Memória</h2>
+            <p>Aprenda sobre os diferentes tipos e funcionamento das memórias</p>
+            <a href="/modulos/processamento/memoria" class="holo-button">Explorar</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cyber-card">
+            <h2>Processador</h2>
+            <p>Descubra como funciona o cérebro do computador</p>
+            <a href="/modulos/processamento/processador" class="holo-button">Explorar</a>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de hover nos cards
+        document.querySelectorAll('.cyber-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const shine = card.querySelector('.shine');
+                if (shine) {
+                    shine.style.setProperty('--x', `${x}px`);
+                    shine.style.setProperty('--y', `${y}px`);
+                }
+            });
+        });
+
+        // Efeito de digitação para o texto terminal
+        const terminalText = document.querySelector('.terminal-text');
+        if (terminalText) {
+            terminalText.style.width = '0';
+            setTimeout(() => {
+                terminalText.style.width = '100%';
+            }, 100);
+        }
+    </script>
+</body>
+</html>
