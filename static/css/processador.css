@@ -199,3 +199,83 @@ strong {
         font-size: 3rem;
     }
 }
+
+/* Estilos para Inputs */
+input[type="number"],
+select {
+    width: 200px; /* Largura fixa para os inputs */
+    padding: 0.5rem; /* Preenchimento interno reduzido */
+    margin: 5px auto; /* Margem superior e inferior reduzida, centralizado */
+    border: 2px solid var(--neon-blue); /* Borda azul neon */
+    border-radius: 5px; /* Bordas arredondadas */
+    background: rgba(255, 255, 255, 0.1); /* Fundo mais claro */
+    color: #fff; /* Cor do texto */
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+    transition: border-color 0.3s ease, background 0.3s ease; /* Transição suave */
+}
+
+/* Efeito de foco nos inputs */
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--neon-purple); /* Muda a cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+    background: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao focar */
+}
+
+/* Estilo para o botão */
+button {
+    width: 200px; /* Largura fixa para o botão */
+    background: var(--neon-blue); /* Cor de fundo do botão */
+    color: #0f172a; /* Cor do texto */
+    padding: 0.5rem; /* Preenchimento interno reduzido */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave */
+    margin: 10px auto; /* Margem superior e inferior, centralizado */
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background: var(--neon-purple); /* Muda a cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+}
+
+/* Efeito de foco no botão */
+button:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px var(--neon-purple); /* Sombra ao focar */
+}
+
+/* Estilo para as opções do select */
+select {
+    color: #ffffff; /* Cor do texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo mais escuro para o select */
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+}
+
+/* Estilo para o select */
+select {
+    width: 200px; /* Largura fixa */
+    padding: 0.5rem; /* Preenchimento interno */
+    margin: 5px auto; /* Margem superior e inferior, centralizado */
+    border: 2px solid var(--neon-blue); /* Borda azul neon */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo mais claro */
+    color: #fff; /* Cor do texto */
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+    transition: border-color 0.3s ease, background 0.3s ease; /* Transição suave */
+}
+
+/* Efeito de foco no select */
+select:focus {
+    border-color: var(--neon-purple); /* Muda a cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+    background: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao focar */
+}
+
+option {
+    background-color: var(--dark-bg); /* Fundo escuro para as opções */
+    color: #fff; /* Cor do texto das opções */
+}
