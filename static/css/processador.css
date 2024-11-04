@@ -76,7 +76,7 @@ h1 {
 /* Efeito de glitch no título */
 h1::before,
 h1::after {
-    content: 'Unidade de Memória';
+    content: 'Processador de um Computador';
     position: absolute;
     width: 100%;
     height: 100%;
