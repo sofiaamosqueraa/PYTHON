@@ -1,0 +1,201 @@
+/* Variables e configurações */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #9d00ff;
+    --dark-bg: #0a0b1e;
+    --circuit-color: rgba(0, 243, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --spacing: 4rem;
+}
+
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark-bg);
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-image: 
+        radial-gradient(var(--circuit-color) 1px, transparent 1px),
+        radial-gradient(var(--circuit-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de linhas de circuito animadas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 243, 255, 0.1) 50%, 
+        transparent 100%);
+    animation: circuit-scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes circuit-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Títulos */
+h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    margin: var(--spacing) 0;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 243, 255, 0.1),
+        transparent);
+}
+
+/* Efeito de glitch no título */
+h1::before,
+h1::after {
+    content: 'Processador de um Computador';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1::before {
+    color: #ff00ff;
+    animation: glitch 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px);
+    opacity: 0.75;
+}
+
+h1::after {
+    color: #00ffff;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(2px);
+    opacity: 0.75;
+}
+
+/* Animação de glitch */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Seções */
+section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Voltar */
+.voltar-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.voltar-btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-2px);
+}
+
+/* Listas com efeito de terminal */
+ul {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    border-left: 4px solid var(--neon-blue);
+}
+
+/* Texto */
+p, li {
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+/* Elementos destacados */
+strong {
+    color: var(--neon-purple);
+    font-weight: 700;
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
