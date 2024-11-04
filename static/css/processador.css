@@ -1,157 +1,201 @@
-/* Estilo Geral */
-body {
-    font-family: 'Arial', sans-serif; /* Fonte mais simples */
-    line-height: 1.6;
+/* Variables e configurações */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #9d00ff;
+    --dark-bg: #0a0b1e;
+    --circuit-color: rgba(0, 243, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --spacing: 4rem;
+}
+
+/* Reset e Estilos Base */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0f172a, #1e1b4b); /* Fundo escuro com gradiente */
-    color: #000000; /* Texto preto */
-    overflow-x: hidden; /* Evitar rolagem horizontal */
+    box-sizing: border-box;
 }
 
-/* Cabeçalho */
-header {
-    position: relative;
-    overflow: hidden;
-    background: rgba(30, 41, 59, 0.9); /* Fundo escuro e semi-transparente */
-    color: #000000; /* Texto preto */
-    padding: 100px 0; /* Aumentar o padding para um efeito mais espaçoso */
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 4.5em; /* Tamanho da fonte maior */
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte divertida */
-    color: #00bfff; /* Azul claro */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
-    animation: pulse 1.5s infinite; /* Animação de pulso */
-}
-
-/* Animação de Pulso */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Estilo Principal */
-main {
+body {
+    background: var(--dark-bg);
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
     padding: 20px;
+    background-image: 
+        radial-gradient(var(--circuit-color) 1px, transparent 1px),
+        radial-gradient(var(--circuit-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de linhas de circuito animadas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 243, 255, 0.1) 50%, 
+        transparent 100%);
+    animation: circuit-scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes circuit-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Container Principal */
+.container {
     max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    gap: 20px; /* Espaçamento entre colunas */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Títulos */
+h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    margin: var(--spacing) 0;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 243, 255, 0.1),
+        transparent);
+}
+
+/* Efeito de glitch no título */
+h1::before,
+h1::after {
+    content: 'Unidade de Memória';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1::before {
+    color: #ff00ff;
+    animation: glitch 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px);
+    opacity: 0.75;
+}
+
+h1::after {
+    color: #00ffff;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(2px);
+    opacity: 0.75;
+}
+
+/* Animação de glitch */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
 }
 
 /* Seções */
 section {
-    background: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
-    border-radius: 20px; /* Bordas arredondadas */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    position: relative;
-    overflow: hidden; /* Para esconder elementos flutuantes */
-    transition: transform 0.3s; /* Transição suave */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-section:hover {
-    transform: translateY(-10px); /* Efeito de elevação */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-}
-
-/* Títulos das Seções */
-h2 {
-    color: #333; /* Cor do título */
-    font-size: 2.5em; /* Aumentar o tamanho do título */
-    margin-bottom: 15px;
-    position: relative;
-    padding-bottom: 10px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Efeito de brilho */
-    cursor: pointer; /* Mudar o cursor para indicar interatividade */
-}
-
-/* Subtítulos */
-h3 {
-    color: #666; /* Texto suave */
-    margin-top: 20px;
-    font-size: 2em; /* Aumentar o tamanho do subtítulo */
-}
-
-/* Parágrafos */
-p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-/* Listas */
-ol, ul {
-    margin: 10px 0 10px 20px;
-    padding-left: 20px;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: rgba(30, 41, 59, 0.9); /* Cor do rodapé */
-    color: #000000; /* Texto preto */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo do Rodapé */
-footer p {
-    margin: 0;
-    font-size: 1em; /* Ajustar o tamanho da fonte */
-}
-
-/* Botões */
-button {
-    background-color: transparent; /* Fundo transparente */
-    color: #000000; /* Texto preto */
-    border: 2px solid #00bfff; /* Borda azul claro */
-    padding: 15px 30px;
-    border-radius: 50px; /* Bordas mais arredondadas */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    font-size: 1.2em;
-    position: relative;
-    overflow: hidden;
-}
-
-button:hover {
-    background-color: #00bfff; /* Cor de fundo ao passar o mouse */
-    color: #ffffff;
-    box-shadow: 0 0 20px #00bfff; /* Efeito de brilho */
-}
-
-/* Efeitos de Transição */
-section {
+/* Botão Voltar */
+.voltar-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
-section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.voltar-btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-2px);
 }
 
-/* Animações de Scanner */
-.scanner {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #06b6d4; /* Ciano */
-    opacity: 0.5;
-    animation: scan 3s ease-in-out infinite;
+/* Listas com efeito de terminal */
+ul {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 2rem 3rem;
+    border-left: 4px solid var(--neon-blue);
 }
 
-/* Animação do Scanner */
-@keyframes scan {
-    0% { top: 0; }
-    100% { top: 100%; }
+/* Texto */
+p, li {
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+/* Elementos destacados */
+strong {
+    color: var(--neon-purple);
+    font-weight: 700;
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
 }

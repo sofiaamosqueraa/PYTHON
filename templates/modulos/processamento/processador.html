@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/processador.css') }}">
     <title>Processador de um Computador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -42,9 +43,33 @@
                 <li><strong>Cache:</strong> Pequena memória dentro do processador que armazena dados acessados com frequência para agilizar o processamento.</li>
             </ul>
         </section>
+        <section id="simulador">
+            <h2>Simulador de Processador</h2>
+            <div class="simulator">
+                <div class="calculator">
+                    <input type="number" id="num1" placeholder="Primeiro número">
+                    <select id="operacao">
+                        <option value="+">Adição (+)</option>
+                        <option value="-">Subtração (-)</option>
+                        <option value="*">Multiplicação (*)</option>
+                        <option value="/">Divisão (/)</option>
+                        <option value="&">AND</option>
+                        <option value="|">OR</option>
+                    </select>
+                    <input type="number" id="num2" placeholder="Segundo número">
+                    <button onclick="simular()">Simular Processamento</button>
+                </div>
+                <div class="simulation-steps">
+                    <div class="step" id="busca">1. Busca</div>
+                    <div class="step" id="decodificacao">2. Decodificação</div>
+                    <div class="step" id="execucao">3. Execução</div>
+                    <div class="step" id="resultado">4. Resultado</div>
+                </div>
+            </div>
+        </section>
+        <a href="/" class="voltar-btn">Voltar</a>
     </main>
-    <footer>
-        <p>&copy; 2023 Processador de um Computador</p>
-    </footer>
+    
+    <script src="{{ url_for('static', filename='js/processador.js') }}"></script>
 </body>
 </html>
