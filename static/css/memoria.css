@@ -55,6 +55,26 @@ body::before {
     z-index: 2;
 }
 
+/* Botão Voltar - Agora no final da página */
+.voltar-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.voltar-btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-2px);
+}
+
 /* Estilo do título principal */
 h1 {
     font-size: 4.5rem;

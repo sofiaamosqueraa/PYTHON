@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/organizacao.css') }}">
     <title>Organização de um Computador</title>
 </head>
+
 <body>
-    <h1>Organização de um Computador</h1>
-    
+    <div class="container mt-5">
+        <h1 class="text-center">Organização de um Computador</h1>
+
+        <h2> Descrição Geral do Funcionamento de um Computador</h2>
+        <p>
+            Um computador pode ser definido como uma máquina que processa dados, transformando informações de entrada em
+            resultados de saída. Ele opera de forma sistemática, recebendo dados (inputs), processando-os de acordo com
+            instruções pré-definidas, e então apresentando um resultado (output) ao usuário. Esse processo é coordenado
+            por um conjunto de componentes que trabalham em conjunto, incluindo a CPU, a memória e os dispositivos de
+            entrada e saída.
+
+        <h2>Etapas da Execução de uma Tarefa no Computador</h2>
+        <p>Para entender o funcionamento, podemos analisar o processo de execução de uma tarefa. Suponha que você quer
+            abrir um programa, como um navegador web. As etapas seriam:</p>
+        <ol>
+            <li>Entrada do Usuário: Você clica no ícone do navegador.</li>
+            <li>Identificação e Localização: O sistema operacional identifica o programa e localiza seus arquivos
+                armazenados.</li>
+            <li>Carregamento na Memória: O programa é carregado na memória RAM, onde será executado.</li>
+            <li>Processamento pela CPU: A CPU interpreta e executa as instruções necessárias para abrir o navegador.
+            </li>
+            <li>Apresentação na Tela: Finalmente, a interface do navegador é exibida, permitindo que você navegue na
+                internet.</li>
+        </ol>
+
+        <h2>Unidades de Execução de Tarefas</h2>
+        <p>O computador opera por meio de várias unidades de execução que, em conjunto, possibilitam a realização das
+            tarefas.</p>
+        <ul>
+            <li><strong>CPU (Unidade Central de Processamento)</strong>: Conhecida como o "cérebro" do computador, a CPU
+                é responsável por interpretar e executar as instruções dos programas. Ela realiza operações aritméticas
+                e lógicas e controla o fluxo de dados dentro do sistema.</li>
+            <li><strong>Memória</strong>: A memória (como a RAM e a ROM) armazena temporariamente os dados e instruções
+                dos programas enquanto estão em execução. A RAM, em especial, permite acesso rápido aos dados
+                necessários para que a CPU processe as informações de forma eficiente.</li>
+            <li><strong>Dispositivos de Entrada/Saída (I/O)</strong>: Esses dispositivos permitem a comunicação entre o
+                usuário e o computador. Exemplos de dispositivos de entrada incluem o teclado e o mouse, enquanto a tela
+                e a impressora são dispositivos de saída, permitindo visualizar ou imprimir os resultados das operações.
+            </li>
+        </ul>
+
+        <h3>Como o Computador Funciona em Conjunto</h3>
+        <p>
+            O funcionamento de um computador depende do trabalho conjunto dessas unidades. A CPU, a memória e os
+            dispositivos de I/O são coordenados pelo sistema operacional para realizar tarefas de forma eficiente.
+            Quando uma tarefa é solicitada, a CPU processa as instruções, acessando a memória conforme necessário,
+            enquanto os dispositivos de entrada/saída facilitam a interação com o usuário e a apresentação dos
+            resultados. Este sistema coordenado permite ao computador executar operações complexas rapidamente, fazendo
+            dele uma ferramenta poderosa para a realização de inúmeras atividades.
+    </div>
+    <a href="/" class="voltar-btn">Voltar</a>
 </body>
+
 </html>
