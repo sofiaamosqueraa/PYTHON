@@ -14,20 +14,18 @@
 </head>
 
 <body class="bg-gray-100">
-    <nav class="bg-gray-800 p-4">
-        <div class="container mx-auto">
-            <div class="flex justify-between items-center">
-                <a class="text-white text-lg font-bold" href="/">Home</a>
-                <div class="space-x-4">
-                    <a class="text-gray-300 hover:text-white" href="/documentacao">Documentação</a>
-                    <a class="text-gray-300 hover:text-white" href="/modulos">Módulos</a>
-                    <a class="text-gray-300 hover:text-white" href="/projeto">Projeto</a>
-                </div>
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-white text-2xl font-bold transition duration-300 hover:text-gray-300" href="/">Home</a>
+            <div class="space-x-6">
+                <a class="text-gray-300 hover:text-white transition duration-300" href="/documentacao">Documentação</a>
+                <a class="text-gray-300 hover:text-white transition duration-300" href="/modulos">Módulos</a>
+                <a class="text-gray-300 hover:text-white transition duration-300" href="/projeto">Projeto</a>
             </div>
         </div>
     </nav>
 
-    <div class="container mx-auto mt-4">
+    <div class="container mx-auto mt-6">
         {% block content %}
         {% endblock %}
     </div>
