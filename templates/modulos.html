@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Módulos{% endblock %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Módulos</h1>
+    <nav class="mb-6">
+        <ul class="flex justify-center space-x-6">
+            <li>
+                <a href="#" onclick="showContent('cpp')" class="flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    C++
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('python')" class="flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Python
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('java')" class="flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Java
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('redes')" class="flex items-center bg-gradient-to-r from-purple-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Administração de Redes Locais
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('banco-de-dados')" class="flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Base de Dados
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('processamento')" class="flex items-center bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Processamento Computacional
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content" class="container mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200 hidden">
+        <div id="cpp" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">C++</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">C++ para Iniciantes</h2>
+                <p class="mb-2">C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas!</p>
+                <p class="mb-4">Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
+                <h3 class="text-lg font-semibold text-gray-700">Com C++, podes:</h3>
+                <ul class="list-disc pl-6 mb-4">
+                    <li class="mb-2">Criar jogos divertidos</li>
+                    <li class="mb-2">Fazer o computador desenhar coisas giras</li>
+                    <li class="mb-2">Ensinar o computador a contar histórias</li>
+                    <li class="mb-2">Construir aplicações úteis e inovadoras</li>
+                    <li class="mb-2">Explorar o mundo da programação de forma divertida!</li>
+                </ul>
+                <p class="mb-4">É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis.</p>
+                <p class="mb-4">Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
+            </section>
+        </div>
+
+        <div id="python" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Python</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">Python para Iniciantes</h2>
+                <p class="mb-2">Python é uma linguagem de programação fácil de aprender e muito poderosa!</p>
+                <p class="mb-4">Com Python, você pode fazer muitas coisas legais, como criar jogos, sites e até mesmo inteligência artificial!</p>
+            </section>
+        </div>
+
+        <div id="java" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Java</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">Java para Iniciantes</h2>
+                <p class="mb-2">Java é uma linguagem de programação muito popular, usada em muitas aplicações!</p>
+                <p class="mb-4">Com Java, você pode desenvolver aplicativos para Android, jogos e muito mais!</p>
+            </section>
+        </div>
+
+        <div id="redes" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Administração de Redes Locais</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">Redes Locais para Iniciantes</h2>
+                <p class="mb-2">Aprender sobre redes é essencial para entender como os computadores se comunicam!</p>
+                <p class="mb-4">Compreender redes locais ajuda a resolver problemas e a configurar conexões.</p>
+            </section>
+        </div>
+
+        <div id="banco-de-dados" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Base de Dados</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">Bases de Dados para Iniciantes</h2>
+                <p class="mb-2">As bases de dados são essenciais para armazenar e gerenciar informações!</p>
+                <p class="mb-4">Aprender sobre bancos de dados ajuda a organizar dados de forma eficiente.</p>
+            </section>
+        </div>
+
+        <div id="processamento" class="content-section hidden">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Processamento Computacional</h2>
+            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                <h2 class="text-2xl font-semibold text-gray-800">Processamento para Iniciantes</h2>
+                <p class="mb-2">O processamento computacional é fundamental para resolver problemas complexos!</p>
+                <p class="mb-4">Aprender sobre processamento ajuda a otimizar tarefas e a desenvolver soluções.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="back-button-container mb-6 text-center">
+        <a href="/" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition">Voltar para a página inicial</a>
+    </div>
+
+    <footer class="text-center mt-4 text-gray-600">
+        &copy; 2024 - Aprendendo C++
+    </footer>
+
+    <script>
+        function showContent(section) {
+            // Esconder todas as seções de conteúdo
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((sec) => {
+                sec.classList.add('hidden');
+            });
+
+            // Mostrar a seção correspondente
+            const activeSection = document.getElementById(section);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+            }
+
+            // Mostrar o contêiner de conteúdo
+            document.getElementById('content').classList.remove('hidden');
+        }
+    </script>
+{% endblock %} 
