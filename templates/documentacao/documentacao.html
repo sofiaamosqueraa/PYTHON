@@ -1,68 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentação do Projeto</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/documentacao.css') }}">
-</head>
-<body>
-    <canvas id="stars-background"></canvas>
-    <div class="container">
-        <h1>Documentação do Projeto</h1>
-        <nav>
-            <ul>
-                <li><a href="/documentacao/microservicos">Microserviços</a></li>
-                <li><a href="/documentacao/gateway">Gateway</a></li>
-                <li><a href="/documentacao/api">API</a></li>
-            </ul>
-        </nav>
-        <a href="/" class="button">Voltar para a página inicial</a>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('stars-background'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        const starGeometry = new THREE.BufferGeometry();
-        const starMaterial = new THREE.PointsMaterial({
-            color: 0xFFFFFF,
-            size: 0.1,
-            transparent: true
-        });
-
-        const starVertices = [];
-        for (let i = 0; i < 10000; i++) {
-            const x = (Math.random() - 0.5) * 2000;
-            const y = (Math.random() - 0.5) * 2000;
-            const z = -Math.random() * 2000;
-            starVertices.push(x, y, z);
-        }
-
-        starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-        const stars = new THREE.Points(starGeometry, starMaterial);
-        scene.add(stars);
-
-        camera.position.z = 1;
-
-        function animateStars() {
-            requestAnimationFrame(animateStars);
-
-            stars.rotation.y += 0.0002;
-            stars.rotation.x += 0.0001;
-
-            renderer.render(scene, camera);
-        }
-
-        animateStars();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documentação do Projeto</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/documentacao.css') }}">
+    </head>
+    <body>
+        <canvas id="stars-background"></canvas>
+        <div class="container">
+            <h1>Documentação do Projeto</h1>
+            <nav>
+                <ul>
+                    <li><a href="/documentacao/microservicos">Microserviços</a></li>
+                    <li><a href="/documentacao/gateway">Gateway</a></li>
+                    <li><a href="/documentacao/api">API</a></li>
+                </ul>
+            </nav>
+            <a href="/" class="button">Voltar para a página inicial</a>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('stars-background'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
-</body>
-</html>
+
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({
+                color: 0xFFFFFF,
+                size: 0.1,
+                transparent: true
+            });
+
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = -Math.random() * 2000;
+                starVertices.push(x, y, z);
+            }
+
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+
+            camera.position.z = 1;
+
+            function animateStars() {
+                requestAnimationFrame(animateStars);
+
+                stars.rotation.y += 0.0002;
+                stars.rotation.x += 0.0001;
+
+                renderer.render(scene, camera);
+            }
+
+            animateStars();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        </script>
+    </body>
+    </html>
