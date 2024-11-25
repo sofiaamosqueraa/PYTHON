@@ -2,37 +2,47 @@
 
 {% block content %}
 <h1 class="text-5xl font-bold text-center mb-12 text-gray-800">Documentação do Projeto</h1>
-<nav class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-6">
-    <a href="{{ url_for('documentacao', section='microservicos') }}" class="flex items-center w-72 px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+<nav class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 mt-8">
+    <a href="{{ url_for('documentacao', section='microservicos') }}" class="flex items-center w-72 px-6 py-4 bg-white text-blue-600 rounded-lg shadow-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+        </svg>
         <span class="font-semibold">Microserviços</span>
     </a>
-    <a href="{{ url_for('documentacao', section='gateway') }}" class="flex items-center w-72 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+    <a href="{{ url_for('documentacao', section='gateway') }}" class="flex items-center w-72 px-6 py-4 bg-white text-green-600 rounded-lg shadow-lg hover:bg-green-50 transition-all duration-300 transform hover:scale-105">
+        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+        </svg>
         <span class="font-semibold">Gateway</span>
     </a>
-    <a href="{{ url_for('documentacao', section='api') }}" class="flex items-center w-72 px-6 py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+    <a href="{{ url_for('documentacao', section='api') }}" class="flex items-center w-72 px-6 py-4 bg-white text-purple-600 rounded-lg shadow-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105">
+        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+        </svg>
         <span class="font-semibold">API</span>
     </a>
 </nav>
 
 {% if section %}
     
-<div class="mt-4">
+<div class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     {% if section == 'microservicos' %}
-        <h2>Microserviços</h2>
-        <div class="container">
-            <div class="section">
-                <h4>Introdução</h4>
-                <p>
-                    Microserviços são um estilo de arquitetura de software onde uma aplicação é construída como uma coleção de <span class="highlight">pequenos serviços independentes</span>. Cada serviço se concentra em fazer uma coisa bem, executa em seu próprio processo e se comunica com outros serviços através de interfaces simples e bem definidas (geralmente APIs). Essa abordagem permite maior <span class="highlight">flexibilidade, escalabilidade e manutenção</span> mais fácil em comparação com arquiteturas monolíticas tradicionais.
+        <h2 class="text-6xl font-bold text-teal-600 mb-12 text-center relative">
+            Microserviços
+            <span class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-teal-600"></span>
+        </h2>
+        <div class="container mx-auto space-y-12">
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-6">Introdução</h4>
+                <p class="mt-2 text-gray-700 leading-relaxed text-lg">
+                    Microserviços são um estilo de arquitetura de software onde uma aplicação é construída como uma coleção de <span class="highlight bg-yellow-100 px-1 rounded">pequenos serviços independentes</span>. Cada serviço se concentra em fazer uma coisa bem, executa em seu próprio processo e se comunica com outros serviços através de interfaces simples e bem definidas (geralmente APIs). Essa abordagem permite maior <span class="highlight bg-yellow-100 px-1 rounded">flexibilidade, escalabilidade e manutenção</span> mais fácil em comparação com arquiteturas monolíticas tradicionais.
                 </p>
             </div>
     
-            <div class="section">
-                <h4>Pontos Principais:</h4>
-                <ul>
+    
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Pontos Principais:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
                     <li><span class="highlight">Serviços Independentes:</span> Cada serviço é responsável por uma função única, como gestão de usuários ou pagamentos.</li>
                     <li><span class="highlight">Baixo Acoplamento:</span> Os serviços podem ser desenvolvidos, implantados e escalados de forma independente.</li>
                     <li><span class="highlight">Comunicação:</span> Os serviços se comunicam entre si usando APIs (ex.: REST, gRPC).</li>
@@ -41,9 +51,9 @@
                 </ul>
             </div>
     
-            <div class="section">
-                <h4>Vantagens:</h4>
-                <ul>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Vantagens:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
                     <li>Escalabilidade: Serviços podem ser escalados individualmente.</li>
                     <li>Flexibilidade tecnológica: Diferentes serviços podem usar diferentes tecnologias.</li>
                     <li>Implantação independente: Cada serviço pode ser atualizado separadamente.</li>
@@ -52,9 +62,9 @@
                 </ul>
             </div>
     
-            <div class="section">
-                <h4>Desafios:</h4>
-                <ul>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Desafios:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
                     <li>Complexidade distribuída: Gerenciar múltiplos serviços pode ser desafiador.</li>
                     <li>Consistência de dados: Manter dados consistentes entre serviços requer atenção.</li>
                     <li>Monitoramento: É necessário monitorar múltiplos serviços.</li>
@@ -62,54 +72,50 @@
                 </ul>
             </div>
     
-            <div class="section">
-                <h4>Implementação:</h4>
-                <ul>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Implementação:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
                     <li>Frequentemente utiliza-se containerização (ex: Docker) para implantação.</li>
                     <li>Orquestração de containers (ex: Kubernetes) para gerenciamento.</li>
                 </ul>
             </div>
     
-            <div class="section">
-                <h4>Contraste com arquitetura monolítica:</h4>
-                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Contraste com arquitetura monolítica:</h4>
+                <p class="mt-2 text-gray-700">Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
             </div>
     
-            <div class="section">
-                <h4>Padrões comuns:</h4>
-                <p><li>API Gateway </li>
-                    <li> Service Discovery </li>
-                    <li> Circuit Breaker </li>
-                    <li>Event Sourcing</li></p>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Padrões comuns:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
+                    <li>API Gateway</li>
+                    <li>Service Discovery</li>
+                    <li>Circuit Breaker</li>
+                    <li>Event Sourcing</li>
+                </ul>
             </div>
     
-            <div class="section">
-                <h4> Contraste com arquitetura monolítica:</h4>
-                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.
-                </p>
-            </div>
-    
-            <div class="section">
-                <h4>Ferramentas e tecnologias associadas:</h4>
-                <p>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Ferramentas e tecnologias associadas:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
                     <li>Spring Boot, Node.js (para desenvolvimento)</li>
                     <li>Docker, Kubernetes (para implantação e orquestração)</li>
                     <li>Kafka, RabbitMQ (para mensageria)</li>
                     <li>Prometheus, ELK Stack (para monitoramento e logging)</li>
-                </p>
-                
-                <div class="section">
-                    <h4> Evolução e manutenção:</h4>
-                    <p>Facilita a evolução contínua da aplicação
-                        Permite atualizações e substituições graduais de serviços</p>
-                    </div>
+                </ul>
+            </div>
     
-                    <div class="info-box">
-                        <h4>Quer saber mais?</h4>
-                        <p>Explore nossos recursos adicionais para aprofundar seu conhecimento em microserviços.</p>
-                        <a href="#" class="button">Recursos Adicionais</a>
-                    </div>
-    </div>
+            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
+                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Evolução e manutenção:</h4>
+                <p class="mt-2 text-gray-700">Facilita a evolução contínua da aplicação, permitindo atualizações e substituições graduais de serviços.</p>
+            </div>
+    
+            <div class="info-box bg-teal-100 p-6 rounded-xl shadow-lg mb-8">
+                <h4 class="text-lg font-semibold text-teal-600">Quer saber mais?</h4>
+                <p class="text-gray-700">Explore nossos recursos adicionais para aprofundar seu conhecimento em microserviços.</p>
+                <a href="#" class="mt-2 inline-block bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-200">Recursos Adicionais</a>
+            </div>
+        </div>
     {% elif section == 'gateway' %}
     <div id="gateway" class="mt-4">
         <h2>Gateway</h2>

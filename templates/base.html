@@ -5,27 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Título Padrão{% endblock %}</title>
-    
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
-    <nav class="bg-gray-900 p-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <a class="text-white text-2xl font-bold transition duration-300 hover:text-gray-300" href="/">Home</a>
-            <div class="space-x-6">
-                <a class="text-gray-300 hover:text-white transition duration-300" href="/documentacao">Documentação</a>
-                <a class="text-gray-300 hover:text-white transition duration-300" href="/modulos">Módulos</a>
-                <a class="text-gray-300 hover:text-white transition duration-300" href="/projeto">Projeto</a>
+<body class="bg-gray-50">
+    <nav class="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a class="text-white text-2xl font-bold transition duration-300 hover:text-gray-200" href="/">
+                <span class="sr-only">Home</span>
+                <svg class="w-8 h-8 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Projeto Saúde
+            </a>
+            <div class="space-x-0 md:space-x-6 mt-4 md:mt-0">
+                <a class="text-gray-200 hover:text-white transition duration-300 border-b-2 border-transparent hover:border-white pb-1" href="/documentacao">Documentação</a>
+                <a class="text-gray-200 hover:text-white transition duration-300 border-b-2 border-transparent hover:border-white pb-1" href="/modulos">Módulos</a>
+                <a class="text-gray-200 hover:text-white transition duration-300 border-b-2 border-transparent hover:border-white pb-1" href="/projeto">Projeto</a>
             </div>
         </div>
     </nav>
 
-    <div class="container mx-auto mt-6">
+    <div class="container mx-auto mt-8 px-4">
         {% block content %}
         {% endblock %}
     </div>
