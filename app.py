@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,9 +6,10 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/documentacao')
+@app.route('/documentacao', methods=['GET', 'POST'])
 def documentacao():
-    return render_template('documentacao.html')
+    section_to_show = request.args.get('section')  # Não define um padrão
+    return render_template('documentacao.html', section=section_to_show)
 
 @app.route('/modulos')
 def modulos():
