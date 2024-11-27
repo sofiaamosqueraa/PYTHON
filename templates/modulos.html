@@ -3,102 +3,126 @@
 {% block title %}Módulos{% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
     <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Módulos</h1>
     <nav class="mb-6">
-        <ul class="flex justify-center space-x-6">
-            <li>
-                <a href="#" onclick="showContent('cpp')" class="flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    C++
+        <ul class="grid grid-cols-2 gap-6">
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='cpp') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">C++</span>
                 </a>
             </li>
-            <li>
-                <a href="#" onclick="showContent('python')" class="flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    Python
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='python') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://static.vecteezy.com/system/resources/previews/012/697/295/non_2x/3d-python-programming-language-logo-free-png.png" alt="Python" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">Python</span>
                 </a>
             </li>
-            <li>
-                <a href="#" onclick="showContent('java')" class="flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    Java
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='java') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/181_Java-1024.png" alt="Java" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">Java</span>
                 </a>
             </li>
-            <li>
-                <a href="#" onclick="showContent('redes')" class="flex items-center bg-gradient-to-r from-purple-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Administração de Redes Locais
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='redes') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1167/1167057.png" alt="Administração de Redes" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">Administração de Redes</span>
                 </a>
             </li>
-            <li>
-                <a href="#" onclick="showContent('banco-de-dados')" class="flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Base de Dados
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='banco-de-dados') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6376/6376458.png" alt="Base de Dados" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">Base de Dados</span>
                 </a>
             </li>
-            <li>
-                <a href="#" onclick="showContent('processamento')" class="flex items-center bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Processamento Computacional
+            <li class="flex justify-center">
+                <a href="{{ url_for('modulo', nome='processamento') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+                    <img src="https://png.pngtree.com/png-clipart/20230417/original/pngtree-cpu-line-icon-png-image_9060685.png" class="w-12 h-12 mb-2">
+                    <span class="text-lg font-semibold">Processamento Computacional</span>
                 </a>
             </li>
         </ul>
     </nav>
 
-    <div id="content" class="container mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200 hidden">
-        <div id="cpp" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">C++: A Linguagem Mágica da Programação</h2>
-            <section class="simple mb-6 p-6 bg-gray-50 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-2">C++ para Iniciantes</h3>
-                <p class="mb-2 text-gray-600">C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas!</p>
-                <p class="mb-4 text-gray-600">Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Com C++, podes:</h3>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-                    <li class="mb-2">Criar jogos divertidos</li>
-                    <li class="mb-2">Fazer o computador desenhar coisas giras</li>
-                    <li class="mb-2">Ensinar o computador a contar histórias</li>
-                    <li class="mb-2">Construir aplicações úteis e inovadoras</li>
-                    <li class="mb-2">Explorar o mundo da programação de forma divertida!</li>
-                </ul>
-                <p class="mb-4 text-gray-600">É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis.</p>
-                <p class="mb-4 text-gray-600">Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
-            </section>
+    {% if modulo == 'cpp' %}
+        <div id="cpp" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Icon" class="w-8 h-8 mr-2">
+                C++: A Linguagem Mágica da Programação
+            </h2>
+            <div class="container">
+                <section class="simple mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-gray-700">C++ para Iniciantes</h3>
+                    <p class="text-gray-600 mb-4">C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas! Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
 
-            <section class="technical mb-6 p-6 bg-gray-50 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-2">C++: Uma Linguagem de Programação Multi-paradigma</h3>
-                <p class="mb-2 text-gray-600">C++ é uma linguagem de programação de alto nível, estaticamente tipada, compilada e multi-paradigma, desenvolvida por Bjarne Stroustrup em 1979 como uma extensão da linguagem C.</p>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Características Fundamentais:</h3>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-                    <li class="mb-2"><strong>Orientação a Objetos:</strong> Suporta encapsulamento, herança e polimorfismo.</li>
-                    <li class="mb-2"><strong>Programação Genérica:</strong> Utiliza templates para implementar algoritmos independentes de tipo.</li>
-                    <li class="mb-2"><strong>Gerenciamento de Memória:</strong> Oferece controle de baixo nível sobre alocação e desalocação de memória.</li>
-                    <li class="mb-2"><strong>Sobrecarga de Operadores:</strong> Permite a redefinição do comportamento de operadores.</li>
-                    <li class="mb-2"><strong>Portabilidade:</strong> O código C++ pode ser executado em diferentes plataformas.</li>
-                    <li class="mb-2"><strong>Desempenho:</strong> C++ é conhecido pela sua eficiência e rapidez na execução.</li>
-                </ul>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Aspectos Técnicos Avançados:</h3>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-                    <li class="mb-2"><strong>Compilação e Linking:</strong> O código-fonte C++ passa por um processo de pré-processamento, compilação e linking.</li>
-                    <li class="mb-2"><strong>ABI (Application Binary Interface):</strong> Define como funções são chamadas.</li>
-                    <li class="mb-2"><strong>RAII (Resource Acquisition Is Initialization):</strong> Um paradigma de design que vincula o tempo de vida de recursos.</li>
-                    <li class="mb-2"><strong>Metaprogramação de Templates:</strong> Permite a execução de computações em tempo de compilação.</li>
-                    <li class="mb-2"><strong>Padrões da Indústria:</strong> Utilizado em diversas áreas como desenvolvimento de jogos.</li>
-                </ul>
-                <p class="mb-4 text-gray-600">C++ continua a ser uma das linguagens mais relevantes no desenvolvimento moderno devido à sua versatilidade e poder.</p>
-            </section>
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Com C++, podes:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Criar jogos divertidos</li>
+                        <li>Fazer o computador desenhar coisas giras</li>
+                        <li>Ensinar o computador a contar histórias</li>
+                        <li>Construir aplicações úteis e inovadoras</li>
+                        <li>Explorar o mundo da programação de forma divertida!</li>
+                    </ul>
+
+                    <p class="text-gray-600">É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis. Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
+                </section>
+
+                <section class="technical mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-gray-700">C++: Uma Linguagem de Programação Multi-paradigma</h3>
+                    <p class="text-gray-600 mb-4">C++ é uma linguagem de programação de alto nível, estaticamente tipada, compilada e multi-paradigma, desenvolvida por Bjarne Stroustrup em 1979 como uma extensão da linguagem C.</p>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Características Fundamentais:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li><strong>Orientação a Objetos:</strong> Suporta encapsulamento, herança e polimorfismo, permitindo a criação de estruturas de dados complexas e reutilizáveis.</li>
+                        <li><strong>Programação Genérica:</strong> Utiliza templates para implementar algoritmos independentes de tipo, promovendo a reutilização de código.</li>
+                        <li><strong>Gerenciamento de Memória:</strong> Oferece controle de baixo nível sobre alocação e desalocação de memória, crucial para otimização de performance.</li>
+                        <li><strong>Sobrecarga de Operadores:</strong> Permite a redefinição do comportamento de operadores para tipos definidos pelo utilizador.</li>
+                        <li><strong>Portabilidade:</strong> O código C++ pode ser executado em diferentes plataformas com poucas ou nenhumas modificações.</li>
+                        <li><strong>Desempenho:</strong> C++ é conhecido pela sua eficiência e rapidez na execução.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Aspectos Técnicos Avançados:</h4>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li><strong>Compilação e Linking:</strong> O código-fonte C++ passa por um processo de pré-processamento, compilação e linking para gerar código de máquina executável.</li>
+                        <li><strong>ABI (Application Binary Interface):</strong> Define como funções são chamadas e como dados são representados em código de máquina.</li>
+                        <li><strong>RAII (Resource Acquisition Is Initialization):</strong> Um paradigma de design que vincula o tempo de vida de recursos à duração do escopo dos objetos.</li>
+                        <li><strong>Metaprogramação de Templates:</strong> Permite a execução de computações em tempo de compilação, gerando código otimizado.</li>
+                        <li><strong>Padrões da Indústria:</strong> Utilizado em diversas áreas como desenvolvimento de jogos, sistemas operacionais e software embarcado.</li>
+                    </ul>
+
+                    <p class="text-gray-600">C++ continua a ser uma das linguagens mais relevantes no desenvolvimento moderno devido à sua versatilidade e poder.</p>
+                </section>
+            </div>
+
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo C++</p>
+            </footer>
         </div>
+    {% elif modulo == 'python' %}
+        <div id="python" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://static.vecteezy.com/system/resources/previews/012/697/295/non_2x/3d-python-programming-language-logo-free-png.png" alt="Python Icon" class="w-8 h-8 mr-2">
+                Python: A Linguagem que Capacita
+            </h2>
+            <div class="container">
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <header>
+                        <div class="header-content">
+                            <h1 class="text-2xl font-semibold text-gray-700">Introdução ao Python</h1>
+                            <p class="text-gray-600">Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Criada por Guido van Rossum em 1991, é conhecida por sua simplicidade e versatilidade.</p>
+                        </div>
+                    </header>
+                </section>
 
-        <div id="python" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Python</h2>
-            
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Introdução ao Python</h3>
-                <p>Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Criada por Guido van Rossum em 1991, é conhecida por sua simplicidade e versatilidade.</p>
-                <a href="https://www.w3schools.com/python/default.asp" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition mt-4 inline-block" target="_blank">Aprenda Python</a>
-            </section>
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Sintaxe Básica</h3>
-                <p>A sintaxe do Python é simples e clara. Aqui estão alguns exemplos básicos:</p>
-                <pre class="bg-gray-100 p-4 rounded-lg"><code>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Sintaxe Básica</h3>
+                    <p class="text-gray-600">A sintaxe do Python é simples e clara. Aqui estão alguns exemplos básicos:</p>
+                    <pre><code>
 # Isto é um comentário
 print("Olá, Mundo!")
 
@@ -114,164 +138,36 @@ elif x < 0:
     print("x é negativo")
 else:
     print("x é zero")
-                </code></pre>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Estruturas de Dados</h3>
-                <p>Python oferece várias estruturas de dados embutidas, incluindo:</p>
-                <ul class="list-disc list-inside">
-=======
-    <h1>Módulos</h1>
-    <nav>
-        <ul>
-            <li><a href="#cpp">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#java">Java</a></li>
-            <li><a href="#redes">Administração de Redes Locais</a></li>
-            <li><a href="#banco-de-dados">Base de Dados</a></li>
-            <li><a href="#processamento">Processamento Computacional</a></li>
-        </ul>
-    </nav>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Estruturas de Dados</h3>
+                    <p class="text-gray-600">Python oferece várias estruturas de dados embutidas, incluindo:</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Listas: Coleções ordenadas e mutáveis</li>
+                        <li>Tuplos: Coleções ordenadas e imutáveis</li>
+                        <li>Dicionários: Coleções não ordenadas de pares chave-valor</li>
+                        <li>Conjuntos: Coleções não ordenadas de elementos únicos</li>
+                    </ul>
+                </section>
 
-    <div id="cpp">
-        <h2>C++</h2>
-        <div class="container">
-            <section class="simple">
-                <h2>C++ para Iniciantes</h2>
-                <p>C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas!</p>
-                <p>Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
-                
-                <h3>Com C++, podes:</h3>
-                <ul>
-                    <li>Criar jogos divertidos</li>
-                    <li>Fazer o computador desenhar coisas giras</li>
-                    <li>Ensinar o computador a contar histórias</li>
-                    <li>Construir aplicações úteis e inovadoras</li>
-                    <li>Explorar o mundo da programação de forma divertida!</li>
-                </ul>
-    
-                <p>É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis.</p>
-                <p>Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
-            </section>
-    
-            <section class="technical">
-                <h2>C++: Uma Linguagem de Programação Multi-paradigma</h2>
-                <p>C++ é uma linguagem de programação de alto nível, estaticamente tipada, compilada e multi-paradigma, desenvolvida por Bjarne Stroustrup em 1979 como uma extensão da linguagem C.</p>
-    
-                <h3>Características Fundamentais:</h3>
-                <ul>
-                    <li><strong>Orientação a Objetos:</strong> Suporta encapsulamento, herança e polimorfismo, permitindo a criação de estruturas de dados complexas e reutilizáveis.</li>
-                    <li><strong>Programação Genérica:</strong> Utiliza templates para implementar algoritmos independentes de tipo, promovendo a reutilização de código.</li>
-                    <li><strong>Gerenciamento de Memória:</strong> Oferece controle de baixo nível sobre alocação e desalocação de memória, crucial para otimização de performance.</li>
-                    <li><strong>Sobrecarga de Operadores:</strong> Permite a redefinição do comportamento de operadores para tipos definidos pelo utilizador.</li>
-                    <li><strong>Portabilidade:</strong> O código C++ pode ser executado em diferentes plataformas com poucas ou nenhumas modificações.</li>
-                    <li><strong>Desempenho:</strong> C++ é conhecido pela sua eficiência e rapidez na execução.</li>
-                </ul>
-    
-                <h3>Aspectos Técnicos Avançados:</h3>
-                <ul>
-                    <li><strong>Compilação e Linking:</strong> O código-fonte C++ passa por um processo de pré-processamento, compilação e linking para gerar código de máquina executável.</li>
-                    <li><strong>ABI (Application Binary Interface):</strong> Define como funções são chamadas e como dados são representados em código de máquina.</li>
-                    <li><strong>RAII (Resource Acquisition Is Initialization):</strong> Um paradigma de design que vincula o tempo de vida de recursos à duração do escopo dos objetos.</li>
-                    <li><strong>Metaprogramação de Templates:</strong> Permite a execução de computações em tempo de compilação, gerando código otimizado.</li>
-                    <li><strong>Padrões da Indústria:</strong> Utilizado em diversas áreas como desenvolvimento de jogos, sistemas operacionais e software embarcado.</li>
-                </ul>
-    
-                <p>C++ continua a ser uma das linguagens mais relevantes no desenvolvimento moderno devido à sua versatilidade e poder.</p>
-    
-            </section>
-    
-        </div>
-    
-        <div class="back-button-container">
-            <a href="/" class="back-button">Voltar para a página inicial</a>
-        </div>
-    
-        <footer>
-            &copy; 2024 - Aprendendo C++
-        </footer>
-    </div>
-
-    <div id="python">
-        <h2>Python</h2>
-        <header>
-            <div class="header-content">
-                <h1>Python</h1>
-            </div>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#introducao">Introdução</a></li>
-                <li><a href="#sintaxe">Sintaxe Básica</a></li>
-                <li><a href="#estruturas">Estruturas de Dados</a></li>
-                <li><a href="#funcoes">Funções</a></li>
-                <li><a href="#modulos">Módulos</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#docs">Documentação</a></li>
-                <li><a href="#pip">Pip e PyPI</a></li>
-            </ul>
-        </nav>
-        
-        <main>
-            <section id="introducao">
-                <h2>Introdução ao Python</h2>
-                <p>Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Criada por Guido van Rossum em 1991, é conhecida por sua simplicidade e versatilidade.</p>
-                <a href="#" class="button">Aprenda Python</a>
-            </section>
-            
-            <section id="sintaxe">
-                <h2>Sintaxe Básica</h2>
-                <p>A sintaxe do Python é simples e clara. Aqui estão alguns exemplos básicos:</p>
-                <pre><code>
-    # Isto é um comentário
-    print("Olá, Mundo!")
-    
-    # Variáveis e tipos de dados
-    x = 5
-    y = "Texto"
-    z = 3.14
-    
-    # Estruturas de controlo
-    if x > 0:
-        print("x é positivo")
-    elif x < 0:
-        print("x é negativo")
-    else:
-        print("x é zero")
-                </code></pre>
-            </section>
-            
-            <section id="estruturas">
-                <h2>Estruturas de Dados</h2>
-                <p>Python oferece várias estruturas de dados embutidas, incluindo:</p>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li>Listas: Coleções ordenadas e mutáveis</li>
-                    <li>Tuplos: Coleções ordenadas e imutáveis</li>
-                    <li>Dicionários: Coleções não ordenadas de pares chave-valor</li>
-                    <li>Conjuntos: Coleções não ordenadas de elementos únicos</li>
-                </ul>
-            </section>
-<<<<<<< HEAD
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Funções</h3>
-                <p>As funções em Python são definidas usando a palavra-chave 'def'. Elas podem ter argumentos posicionais, argumentos nomeados e valores padrão.</p>
-                <pre class="bg-gray-100 p-4 rounded-lg"><code>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Funções</h3>
+                    <p class="text-gray-600">As funções em Python são definidas usando a palavra-chave 'def'. Elas podem ter argumentos posicionais, argumentos nomeados e valores padrão.</p>
+                    <pre><code>
 def saudacao(nome, saudacao="Olá"):
     return f"{saudacao}, {nome}!"
 
 print(saudacao("Maria"))  # Saída: Olá, Maria!
 print(saudacao("João", "Bom dia"))  # Saída: Bom dia, João!
-                </code></pre>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Módulos</h3>
-                <p>Os módulos permitem organizar o código Python em ficheiros separados. Você pode importar módulos inteiros ou funções específicas de módulos.</p>
-                <pre class="bg-gray-100 p-4 rounded-lg"><code>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Módulos</h3>
+                    <p class="text-gray-600">Os módulos permitem organizar o código Python em ficheiros separados. Você pode importar módulos inteiros ou funções específicas de módulos.</p>
+                    <pre><code>
 # Importar um módulo inteiro
 import math
 
@@ -281,661 +177,410 @@ from random import randint, choice
 # Usar funções importadas
 print(math.pi)
 print(randint(1, 10))
-                </code></pre>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Pip e PyPI</h3>
-                <p>Pip é o gerenciador de pacotes para Python, usado para instalar e gerenciar pacotes adicionais que não fazem parte da biblioteca padrão. PyPI (Python Package Index) é o repositório de software para a comunidade Python.</p>
-                <pre class="bg-gray-100 p-4 rounded-lg"><code>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Pip e PyPI</h3>
+                    <p class="text-gray-600">Pip é o gerenciador de pacotes para Python, usado para instalar e gerenciar pacotes adicionais que não fazem parte da biblioteca padrão. PyPI (Python Package Index) é o repositório de software para a comunidade Python.</p>
+                    <pre><code>
 # Instalar um pacote usando pip
 pip install nome_do_pacote
-                </code></pre>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Documentação</h3>
-                <p>A documentação completa do Python, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
-                <a href="https://www.python.org/" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition mt-4 inline-block" target="_blank">Ver Documentação</a>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                    <p class="text-gray-600 mb-4">A documentação completa do Python, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
+                    <a href="https://www.python.org/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Download Python</h3>
-                <p>Baixe a versão mais recente do Python para o seu sistema operacional.</p>
-                <a href="https://www.python.org/downloads/" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition mt-4 inline-block" target="_blank">Baixar Python</a>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Download Python</h3>
+                    <p class="text-gray-600 mb-4">Baixe a versão mais recente do Python para o seu sistema operacional.</p>
+                    <a href="https://www.python.org/downloads/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Baixar Python</a>
+                </section>
+            </div>
+
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Python</p>
+            </footer>
         </div>
+    {% elif modulo == 'java' %}
+        <div id="java" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/181_Java-1024.png" alt="Java Icon" class="w-8 h-8 mr-2">
+                Java: A Linguagem Versátil
+            </h2>
+            <div class="container">
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <header>
+                        <div class="header-content">
+                            <h1 class="text-2xl font-semibold text-gray-700">Introdução ao Java</h1>
+                            <p class="text-gray-600">Java é uma linguagem de programação de alto nível, orientada a objetos, que foi criada por James Gosling e sua equipe na Sun Microsystems em 1995. É amplamente utilizada para desenvolvimento de aplicativos, especialmente em ambientes corporativos.</p>
+                        </div>
+                    </header>
+                </section>
 
-        <div id="java" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Java</h2>
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Introdução ao Java</h3>
-                <p>Java é uma linguagem de programação e plataforma computacional lançada pela primeira vez pela Sun Microsystems em 1995. Desenvolvida por James Gosling e sua equipe, Java rapidamente se tornou uma das linguagens mais populares e amplamente utilizadas no mundo, conhecida por sua portabilidade, segurança e robustez.</p>
-                <p>Com o slogan "Write Once, Run Anywhere" (WORA), Java permite que os desenvolvedores escrevam código uma vez e o executem em qualquer dispositivo que suporte a plataforma Java, sem a necessidade de recompilação.</p>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Características do Java</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Portabilidade: "Escreva uma vez, execute em qualquer lugar".</li>
+                        <li>Orientação a Objetos: Suporte a encapsulamento, herança e polimorfismo.</li>
+                        <li>Segurança: Mecanismos de segurança robustos para proteger aplicativos.</li>
+                        <li>Multithreading: Suporte para execução simultânea de múltiplas threads.</li>
+                    </ul>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">História do Java</h3>
-                <ul class="list-disc list-inside">
-                    <li><strong>1991:</strong> O projeto Green inicia o desenvolvimento do que se tornaria Java.</li>
-                    <li><strong>1995:</strong> Java 1.0 é lançado publicamente.</li>
-                    <li><strong>2006:</strong> Java se torna open source.</li>
-                    <li><strong>2010:</strong> Oracle adquire a Sun Microsystems e se torna a mantenedora do Java.</li>
-                    <li><strong>2014:</strong> Java SE 8 é lançado, introduzindo expressões lambda e a API de data/hora.</li>
-                    <li><strong>2018:</strong> Java SE 11 é lançado como a primeira versão LTS (Long Term Support) sob o novo ciclo de lançamento semestral.</li>
-                    <li><strong>2021:</strong> Java SE 17 é lançado, a mais recente versão LTS.</li>
-                </ul>
-            </section>
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Características Principais</h3>
-                <ul class="list-disc list-inside">
-                    <li><strong>Orientada a objetos:</strong> Baseada no modelo de programação orientada a objetos, facilitando o desenvolvimento de software modular e reutilizável.</li>
-                    <li><strong>Independente de plataforma:</strong> O bytecode Java pode ser executado em qualquer dispositivo que tenha uma Máquina Virtual Java (JVM) instalada.</li>
-                    <li><strong>Segura:</strong> Com o Security Manager, Java oferece um ambiente de execução seguro, protegendo contra códigos maliciosos.</li>
-                    <li><strong>Robusta:</strong> Forte verificação de tipos em tempo de compilação e execução, gerenciamento automático de memória e tratamento de exceções.</li>
-                    <li><strong>Multithreaded:</strong> Suporte nativo para programação concorrente, permitindo a criação de aplicações eficientes e responsivas.</li>
-                    <li><strong>Alto desempenho:</strong> Com o JIT (Just-In-Time) compiler, o código Java é otimizado em tempo de execução.</li>
-                    <li><strong>Distribuída:</strong> Suporte integrado para protocolos de rede como TCP/IP, facilitando o desenvolvimento de aplicações distribuídas.</li>
-                    <li><strong>Dinâmica:</strong> Capacidade de carregar classes em tempo de execução, permitindo atualizações de código sem reiniciar a aplicação.</li>
-                </ul>
-            </section>
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Sintaxe Básica</h3>
-                <p>A sintaxe do Java é similar a C e C++, mas com menos recursos de baixo nível. Aqui está um exemplo básico:</p>
-                <pre class="bg-gray-100 p-4 rounded-lg"><code>
-public class OlaMundo {
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Sintaxe Básica</h3>
+                    <p class="text-gray-600">A sintaxe do Java é semelhante à do C++. Aqui estão alguns exemplos básicos:</p>
+                    <pre><code>
+public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Olá, Mundo!");
     }
 }
-                </code></pre>
-                <p>Elementos fundamentais da sintaxe Java incluem:</p>
-                <ul class="list-disc list-inside">
-                    <li>Declaração de variáveis com tipos estáticos</li>
-                    <li>Estruturas de controle como if-else, switch, for, while</li>
-                    <li>Métodos e classes como unidades básicas de organização</li>
-                    <li>Pacotes para organização de código em namespaces</li>
-                    <li>Modificadores de acesso para controle de visibilidade</li>
-                </ul>
-            </section>
+                    </code></pre>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Programação Orientada a Objetos (POO)</h3>
-                <p>Java é uma linguagem fortemente orientada a objetos. Seus principais conceitos incluem:</p>
-                <ul class="list-disc list-inside">
-                    <li><strong>Classes e Objetos:</strong> Classes são modelos para objetos, que são instâncias de classes.</li>
-                    <li><strong>Herança:</strong> Permite que uma classe herde atributos e métodos de outra classe.</li>
-                    <li><strong>Polimorfismo:</strong> Capacidade de um objeto assumir múltiplas formas, fundamental para o design flexível de software.</li>
-                    <li><strong>Encapsulamento:</strong> Ocultação de detalhes internos da implementação, promovendo a segurança e manutenibilidade do código.</li>
-                    <li><strong>Abstração:</strong> Simplificação de sistemas complexos, focando apenas nos aspectos relevantes.</li>
-                    <li><strong>Interfaces:</strong> Contratos que classes podem implementar, permitindo múltipla herança de tipo.</li>
-                </ul>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Estruturas de Controle</h3>
+                    <p class="text-gray-600">Java suporta várias estruturas de controle, como:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>if, else if, else</li>
+                        <li>switch</li>
+                        <li>for, while, do-while</li>
+                    </ul>
+                </section>
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Plataformas Java</h3>
-                <p>Java oferece diferentes plataformas para diversos tipos de aplicações:</p>
-                <ul class="list-disc list-inside">
-                    <li><strong>Java SE (Standard Edition):</strong> Para desenvolvimento de aplicações desktop e servidores. Inclui as APIs core da linguagem.</li>
-                    <li><strong>Java EE (Enterprise Edition):</strong> Para desenvolvimento de aplicações empresariais em larga escala. Inclui APIs para web services, componentes distribuídos, e mais.</li>
-                    <li><strong>Java ME (Micro Edition):</strong> Para desenvolvimento de aplicações para dispositivos móveis e embarcados com recursos limitados.</li>
-                    <li><strong>JavaFX:</strong> Para criação de aplicações de interface gráfica ricas e interativas, com suporte a efeitos visuais avançados.</li>
-                </ul>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Classes e Objetos</h3>
+                    <p class="text-gray-600">Java é uma linguagem orientada a objetos. Aqui está um exemplo de como definir uma classe e criar um objeto:</p>
+                    <pre><code>
+class Carro {
+    String modelo;
+    int ano;
 
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Máquina Virtual Java (JVM)</h3>
-                <p>A JVM é o coração da plataforma Java, responsável por:</p>
-                <ul class="list-disc list-inside">
-                    <li>Carregar, verificar e executar o bytecode Java</li>
-                    <li>Gerenciar memória automaticamente (garbage collection)</li>
-                    <li>Otimizar o código em tempo de execução (JIT compilation)</li>
-                    <li>Fornecer portabilidade entre diferentes sistemas operacionais</li>
-                    <li>Garantir segurança através do Security Manager</li>
-                </ul>
-            </section>
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Frameworks e Bibliotecas Populares</h3>
-                <ul class="list-disc list-inside">
-                    <li><strong>Spring:</strong> Framework para desenvolvimento de aplicações empresariais</li>
-                    <li><strong>Hibernate:</strong> Framework ORM (Object-Relational Mapping) para persistência de dados</li>
-                    <li><strong>Apache Struts:</strong> Framework para desenvolvimento de aplicações web</li>
-                    <li><strong>JavaServer Faces (JSF):</strong> Framework para construção de interfaces de usuário para aplicações web</li>
-                    <li><strong>JUnit:</strong> Framework para testes unitários</li>
-                    <li><strong>Log4j:</strong> Biblioteca para logging</li>
-                    <li><strong>Apache Maven:</strong> Ferramenta de automação de compilação e gerenciamento de dependências</li>
-                </ul>
-            </section>
-
-            <section class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h3 class="text-2xl font-semibold text-gray-800">Recursos</h3>
-                <p>Acesse a documentação oficial e baixe o Java para começar a desenvolver:</p>
-                <div class="flex space-x-4">
-                    <a href="https://docs.oracle.com/en/java/" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition" target="_blank">Documentação Java</a>
-                    <a href="https://www.java.com/download/" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition" target="_blank">Baixar Java</a>
-                </div>
-            </section>
-        </div>
-
-        <div id="redes" class="content-section hidden p-6 bg-gradient-to-r from-purple-200 to-blue-300 rounded-lg shadow-lg">
-            <h2 class="text-5xl font-extrabold text-gray-800 mb-6 text-center">Administração de Redes Locais</h2>
-            
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">1. Fundamentos de Redes Locais</h2>
-                <p class="mb-2 text-gray-700"><strong>Definição:</strong> Uma rede local (LAN) é um conjunto de dispositivos interconectados que compartilham recursos em uma área geográfica limitada.</p>
-                <p class="mb-4 text-gray-700"><strong>Importância:</strong> Fundamental para a comunicação e compartilhamento de recursos em ambientes corporativos e domésticos.</p>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Configuração básica de IP em Linux</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
-                </code></pre>
-            </section>
-
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">2. Componentes Principais de uma Rede Local</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-            
-            <section id="funcoes">
-                <h2>Funções</h2>
-                <p>As funções em Python são definidas usando a palavra-chave 'def'. Elas podem ter argumentos posicionais, argumentos nomeados e valores padrão.</p>
-                <pre><code>
-    def saudacao(nome, saudacao="Olá"):
-        return f"{saudacao}, {nome}!"
-    
-    print(saudacao("Maria"))  # Saída: Olá, Maria!
-    print(saudacao("João", "Bom dia"))  # Saída: Bom dia, João!
-                </code></pre>
-            </section>
-            
-            <section id="modulos">
-                <h2>Módulos</h2>
-                <p>Os módulos permitem organizar o código Python em ficheiros separados. Você pode importar módulos inteiros ou funções específicas de módulos.</p>
-                <pre><code>
-    # Importar um módulo inteiro
-    import math
-    
-    # Importar funções específicas
-    from random import randint, choice
-    
-    # Usar funções importadas
-    print(math.pi)
-    print(randint(1, 10))
-                </code></pre>
-            </section>
-    
-            <section id="pip">
-                <h2>Pip e PyPI</h2>
-                <p>Pip é o gerenciador de pacotes para Python, usado para instalar e gerenciar pacotes adicionais que não fazem parte da biblioteca padrão. PyPI (Python Package Index) é o repositório de software para a comunidade Python.</p>
-                <pre><code>
-    # Instalar um pacote usando pip
-    pip install nome_do_pacote
-                </code></pre>
-            </section>
-    
-            <section id="docs">
-                <h2>Documentação</h2>
-                <p>A documentação completa do Python, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
-                <a href="https://www.python.org/" class="button" target="_blank">Ver Documentação</a>
-            </section>
-            
-            
-            <section id="download">
-                <h2>Download Python</h2>
-                <p>Baixe a versão mais recente do Python para o seu sistema operacional.</p>
-                <a href="https://www.python.org/downloads/" class="button" target="_blank">Baixar Python</a>
-            </section>
-    
-           
-            <div class="back-to-top">
-                <a href="/" class="button">Voltar ao Início</a>
-            </div>
-        </main>
-        
-        <footer>
-            <p>© 2024 Python </p>
-        </footer>
-    </div>
-
-    <div id="java">
-        <h2>Java</h2>
-        <header>
-            <div class="header-content">
-                <h1>Java</h1>
-            </div>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#introducao">Introdução</a></li>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#caracteristicas">Características</a></li>
-                <li><a href="#sintaxe">Sintaxe</a></li>
-                <li><a href="#oop">POO</a></li>
-                <li><a href="#plataformas">Plataformas</a></li>
-                <li><a href="#jvm">JVM</a></li>
-                <li><a href="#frameworks">Frameworks</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-            </ul>
-        </nav>
-    
-        <main>
-            <section id="introducao">
-                <h2>Introdução ao Java</h2>
-                <p>Java é uma linguagem de programação e plataforma computacional lançada pela primeira vez pela Sun Microsystems em 1995. Desenvolvida por James Gosling e sua equipe, Java rapidamente se tornou uma das linguagens mais populares e amplamente utilizadas no mundo, conhecida por sua portabilidade, segurança e robustez.</p>
-                <p>Com o slogan "Write Once, Run Anywhere" (WORA), Java permite que os desenvolvedores escrevam código uma vez e o executem em qualquer dispositivo que suporte a plataforma Java, sem a necessidade de recompilação.</p>
-            </section>
-    
-            <section id="historia">
-                <h2>História do Java</h2>
-                <ul>
-                    <li><span></span><strong>1991:</strong> O projeto Green inicia o desenvolvimento do que se tornaria Java.</li>
-                    <li><span></span><strong>1995:</strong> Java 1.0 é lançado publicamente.</li>
-                    <li><span></span><strong>2006:</strong> Java se torna open source.</li>
-                    <li><span></span><strong>2010:</strong> Oracle adquire a Sun Microsystems e se torna a mantenedora do Java.</li>
-                    <li><span></span><strong>2014:</strong> Java SE 8 é lançado, introduzindo expressões lambda e a API de data/hora.</li>
-                    <li><span></span><strong>2018:</strong> Java SE 11 é lançado como a primeira versão LTS (Long Term Support) sob o novo ciclo de lançamento semestral.</li>
-                    <li><span></span><strong>2021:</strong> Java SE 17 é lançado, a mais recente versão LTS.</li>
-                </ul>
-            </section>
-    
-            <section id="caracteristicas">
-                <h2>Características Principais</h2>
-                <ul>
-                    <li><span></span><strong>Orientada a objetos:</strong> Baseada no modelo de programação orientada a objetos, facilitando o desenvolvimento de software modular e reutilizável.</li>
-                    <li><span></span><strong>Independente de plataforma:</strong> O bytecode Java pode ser executado em qualquer dispositivo que tenha uma Máquina Virtual Java (JVM) instalada.</li>
-                    <li><span></span><strong>Segura:</strong> Com o Security Manager, Java oferece um ambiente de execução seguro, protegendo contra códigos maliciosos.</li>
-                    <li><span></span><strong>Robusta:</strong> Forte verificação de tipos em tempo de compilação e execução, gerenciamento automático de memória e tratamento de exceções.</li>
-                    <li><span></span><strong>Multithreaded:</strong> Suporte nativo para programação concorrente, permitindo a criação de aplicações eficientes e responsivas.</li>
-                    <li><span></span><strong>Alto desempenho:</strong> Com o JIT (Just-In-Time) compiler, o código Java é otimizado em tempo de execução.</li>
-                    <li><span></span><strong>Distribuída:</strong> Suporte integrado para protocolos de rede como TCP/IP, facilitando o desenvolvimento de aplicações distribuídas.</li>
-                    <li><span></span><strong>Dinâmica:</strong> Capacidade de carregar classes em tempo de execução, permitindo atualizações de código sem reiniciar a aplicação.</li>
-                </ul>
-            </section>
-    
-            <section id="sintaxe">
-                <h2>Sintaxe Básica</h2>
-                <p>A sintaxe do Java é similar a C e C++, mas com menos recursos de baixo nível. Aqui está um exemplo básico:</p>
-                <pre><code>
-    public class OlaMundo {
-        public static void main(String[] args) {
-            System.out.println("Olá, Mundo!");
-        }
+    Carro(String modelo, int ano) {
+        this.modelo = modelo;
+        this.ano = ano;
     }
-                </code></pre>
-                <p>Elementos fundamentais da sintaxe Java incluem:</p>
-                <ul>
-                    <li><span></span>Declaração de variáveis com tipos estáticos</li>
-                    <li><span></span>Estruturas de controle como if-else, switch, for, while</li>
-                    <li><span></span>Métodos e classes como unidades básicas de organização</li>
-                    <li><span></span>Pacotes para organização de código em namespaces</li>
-                    <li><span></span>Modificadores de acesso para controle de visibilidade</li>
-                </ul>
-            </section>
-    
-            <section id="oop">
-                <h2>Programação Orientada a Objetos (POO)</h2>
-                <p>Java é uma linguagem fortemente orientada a objetos. Seus principais conceitos incluem:</p>
-                <ul>
-                    <li><span></span><strong>Classes e Objetos:</strong> Classes são modelos para objetos, que são instâncias de classes.</li>
-                    <li><span></span><strong>Herança:</strong> Permite que uma classe herde atributos e métodos de outra classe.</li>
-                    <li><span></span><strong>Polimorfismo:</strong> Capacidade de um objeto assumir múltiplas formas, fundamental para o design flexível de software.</li>
-                    <li><span></span><strong>Encapsulamento:</strong> Ocultação de detalhes internos da implementação, promovendo a segurança e manutenibilidade do código.</li>
-                    <li><span></span><strong>Abstração:</strong> Simplificação de sistemas complexos, focando apenas nos aspectos relevantes.</li>
-                    <li><span></span><strong>Interfaces:</strong> Contratos que classes podem implementar, permitindo múltipla herança de tipo.</li>
-                </ul>
-            </section>
-    
-            <section id="plataformas">
-                <h2>Plataformas Java</h2>
-                <p>Java oferece diferentes plataformas para diversos tipos de aplicações:</p>
-                <ul>
-                    <li><span></span><strong>Java SE (Standard Edition):</strong> Para desenvolvimento de aplicações desktop e servidores. Inclui as APIs core da linguagem.</li>
-                    <li><span></span><strong>Java EE (Enterprise Edition):</strong> Para desenvolvimento de aplicações empresariais em larga escala. Inclui APIs para web services, componentes distribuídos, e mais.</li>
-                    <li><span></span><strong>Java ME (Micro Edition):</strong> Para desenvolvimento de aplicações para dispositivos móveis e embarcados com recursos limitados.</li>
-                    <li><span></span><strong>JavaFX:</strong> Para criação de aplicações de interface gráfica ricas e interativas, com suporte a efeitos visuais avançados.</li>
-                </ul>
-            </section>
-    
-            <section id="jvm">
-                <h2>Máquina Virtual Java (JVM)</h2>
-                <p>A JVM é o coração da plataforma Java, responsável por:</p>
-                <ul>
-                    <li><span></span>Carregar, verificar e executar o bytecode Java</li>
-                    <li><span></span>Gerenciar memória automaticamente (garbage collection)</li>
-                    <li><span></span>Otimizar o código em tempo de execução (JIT compilation)</li>
-                    <li><span></span>Fornecer portabilidade entre diferentes sistemas operacionais</li>
-                    <li><span></span>Garantir segurança através do Security Manager</li>
-                </ul>
-            </section>
-    
-            <section id="frameworks">
-                <h2>Frameworks e Bibliotecas Populares</h2>
-                <ul>
-                    <li><span></span><strong>Spring:</strong> Framework para desenvolvimento de aplicações empresariais</li>
-                    <li><span></span><strong>Hibernate:</strong> Framework ORM (Object-Relational Mapping) para persistência de dados</li>
-                    <li><span></span><strong>Apache Struts:</strong> Framework para desenvolvimento de aplicações web</li>
-                    <li><span></span><strong>JavaServer Faces (JSF):</strong> Framework para construção de interfaces de usuário para aplicações web</li>
-                    <li><span></span><strong>JUnit:</strong> Framework para testes unitários</li>
-                    <li><span></span><strong>Log4j:</strong> Biblioteca para logging</li>
-                    <li><span></span><strong>Apache Maven:</strong> Ferramenta de automação de compilação e gerenciamento de dependências</li>
-                </ul>
-            </section>
-    
-            <section id="recursos">
-                <h2>Recursos</h2>
-                <p>Acesse a documentação oficial e baixe o Java para começar a desenvolver:</p>
-                <div class="button-group">
-                    <a href="https://docs.oracle.com/en/java/" class="button" target="_blank">Documentação Java</a>
-                    <a href="https://www.java.com/download/" class="button" target="_blank">Baixar Java</a>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <p>© 2024 Java</p>
-        </footer>
-    </div>
 
-    <div id="redes">
-        <h2>Administração de Redes Locais</h2>
-        <header>
-            <h1>Administração de Redes Locais para Programadores</h1>
-        </header>
-    
-        <nav>
-            <ul>
-                <li><a href="#fundamentos">Fundamentos</a></li>
-                <li><a href="#componentes">Componentes</a></li>
-                <li><a href="#topologias">Topologias</a></li>
-                <li><a href="#protocolos">Protocolos</a></li>
-                <li><a href="#seguranca">Segurança</a></li>
-                <li><a href="#monitoramento">Monitoramento</a></li>
-                <li><a href="#boas-praticas">Boas Práticas</a></li>
-            </ul>
-        </nav>
-    
-        <main>
-            <section id="fundamentos">
-                <h2>1. Fundamentos de Redes Locais</h2>
-                <p><strong>Definição:</strong> Uma rede local (LAN) é um conjunto de dispositivos interconectados que compartilham recursos em uma área geográfica limitada.</p>
-                <p><strong>Importância:</strong> Fundamental para a comunicação e compartilhamento de recursos em ambientes corporativos e domésticos.</p>
-                <h3>Exemplo: Configuração básica de IP em Linux</h3>
-                <pre><code>
-    sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
-                </code></pre>
-            </section>
-    
-            <section id="componentes">
-                <h2>2. Componentes Principais de uma Rede Local</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>Switches:</strong> Direcionam o tráfego entre dispositivos na mesma rede.</li>
-                    <li><strong>Roteadores:</strong> Conectam diferentes redes e gerenciam o tráfego entre elas.</li>
-                    <li><strong>Servidores:</strong> Fornecem serviços centralizados como DHCP, DNS, e compartilhamento de arquivos.</li>
-                    <li><strong>Estações de Trabalho:</strong> Computadores dos usuários finais.</li>
-                    <li><strong>Cabos e Conectores:</strong> Infraestrutura física para conexão dos dispositivos.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Verificação de conectividade</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-ping 192.168.1.1
-                </code></pre>
-            </section>
+    void mostrarDetalhes() {
+        System.out.println("Modelo: " + modelo + ", Ano: " + ano);
+    }
+}
 
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">3. Topologias de Rede</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-                <h3>Exemplo: Verificação de conectividade</h3>
-                <pre><code>
-    ping 192.168.1.1
-                </code></pre>
-            </section>
-    
-            <section id="topologias">
-                <h2>3. Topologias de Rede</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>Estrela:</strong> Todos os dispositivos conectados a um ponto central.</li>
-                    <li><strong>Barramento:</strong> Todos os dispositivos conectados a um cabo principal.</li>
-                    <li><strong>Anel:</strong> Dispositivos conectados em um loop fechado.</li>
-                    <li><strong>Malha:</strong> Cada dispositivo conectado a vários outros dispositivos.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Visualização de conexões de rede</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-netstat -an
-                </code></pre>
-            </section>
+public class Main {
+    public static void main(String[] args) {
+        Carro meuCarro = new Carro("Fusca", 1970);
+        meuCarro.mostrarDetalhes();
+    }
+}
+                    </code></pre>
+                </section>
 
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">4. Protocolos de Rede</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-                <h3>Exemplo: Visualização de conexões de rede</h3>
-                <pre><code>
-    netstat -an
-                </code></pre>
-            </section>
-    
-            <section id="protocolos">
-                <h2>4. Protocolos de Rede</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>TCP/IP:</strong> Conjunto de protocolos base para comunicação na Internet e em muitas LANs.</li>
-                    <li><strong>DHCP:</strong> Atribuição automática de endereços IP.</li>
-                    <li><strong>DNS:</strong> Resolução de nomes de domínio para endereços IP.</li>
-                    <li><strong>HTTP/HTTPS:</strong> Protocolos para transferência de dados na web.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Configuração de DNS</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
-                </code></pre>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Pacotes e Importações</h3>
+                    <p class="text-gray-600">Java organiza classes em pacotes. Você pode importar pacotes usando a palavra-chave 'import'.</p>
+                    <pre><code>
+import java.util.ArrayList;
 
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">5. Segurança de Rede</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-                <h3>Exemplo: Configuração de DNS</h3>
-                <pre><code>
-    echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
-                </code></pre>
-            </section>
-    
-            <section id="seguranca">
-                <h2>5. Segurança de Rede</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>Firewalls:</strong> Controlam o tráfego de entrada e saída da rede.</li>
-                    <li><strong>VPNs:</strong> Criam conexões seguras através de redes públicas.</li>
-                    <li><strong>Antivírus:</strong> Protegem contra software malicioso.</li>
-                    <li><strong>Políticas de Acesso:</strong> Definem quem pode acessar quais recursos.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Configuração básica de firewall</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-sudo ufw enable
-sudo ufw allow 22
-                </code></pre>
-            </section>
+public class Exemplo {
+    public static void main(String[] args) {
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add("Item 1");
+        System.out.println(lista);
+    }
+}
+                    </code></pre>
+                </section>
 
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">6. Monitoramento de Rede</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-                <h3>Exemplo: Configuração básica de firewall</h3>
-                <pre><code>
-    sudo ufw enable
-    sudo ufw allow 22
-                </code></pre>
-            </section>
-    
-            <section id="monitoramento">
-                <h2>6. Monitoramento de Rede</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>Análise de Tráfego:</strong> Identifica gargalos e problemas de desempenho.</li>
-                    <li><strong>Logs de Sistema:</strong> Registram eventos e erros para diagnóstico.</li>
-                    <li><strong>Alertas:</strong> Notificam administradores sobre problemas críticos.</li>
-                    <li><strong>Ferramentas de Monitoramento:</strong> Nagios, Zabbix, PRTG, etc.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Monitoramento de tráfego com tcpdump</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-sudo tcpdump -i eth0
-                </code></pre>
-            </section>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                    <p class="text-gray-600 mb-4">A documentação completa do Java, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
+                    <a href="https://docs.oracle.com/en/java/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                </section>
 
-            <section class="mb-8 p-6 bg-white rounded-lg shadow-md border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl">
-                <h2 class="text-4xl font-extrabold text-purple-600 mb-4">7. Boas Práticas em Administração de Redes</h2>
-                <ul class="list-disc pl-6 mb-4 text-gray-600">
-=======
-                <h3>Exemplo: Monitoramento de tráfego com tcpdump</h3>
-                <pre><code>
-    sudo tcpdump -i eth0
-                </code></pre>
-            </section>
-    
-            <section id="boas-praticas">
-                <h2>7. Boas Práticas em Administração de Redes</h2>
-                <ul>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-                    <li><strong>Documentação:</strong> Manter registros atualizados da infraestrutura de rede.</li>
-                    <li><strong>Backups:</strong> Realizar backups regulares de configurações e dados críticos.</li>
-                    <li><strong>Atualizações:</strong> Manter sistemas e softwares atualizados.</li>
-                    <li><strong>Treinamento:</strong> Capacitar a equipe em novas tecnologias e práticas de segurança.</li>
-                    <li><strong>Planejamento de Capacidade:</strong> Antecipar necessidades futuras de crescimento da rede.</li>
-                </ul>
-<<<<<<< HEAD
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Script de backup de configurações</h3>
-                <pre class="bg-gray-200 p-4 rounded-lg overflow-auto"><code>
-#!/bin/bash
-DATE=$(date +%Y%m%d)
-tar -czf network_configs_$DATE.tar.gz /etc/network/
-                </code></pre>
-            </section>
-            
-            <footer class="text-center mt-4 text-gray-600">
-                <p>&copy; 2024 Administração de Redes Locais</p>
-            </footer>
-
-            <div class="back-to-top text-center mt-4">
-                <a href="#top" class="bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105">Voltar ao Início</a>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Download Java</h3>
+                    <p class="text-gray-600 mb-4">Baixe a versão mais recente do Java para o seu sistema operacional.</p>
+                    <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Baixar Java</a>
+                </section>
             </div>
+
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Java</p>
+            </footer>
         </div>
+    {% elif modulo == 'redes' %}
+        <div id="redes" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1167/1167057.png" alt="Administração de Redes Icon" class="w-8 h-8 mr-2">
+                Administração de Redes: Conectando o Mundo
+            </h2>
+            <div class="container">
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <header>
+                        <div class="header-content">
+                            <h1 class="text-2xl font-semibold text-gray-700">Introdução à Administração de Redes</h1>
+                            <p class="text-gray-600">A administração de redes é o processo de gerenciar e manter uma rede de computadores. Isso inclui a configuração, monitoramento e manutenção de hardware e software de rede.</p>
+                        </div>
+                    </header>
+                </section>
 
-        <div id="banco-de-dados" class="content-section hidden">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-6 border-b-4 border-blue-600 pb-2">Administração de Bases de Dados para Programadores</h2>
-            <nav class="mb-4">
-                <ul class="flex flex-wrap space-x-6">
-                    <li><a href="#fundamentos" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Fundamentos</a></li>
-                    <li><a href="#componentes" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Componentes</a></li>
-                    <li><a href="#boas-praticas" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Boas Práticas</a></li>
-                    <li><a href="#seguranca" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Segurança</a></li>
-                    <li><a href="#recuperacao" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Recuperação</a></li>
-                    <li><a href="#modelagem" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Modelagem</a></li>
-                    <li><a href="#linguagens" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Linguagens</a></li>
-                    <li><a href="#otimizacao" class="text-blue-600 hover:text-blue-800 font-semibold transition duration-200">Otimização</a></li>
-                </ul>
-            </nav>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Componentes de uma Rede</h3>
+                    <p class="text-gray-600">Os principais componentes de uma rede incluem:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Roteadores</li>
+                        <li>Switches</li>
+                        <li>Firewalls</li>
+                        <li>Cabos e Conectores</li>
+                        <li>Pontos de Acesso</li>
+                    </ul>
+                </section>
 
-            <main class="bg-white p-6 rounded-lg shadow-md">
-                <section id="fundamentos" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">1. Fundamentos de Sistemas de Gestão de Bases de Dados (SGBD)</h2>
-                    <p class="mb-2 text-gray-700"><strong>Definição:</strong> Um SGBD é um software que gerencia o armazenamento, manipulação e pesquisa de dados.</p>
-                    <p class="mb-4 text-gray-700"><strong>Funções:</strong> Criar, proteger, atualizar e eliminar dados numa base de dados.</p>
-                    <p class="mb-4 text-gray-700"><strong>Vantagens:</strong> Integração de dados, redução de redundâncias, integridade dos dados, flexibilidade e segurança.</p>
-                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Exemplo: Criação de uma tabela em SQL</h3>
-                    <pre class="bg-gray-100 p-4 rounded-lg"><code>
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Tipos de Redes</h3>
+                    <p class="text-gray-600">Existem vários tipos de redes, incluindo:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>LAN (Rede Local)</li>
+                        <li>WAN (Rede de Longa Distância)</li>
+                        <li>MAN (Rede Metropolitana)</li>
+                        <li>VPN (Rede Privada Virtual)</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Protocolos de Rede</h3>
+                    <p class="text-gray-600">Os protocolos de rede são regras que definem como os dados são transmitidos em uma rede. Alguns dos principais protocolos incluem:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>TCP/IP</li>
+                        <li>HTTP/HTTPS</li>
+                        <li>FTP</li>
+                        <li>DNS</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Segurança de Redes</h3>
+                    <p class="text-gray-600">A segurança de redes é crucial para proteger dados e recursos. Algumas práticas incluem:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Uso de firewalls</li>
+                        <li>Criptografia de dados</li>
+                        <li>Autenticação de usuários</li>
+                        <li>Monitoramento de tráfego</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Ferramentas de Administração de Redes</h3>
+                    <p class="text-gray-600">Existem várias ferramentas que ajudam na administração de redes, como:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Wireshark</li>
+                        <li>SolarWinds</li>
+                        <li>Nagios</li>
+                        <li>PingPlotter</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                    <p class="text-gray-600 mb-4">A documentação sobre administração de redes é essencial para entender as melhores práticas e técnicas. Você pode encontrar recursos online e livros especializados.</p>
+                    <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Cursos de Administração de Redes</h3>
+                    <p class="text-gray-600 mb-4">Existem muitos cursos online que podem ajudá-lo a aprender sobre administração de redes. Considere plataformas como Coursera, Udemy e edX.</p>
+                    <a href="https://www.udemy.com/topic/networking/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Cursos</a>
+                </section>
+            </div>
+
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Administração de Redes</p>
+            </footer>
+        </div>
+    {% elif modulo == 'banco-de-dados' %}
+        <div id="banco-de-dados" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/6376/6376458.png" alt="Base de Dados Icon" class="w-8 h-8 mr-2">
+                Base de Dados
+            </h2>
+            <div class="container">
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-2">Administração de Bases de Dados para Programadores</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#fundamentos" class="text-blue-600 hover:underline">Fundamentos</a></li>
+                            <li><a href="#componentes" class="text-blue-600 hover:underline">Componentes</a></li>
+                            <li><a href="#boas-praticas" class="text-blue-600 hover:underline">Boas Práticas</a></li>
+                            <li><a href="#seguranca" class="text-blue-600 hover:underline">Segurança</a></li>
+                            <li><a href="#recuperacao" class="text-blue-600 hover:underline">Recuperação</a></li>
+                            <li><a href="#modelagem" class="text-blue-600 hover:underline">Modelagem</a></li>
+                            <li><a href="#linguagens" class="text-blue-600 hover:underline">Linguagens</a></li>
+                            <li><a href="#otimizacao" class="text-blue-600 hover:underline">Otimização</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <main>
+                    <section id="fundamentos" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">1. Fundamentos de Sistemas de Gestão de Bases de Dados (SGBD)</h2>
+                        <p><strong>Definição:</strong> Um SGBD é um software que gerencia o armazenamento, manipulação e pesquisa de dados.</p>
+                        <p><strong>Funções:</strong> Criar, proteger, atualizar e eliminar dados numa base de dados.</p>
+                        <p><strong>Vantagens:</strong> Integração de dados, redução de redundâncias, integridade dos dados, flexibilidade e segurança.</p>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma tabela em SQL</h3>
+                        <pre><code>
 CREATE TABLE Clientes (
     ID INT PRIMARY KEY,
     Nome VARCHAR(100),
     Email VARCHAR(100),
     DataCadastro DATE
 );
-                    </code></pre>
-                </section>
+                        </code></pre>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma coleção em MongoDB</h3>
+                        <pre><code>
+db.createCollection("clientes")
+db.clientes.insertOne({
+    nome: "João Silva",
+    email: "joao@example.com",
+    dataCadastro: new Date()
+})
+                        </code></pre>
+                    </section>
 
-                <section id="componentes" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">2. Componentes Principais de um SGBD</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li><strong>Motor:</strong> Responsável pelo armazenamento de dados a nível do sistema operativo.</li>
-                        <li><strong>Catálogo de Metadados:</strong> Armazena informações sobre objetos da base de dados.</li>
-                        <li><strong>Linguagem de Acesso:</strong> Geralmente SQL, para definir e manipular dados.</li>
-                        <li><strong>Motor de Otimização:</strong> Analisa e otimiza consultas.</li>
-                        <li><strong>Processador de Consultas:</strong> Executa consultas e retorna resultados.</li>
-                        <li><strong>Administrador de Bloqueio:</strong> Gerencia acessos simultâneos.</li>
-                        <li><strong>Administrador de Registos:</strong> Garante a integridade dos dados durante operações.</li>
-                    </ul>
-                </section>
+                    <section id="componentes" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">2. Componentes Principais de um SGBD</h2>
+                        <ul>
+                            <li><strong>Motor:</strong> Responsável pelo armazenamento de dados a nível do sistema operativo.</li>
+                            <li><strong>Catálogo de Metadados:</strong> Armazena informações sobre objetos da base de dados.</li>
+                            <li><strong>Linguagem de Acesso:</strong> Geralmente SQL, para definir e manipular dados.</li>
+                            <li><strong>Motor de Otimização:</strong> Analisa e otimiza consultas.</li>
+                            <li><strong>Processador de Consultas:</strong> Executa consultas e retorna resultados.</li>
+                            <li><strong>Administrador de Bloqueio:</strong> Gerencia acessos simultâneos.</li>
+                            <li><strong>Administrador de Registos:</strong> Garante a integridade dos dados durante operações.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Consulta ao catálogo de metadados em PostgreSQL</h3>
+                        <pre><code>
+SELECT * FROM information_schema.tables
+WHERE table_schema = 'public';
+                        </code></pre>
+                    </section>
 
-                <section id="boas-praticas" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">3. Boas Práticas para Programadores</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li><strong>Avaliação da Infraestrutura:</strong> Escolha entre sistemas on-premise, na nuvem ou híbridos.</li>
-                        <li><strong>Estratégia e Governança de Dados:</strong> Implemente uma estratégia clara e políticas de governança.</li>
-                        <li><strong>Otimização de Acesso:</strong> Facilite o acesso aos dados de forma segura e eficiente.</li>
-                        <li><strong>Automação:</strong> Automatize tarefas repetitivas para aumentar a eficiência.</li>
-                    </ul>
-                </section>
+                    <section id="boas-praticas" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">3. Boas Práticas para Programadores</h2>
+                        <ul>
+                            <li><strong>Avaliação da Infraestrutura:</strong> Escolha entre sistemas on-premise, na nuvem ou híbridos.</li>
+                            <li><strong>Estratégia e Governança de Dados:</strong> Implemente uma estratégia clara e políticas de governança.</li>
+                            <li><strong>Otimização de Acesso:</strong> Facilite o acesso aos dados de forma segura e eficiente.</li>
+                            <li><strong>Automação:</strong> Automatize tarefas repetitivas para aumentar a eficiência.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Script de backup automatizado para PostgreSQL</h3>
+                        <pre><code>
+#!/bin/bash
+DATE=$(date +%Y%m%d)
+tar -czf network_configs_$DATE.tar.gz /etc/network/
+                        </code></pre>
+                    </section>
 
-                <section id="seguranca" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">4. Segurança e Integridade</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li>Implemente mecanismos de segurança para proteger contra acessos não autorizados.</li>
-                        <li>Garanta a integridade dos dados através de validações e controles.</li>
-                        <li>Gerencie o controle de concorrência para acessos simultâneos.</li>
-                    </ul>
-                </section>
+                    <section id="seguranca" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">4. Segurança e Integridade</h2>
+                        <ul>
+                            <li>Implemente mecanismos de segurança para proteger contra acessos não autorizados.</li>
+                            <li>Garanta a integridade dos dados através de validações e controles.</li>
+                            <li>Gerencie o controle de concorrência para acessos simultâneos.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de um usuário com permissões limitadas em PostgreSQL</h3>
+                        <pre><code>
+CREATE USER leitura_usuario WITH PASSWORD 'senha_segura';
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO leitura_usuario;
+                        </code></pre>
+                    </section>
 
-                <section id="recuperacao" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">5. Recuperação e Backup</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li>Desenvolva estratégias de backup e recuperação de dados.</li>
-                        <li>Utilize logs de transações para restaurar a integridade após falhas.</li>
-                    </ul>
-                </section>
+                    <section id="recuperacao" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">5. Recuperação e Backup</h2>
+                        <ul>
+                            <li>Desenvolva estratégias de backup e recuperação de dados.</li>
+                            <li>Utilize logs de transações para restaurar a integridade após falhas.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Restauração de um backup PostgreSQL</h3>
+                        <pre><code>
+psql -U seu_usuario -d sua_base < backup_20240101.sql
+                        </code></pre>
+                    </section>
 
-                <section id="modelagem" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">6. Modelagem de Dados</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li>Compreenda modelos de dados, especialmente o modelo relacional.</li>
-                        <li>Utilize operações de álgebra relacional como projeção e junção.</li>
-                    </ul>
-                </section>
+                    <section id="modelagem" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">6. Modelagem de Dados</h2>
+                        <ul>
+                            <li>Compreenda modelos de dados, especialmente o modelo relacional.</li>
+                            <li>Utilize operações de álgebra relacional como projeção e junção.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma relação entre tabelas em SQL</h3>
+                        <pre><code>
+CREATE TABLE Pedidos (
+    ID INT PRIMARY KEY,
+    ClienteID INT,
+    DataPedido DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
+);
+                        </code></pre>
+                    </section>
 
-                <section id="linguagens" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">7. Linguagens e Ferramentas</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li>Domine SQL para definição (DDL) e manipulação (DML) de dados.</li>
-                        <li>Familiarize-se com interfaces gráficas como QBE para consultas.</li>
-                        <li>Aprenda linguagens de consulta para bancos NoSQL.</li>
-                    </ul>
-                </section>
+                    <section id="linguagens" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">7. Linguagens e Ferramentas</h2>
+                        <ul>
+                            <li>Domine SQL para definição (DDL) e manipulação (DML) de dados.</li>
+                            <li>Familiarize-se com interfaces gráficas como QBE para consultas.</li>
+                            <li>Aprenda linguagens de consulta para bancos NoSQL.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Consulta SQL com junção</h3>
+                        <pre><code>
+SELECT c.Nome, p.DataPedido
+FROM Clientes c
+JOIN Pedidos p ON c.ID = p.ClienteID
+WHERE p.DataPedido > '2024-01-01';
+                        </code></pre>
+                    </section>
 
-                <section id="otimizacao" class="mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">8. Otimização de Desempenho</h2>
-                    <ul class="list-disc pl-6 mb-4 text-gray-600">
-                        <li>Aprenda a otimizar consultas e estruturas de dados para melhor performance.</li>
-                        <li>Utilize índices e outras técnicas de otimização de banco de dados.</li>
-                    </ul>
-                </section>
-            </main>
-
-            <footer class="text-center mt-6 text-gray-600">
-                <p>&copy; 2024 Administração de Bases de Dados</p>
-            </footer>
-
-            <div class="back-to-top text-center mt-6">
-                <a href="/" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200">Voltar ao Início</a>
+                    <section id="otimizacao" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">8. Otimização de Desempenho</h2>
+                        <ul>
+                            <li>Aprenda a otimizar consultas e estruturas de dados para melhor performance.</li>
+                            <li>Utilize índices e outras técnicas de otimização de banco de dados.</li>
+                        </ul>
+                        <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de um índice em PostgreSQL</h3>
+                        <pre><code>
+CREATE INDEX idx_cliente_nome ON Clientes(Nome);
+                        </code></pre>
+                    </section>
+                </main>
             </div>
-        </div>
 
-        <div id="processamento" class="content-section hidden">
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Base de Dados</p>
+            </footer>
+        </div>
+    {% elif modulo == 'processamento' %}
+        <div id="processamento" class="content-section">
             <h2 class="text-3xl font-semibold text-gray-700 mb-4">Processamento Computacional</h2>
             <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
                 <h2 class="text-2xl font-semibold text-gray-800">Processamento para Iniciantes</h2>
@@ -943,577 +588,5 @@ CREATE TABLE Clientes (
                 <p class="mb-4">Aprender sobre processamento ajuda a otimizar tarefas e a desenvolver soluções.</p>
             </section>
         </div>
-    </div>
-
-    <div class="back-button-container mb-6 text-center">
-        <a href="/" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition">Voltar para a página inicial</a>
-    </div>
-
-    <footer class="text-center mt-4 text-gray-600">
-        &copy; 2024 - Aprendendo C++
-    </footer>
-
-    <script>
-        function showContent(section) {
-            // Esconder todas as seções de conteúdo
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach((sec) => {
-                sec.classList.add('hidden');
-            });
-
-            // Mostrar a seção correspondente
-            const activeSection = document.getElementById(section);
-            if (activeSection) {
-                activeSection.classList.remove('hidden');
-            }
-
-            // Mostrar o contêiner de conteúdo
-            document.getElementById('content').classList.remove('hidden');
-        }
-    </script>
-=======
-                <h3>Exemplo: Script de backup de configurações</h3>
-                <pre><code>
-    #!/bin/bash
-    DATE=$(date +%Y%m%d)
-    tar -czf network_configs_$DATE.tar.gz /etc/network/
-                </code></pre>
-            </section>
-        </main>
-    
-        <footer>
-            <p>&copy; 2024 Administração de Redes Locais</p>
-        </footer>    
-    </div>
-
-    <div id="banco-de-dados">
-        <h2>Base de Dados</h2>
-        <header>
-            <h1>Administração de Bases de Dados para Programadores</h1>
-        </header>
-    
-        <nav>
-            <ul>
-                <li><a href="#fundamentos">Fundamentos</a></li>
-                <li><a href="#componentes">Componentes</a></li>
-                <li><a href="#boas-praticas">Boas Práticas</a></li>
-                <li><a href="#seguranca">Segurança</a></li>
-                <li><a href="#recuperacao">Recuperação</a></li>
-                <li><a href="#modelagem">Modelagem</a></li>
-                <li><a href="#linguagens">Linguagens</a></li>
-                <li><a href="#otimizacao">Otimização</a></li>
-            </ul>
-        </nav>
-    
-        <main>
-            <section id="fundamentos">
-                <h2>1. Fundamentos de Sistemas de Gestão de Bases de Dados (SGBD)</h2>
-                <p><strong>Definição:</strong> Um SGBD é um software que gerencia o armazenamento, manipulação e pesquisa de dados.</p>
-                <p><strong>Funções:</strong> Criar, proteger, atualizar e eliminar dados numa base de dados.</p>
-                <p><strong>Vantagens:</strong> Integração de dados, redução de redundâncias, integridade dos dados, flexibilidade e segurança.</p>
-                <h3>Exemplo: Criação de uma tabela em SQL</h3>
-                <pre><code>
-    CREATE TABLE Clientes (
-        ID INT PRIMARY KEY,
-        Nome VARCHAR(100),
-        Email VARCHAR(100),
-        DataCadastro DATE
-    );
-                </code></pre>
-                <h3>Exemplo: Criação de uma coleção em MongoDB</h3>
-                <pre><code>
-    db.createCollection("clientes")
-    db.clientes.insertOne({
-        nome: "João Silva",
-        email: "joao@example.com",
-        dataCadastro: new Date()
-    })
-                </code></pre>
-            </section>
-    
-            <section id="componentes">
-                <h2>2. Componentes Principais de um SGBD</h2>
-                <ul>
-                    <li><strong>Motor:</strong> Responsável pelo armazenamento de dados a nível do sistema operativo.</li>
-                    <li><strong>Catálogo de Metadados:</strong> Armazena informações sobre objetos da base de dados.</li>
-                    <li><strong>Linguagem de Acesso:</strong> Geralmente SQL, para definir e manipular dados.</li>
-                    <li><strong>Motor de Otimização:</strong> Analisa e otimiza consultas.</li>
-                    <li><strong>Processador de Consultas:</strong> Executa consultas e retorna resultados.</li>
-                    <li><strong>Administrador de Bloqueio:</strong> Gerencia acessos simultâneos.</li>
-                    <li><strong>Administrador de Registos:</strong> Garante a integridade dos dados durante operações.</li>
-                </ul>
-                <h3>Exemplo: Consulta ao catálogo de metadados em PostgreSQL</h3>
-                <pre><code>
-    SELECT * FROM information_schema.tables
-    WHERE table_schema = 'public';
-                </code></pre>
-                <h3>Exemplo: Listagem de coleções em MongoDB</h3>
-                <pre><code>
-    db.getCollectionNames()
-                </code></pre>
-            </section>
-    
-            <section id="boas-praticas">
-                <h2>3. Boas Práticas para Programadores</h2>
-                <ul>
-                    <li><strong>Avaliação da Infraestrutura:</strong> Escolha entre sistemas on-premise, na nuvem ou híbridos.</li>
-                    <li><strong>Estratégia e Governança de Dados:</strong> Implemente uma estratégia clara e políticas de governança.</li>
-                    <li><strong>Otimização de Acesso:</strong> Facilite o acesso aos dados de forma segura e eficiente.</li>
-                    <li><strong>Automação:</strong> Automatize tarefas repetitivas para aumentar a eficiência.</li>
-                </ul>
-                <h3>Exemplo: Script de backup automatizado para PostgreSQL</h3>
-                <pre><code>
-    #!/bin/bash
-    DATE=$(date +%Y%m%d)
-    PGPASSWORD=sua_senha pg_dump -U seu_usuario -d sua_base > backup_$DATE.sql
-                </code></pre>
-                <h3>Exemplo: Backup automatizado com Python e MongoDB</h3>
-                <pre><code>
-    import subprocess
-    from datetime import datetime
-    
-    def backup_mongodb():
-        date = datetime.now().strftime("%Y%m%d")
-        subprocess.run(["mongodump", "--out", f"backup_{date}"])
-    
-    if __name__ == "__main__":
-        backup_mongodb()
-                </code></pre>
-            </section>
-    
-            <section id="seguranca">
-                <h2>4. Segurança e Integridade</h2>
-                <ul>
-                    <li>Implemente mecanismos de segurança para proteger contra acessos não autorizados.</li>
-                    <li>Garanta a integridade dos dados através de validações e controles.</li>
-                    <li>Gerencie o controle de concorrência para acessos simultâneos.</li>
-                </ul>
-                <h3>Exemplo: Criação de um usuário com permissões limitadas em PostgreSQL</h3>
-                <pre><code>
-    CREATE USER leitura_usuario WITH PASSWORD 'senha_segura';
-    GRANT SELECT ON ALL TABLES IN SCHEMA public TO leitura_usuario;
-                </code></pre>
-                <h3>Exemplo: Criação de um usuário em MongoDB</h3>
-                <pre><code>
-    db.createUser(
-      {
-        user: "leitura_usuario",
-        pwd: "senha_segura",
-        roles: [ { role: "read", db: "sua_base" } ]
-      }
-    )
-                </code></pre>
-            </section>
-    
-            <section id="recuperacao">
-                <h2>5. Recuperação e Backup</h2>
-                <ul>
-                    <li>Desenvolva estratégias de backup e recuperação de dados.</li>
-                    <li>Utilize logs de transações para restaurar a integridade após falhas.</li>
-                </ul>
-                <h3>Exemplo: Restauração de um backup PostgreSQL</h3>
-                <pre><code>
-    psql -U seu_usuario -d sua_base < backup_20240101.sql
-                </code></pre>
-                <h3>Exemplo: Restauração de um backup MongoDB</h3>
-                <pre><code>
-    mongorestore --db sua_base backup_20240101/sua_base
-                </code></pre>
-            </section>
-    
-            <section id="modelagem">
-                <h2>6. Modelagem de Dados</h2>
-                <ul>
-                    <li>Compreenda modelos de dados, especialmente o modelo relacional.</li>
-                    <li>Utilize operações de álgebra relacional como projeção e junção.</li>
-                </ul>
-                <h3>Exemplo: Criação de uma relação entre tabelas em SQL</h3>
-                <pre><code>
-    CREATE TABLE Pedidos (
-        ID INT PRIMARY KEY,
-        ClienteID INT,
-        DataPedido DATE,
-        FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
-    );
-                </code></pre>
-                <h3>Exemplo: Modelagem de dados em MongoDB (Documento Embutido)</h3>
-                <pre><code>
-    db.clientes.insertOne({
-        nome: "Maria Silva",
-        email: "maria@example.com",
-        pedidos: [
-            { id: 1, data: new Date(), total: 100.00 },
-            { id: 2, data: new Date(), total: 150.00 }
-        ]
-    })
-                </code></pre>
-            </section>
-    
-            <section id="linguagens">
-                <h2>7. Linguagens e Ferramentas</h2>
-                <ul>
-                    <li>Domine SQL para definição (DDL) e manipulação (DML) de dados.</li>
-                    <li>Familiarize-se com interfaces gráficas como QBE para consultas.</li>
-                    <li>Aprenda linguagens de consulta para bancos NoSQL.</li>
-                </ul>
-                <h3>Exemplo: Consulta SQL com junção</h3>
-                <pre><code>
-    SELECT c.Nome, p.DataPedido
-    FROM Clientes c
-    JOIN Pedidos p ON c.ID = p.ClienteID
-    WHERE p.DataPedido > '2024-01-01';
-                </code></pre>
-                <h3>Exemplo: Consulta em MongoDB</h3>
-                <pre><code>
-    db.clientes.aggregate([
-        { $unwind: "$pedidos" },
-        { $match: { "pedidos.data": { $gt: new Date("2024-01-01") } } },
-        { $project: { nome: 1, "pedidos.data": 1 } }
-    ])
-                </code></pre>
-            </section>
-    
-            <section id="otimizacao">
-                <h2>8. Otimização de Desempenho</h2>
-                <ul>
-                    <li>Aprenda a otimizar consultas e estruturas de dados para melhor performance.</li>
-                    <li>Utilize índices e outras técnicas de otimização de banco de dados.</li>
-                </ul>
-                <h3>Exemplo: Criação de um índice em PostgreSQL</h3>
-                <pre><code>
-    CREATE INDEX idx_cliente_nome ON Clientes(Nome);
-                </code></pre>
-                <h3>Exemplo: Criação de um índice em MongoDB</h3>
-                <pre><code>
-    db.clientes.createIndex({ nome: 1 })
-                </code></pre>
-            </section>
-        </main>
-    
-        <footer>
-            <p>&copy; 2024 Administração de Bases de Dados</p>
-        </footer>
-    </div>
-
-    <div id="processamento">
-        <h2>Processamento Computacional</h2>
-        <nav>
-            <ul>
-                <li><a href="#componentes">Componentes</a></li>
-                <li><a href="#memoria">Memória</a></li>
-                <li><a href="#organizacao">Organização</a></li>
-                <li><a href="#processador">Processador</a></li>
-            </ul>
-        </nav>
-
-        <div id="componentes">
-            <h3>Componentes</h3>
-            <header>
-                <h1>MAIN COMPONENTS OF A COMPUTER</h1>
-                <div class="language-switcher">
-                    <button onclick="switchLanguage('en')">English</button>
-                    <button onclick="switchLanguage('pt')">Português</button>
-                </div>
-            </header>
-                <div data-lang="en">
-                    <ul>
-                        <li>
-                            <h2>1. CPU (Central Processing Unit)</h2>
-                            <p>The CPU is often referred to as the "brain" of the computer. It performs all the logical and arithmetic operations required to execute instructions from programs. It processes data and controls the flow of information within the system.</p>
-                        </li>
-                        <li>
-                            <h2>2. Memory</h2>
-                            <p>Memory, often referred to as RAM (Random Access Memory), temporarily stores data and instructions that the CPU needs while performing tasks. It is volatile, meaning it loses its contents when the power is turned off.</p>
-                        </li>
-                        <li>
-                            <h2>3. Control Unit</h2>
-                            <p>The Control Unit (CU) is a component of the CPU that directs the operation of the processor. It tells the memory, ALU, and I/O devices how to respond to the instructions that have been sent to the processor.</p>
-                        </li>
-                        <li>
-                            <h2>4. Arithmetic Logic Unit (ALU)</h2>
-                            <p>The ALU is another component of the CPU that performs all arithmetic and logical operations. This includes addition, subtraction, and comparisons (like greater than or less than).</p>
-                        </li>
-                        <li>
-                            <h2>5. I/O Devices (Input/Output Devices)</h2>
-                            <p>I/O devices allow the computer to interact with the outside world. Input devices (like keyboards and mice) allow users to input data, while output devices (like monitors and printers) display or produce results.</p>
-                        </li>
-                    </ul>
-        
-                    <h1>Example: Checking CPU Usage in Python</h1>
-                    <pre>
-        <code>
-        import psutil
-        
-        # Check CPU usage
-        cpu_usage = psutil.cpu_percent()
-        print(f"Uso de CPU: {cpu_usage}%")
-        
-        # Check available memory
-        available_memory = psutil.virtual_memory().available / (1024 * 1024)  # Convert bytes to MB
-        print(f"Memória disponível: {available_memory:.2f} MB")
-        </code>
-                    </pre>
-        
-                    <h2>Explanation of the Example:</h2>
-                    <p>The script imports the <code>psutil</code> library, which provides an interface for retrieving information on system utilization (CPU, memory, disks, network, sensors).</p>
-                    <p>It retrieves the current CPU usage percentage using <code>psutil.cpu_percent()</code> and prints it.</p>
-                    <p>It also retrieves the available memory in bytes using <code>psutil.virtual_memory().available</code>, converts it to megabytes (MB), and prints it.</p>
-                    <p>This example demonstrates how to access system information programmatically using Python, which can be useful for monitoring system performance.</p>
-                </div>
-        
-                <div data-lang="pt" style="display: none;">
-                    <ul>
-                        <li>
-                            <h2>1. CPU (Unidade Central de Processamento)</h2>
-                            <p>A CPU é frequentemente chamada de "cérebro" do computador. Ela realiza todas as operações lógicas e aritméticas necessárias para executar instruções de programas. Processa dados e controla o fluxo de informações dentro do sistema.</p>
-                        </li>
-                        <li>
-                            <h2>2. Memória</h2>
-                            <p>A memória, muitas vezes referida como RAM (Memória de Acesso Aleatório), armazena temporariamente dados e instruções que a CPU precisa enquanto realiza tarefas. É volátil, o que significa que perde seu conteúdo quando a energia é desligada.</p>
-                        </li>
-                        <li>
-                            <h2>3. Unidade de Controle</h2>
-                            <p>A Unidade de Controle (UC) é um componente da CPU que dirige a operação do processador. Ela informa à memória, ALU e dispositivos de E/S como responder às instruções que foram enviadas ao processador.</p>
-                        </li>
-                        <li>
-                            <h2>4. Unidade Lógica Aritmética (ALU)</h2>
-                            <p>A ALU é outro componente da CPU que realiza todas as operações aritméticas e lógicas. Isso inclui adição, subtração e comparações (como maior ou menor que).</p>
-                        </li>
-                        <li>
-                            <h2>5. Dispositivos de E/S (Entrada/Saída)</h2>
-                            <p>Os dispositivos de E/S permitem que o computador interaja com o mundo exterior. Dispositivos de entrada (como teclados e mouses) permitem que os usuários insiram dados, enquanto dispositivos de saída (como monitores e impressoras) exibem ou produzem resultados.</p>
-                        </li>
-                    </ul>
-        
-                    <h1>Exemplo: Verificando o Uso da CPU em Python</h1>
-                    <pre>
-        <code>
-        import psutil
-        
-        # Verificar uso da CPU
-        cpu_usage = psutil.cpu_percent()
-        print(f"Uso de CPU: {cpu_usage}%")
-        
-        # Verificar memória disponível
-        available_memory = psutil.virtual_memory().available / (1024 * 1024)  # Converter bytes para MB
-        print(f"Memória disponível: {available_memory:.2f} MB")
-        </code>
-                    </pre>
-        
-                    <h2>Explicação do Exemplo:</h2>
-                    <p>O script importa a biblioteca <code>psutil</code>, que fornece uma interface para recuperar informações sobre a utilização do sistema (CPU, memória, discos, rede, sensores).</p>
-                    <p>Ele recupera a porcentagem atual de uso da CPU usando <code>psutil.cpu_percent()</code> e a imprime.</p>
-                    <p>Ele também recupera a memória disponível em bytes usando <code>psutil.virtual_memory().available</code>, converte para megabytes (MB) e a imprime.</p>
-                    <p>Este exemplo demonstra como acessar informações do sistema programaticamente usando Python, o que pode ser útil para monitorar o desempenho do sistema.</p>
-                </div>
-            </main>
-        
-        """
-        
-        # Write the HTML content to a file
-        with open("computer_components.html", "w") as file:
-            file.write(html_content)
-        
-        print("HTML file 'computer_components.html' has been created.") 
-        </div>
-
-        <div id="memoria">
-            <h3>Memória</h3>
-            <div class="container">
-                <h1>Unidade de Memória</h1>
-            
-                <h2>Estrutura da Memória</h2>
-                <h3>Memória Primária (RAM)</h3>
-                <p>Também conhecida como memória principal ou RAM (Random Access Memory), a memória primária armazena dados e
-                    instruções que a CPU precisa acessar rapidamente. Por ser volátil, seu conteúdo é perdido ao desligar o
-                    computador. Isso significa que tudo o que está em RAM é temporário e precisa ser gravado em uma memória
-                    secundária se precisar ser mantido.</p>
-            
-                <h3>Memória Secundária</h3>
-                <p>A memória secundária é usada para o armazenamento permanente de dados, pois não perde seu conteúdo quando o computador é desligado. Exemplos comuns de memória secundária incluem discos rígidos (HDDs), unidades de estado sólido (SSDs), pen drives e cartões de memória. Ela permite que o sistema armazene arquivos e programas por longos períodos.</p>
-            
-                <h2>Células de Memória e seu Funcionamento</h2>
-                <h3>Células de Memória</h3>
-                <p>A informação na memória é armazenada em células de memória, que são unidades básicas compostas de bits. Cada bit pode ter o valor 0 ou 1, representando estados de carga elétrica (corrente ou não corrente). O agrupamento de 8 bits forma um byte, e cada byte representa um pequeno pedaço de dados, como uma letra ou número</p>
-                 
-                <h3>Funcionamento</h3>
-                <p>As células de memória operam armazenando dados em uma forma binária. Quando a CPU acessa dados, ela lê o estado dos bits na célula para interpretar a informação. Dessa forma, toda a informação armazenada no computador é composta por conjuntos de bits, organizados em bytes e outros múltiplos.</p>
-                
-                <h2>Modos de Endereçamento</h2>
-                <p>Os modos de endereçamento descrevem como a CPU identifica e acessa as células de memória onde os dados estão armazenados. Os três modos principais são:</p>
-                
-                <h3>Endereçamento Direto</h3>
-                <p>Nesse modo, a instrução inclui o endereço específico da célula de memória. Isso permite que a CPU acesse a célula diretamente, sem cálculos ou referências adicionais. Esse modo é direto, mas tem limitações em operações mais complexas.</p>
-            
-                <h3>Endereçamento Indireto</h3>
-                <p>Aqui, a instrução contém um endereço que aponta para outra célula de memória, onde está o endereço final dos dados. Esse método é útil quando o endereço exato não é conhecido de antemão e pode ser determinado durante a execução do programa.</p>
-            
-                <h3>Endereçamento Indexado</h3>
-                <p>O endereço é calculado somando-se o valor de um registrador (um contador, por exemplo) a um valor base. Esse modo é útil para acessar dados em estruturas de repetição, como vetores, onde é necessário acessar células consecutivas de memória.</p>
-            
-                < <h2>Unidades de Medida de Memória</h2>
-                <p>Para medir a capacidade de uma memória, usamos diferentes unidades que indicam a quantidade de dados que podem ser armazenados. Cada unidade representa um valor maior que a anterior, em uma escala baseada no sistema binário (potências de 2).</p>
-            
-                <h3>1. Bit</h3>
-                <p>É a unidade básica de dados na computação e representa um único valor binário, que pode ser 0 ou 1. Os bits são agrupados para formar unidades maiores de dados.</p>
-            
-                <h3>2. Byte</h3>
-                <p>Um byte é composto por <strong>8 bits</strong> e é suficiente para armazenar um único caractere, como uma letra ou número. Ele é a unidade básica usada para medir o tamanho dos dados em sistemas computacionais.</p>
-            
-                <h3>3. Kilobyte (KB)</h3>
-                <p>1 KB = 1.024 bytes. Esse é o primeiro nível de medida que ultrapassa o tamanho de um único caractere ou número. Em algumas aplicações, o valor arredondado de 1.000 bytes é usado, mas tecnicamente, em computação, 1 KB é 1.024 bytes (2<sup>10</sup>).</p>
-            
-                <h3>4. Megabyte (MB)</h3>
-                <p>1 MB = 1.024 KB = 1.048.576 bytes. Esse valor representa uma quantidade maior, geralmente usada para medir arquivos, como fotos de baixa resolução ou documentos de texto grandes.</p>
-            
-                <h3>5. Gigabyte (GB)</h3>
-                <p>1 GB = 1.024 MB = 1.073.741.824 bytes. Comumente usada para medir a capacidade de armazenamento em dispositivos de memória, como pen drives, discos rígidos e SSDs, bem como para medir arquivos de vídeo, software, entre outros.</p>
-            
-                <h3>6. Terabyte (TB)</h3>
-                <p>1 TB = 1.024 GB = 1.099.511.627.776 bytes. É uma unidade comum para medir grandes volumes de dados, como os armazenados em servidores e bancos de dados. Um terabyte pode conter centenas de milhares de fotos, músicas ou documentos.</p>
-            
-                <h2>Relação entre as Unidades</h2>
-                <p>Cada unidade é um múltiplo da anterior, usando a base de 1.024:</p>
-                <ul>
-                    <li>1 KB = 1.024 bytes</li>
-                    <li>1 MB = 1.024 KB</li>
-                    <li>1 GB = 1.024 MB</li>
-                    <li>1 TB = 1.024 GB</li>
-                </ul>
-                <h2>Tipos de Memória e Como São Usadas</h2>
-                <h3>RAM (Random Access Memory)</h3>
-                <p>A RAM é uma memória volátil usada para armazenar dados temporários que a CPU acessa durante a execução de programas. Ela oferece acesso rápido, essencial para a performance, mas seu conteúdo se perde ao desligar o computador.</p>
-            
-                <h3>ROM (Read-Only Memory)</h3>
-                <p>A ROM é uma memória não volátil que armazena dados permanentes, como o firmware, que é o software básico necessário para iniciar o computador. A informação na ROM não é apagada ao desligar o computador e geralmente não pode ser alterada pelo usuário.</p>
-            
-                <h3>Cache</h3>
-                <p>A cache é uma memória de alta velocidade que armazena dados e instruções frequentemente usados pela CPU, agilizando o acesso a esses dados e melhorando a performance do sistema. Ela é uma memória intermediária entre a RAM e a CPU, permitindo que o processador acesse dados com ainda mais rapidez.
-                </p>
-            
-                <h3>Flash</h3>
-                <p>A memória flash é uma forma de armazenamento não volátil, usada em dispositivos como pen drives, SSDs, e outros dispositivos portáteis. Diferente da RAM, a memória flash retém dados mesmo quando o dispositivo está desligado. Ela permite leitura e gravação rápidas e é usada amplamente em dispositivos móveis e para armazenamento externo.
-                </p>
-        </div>
-
-        <div id="organizacao">
-            <h3>Organização</h3>
-            <div class="container mt-5">
-                <h1 class="text-center">Organização de um Computador</h1>
-        
-                <h2> Descrição Geral do Funcionamento de um Computador</h2>
-                <p>
-                    Um computador pode ser definido como uma máquina que processa dados, transformando informações de entrada em
-                    resultados de saída. Ele opera de forma sistemática, recebendo dados (inputs), processando-os de acordo com
-                    instruções pré-definidas, e então apresentando um resultado (output) ao usuário. Esse processo é coordenado
-                    por um conjunto de componentes que trabalham em conjunto, incluindo a CPU, a memória e os dispositivos de
-                    entrada e saída.
-        
-                <h2>Etapas da Execução de uma Tarefa no Computador</h2>
-                <p>Para entender o funcionamento, podemos analisar o processo de execução de uma tarefa. Suponha que você quer
-                    abrir um programa, como um navegador web. As etapas seriam:</p>
-                <ol>
-                    <li>Entrada do Usuário: Você clica no ícone do navegador.</li>
-                    <li>Identificação e Localização: O sistema operacional identifica o programa e localiza seus arquivos
-                        armazenados.</li>
-                    <li>Carregamento na Memória: O programa é carregado na memória RAM, onde será executado.</li>
-                    <li>Processamento pela CPU: A CPU interpreta e executa as instruções necessárias para abrir o navegador.
-                    </li>
-                    <li>Apresentação na Tela: Finalmente, a interface do navegador é exibida, permitindo que você navegue na
-                        internet.</li>
-                </ol>
-        
-                <h2>Unidades de Execução de Tarefas</h2>
-                <p>O computador opera por meio de várias unidades de execução que, em conjunto, possibilitam a realização das
-                    tarefas.</p>
-                <ul>
-                    <li><strong>CPU (Unidade Central de Processamento)</strong>: Conhecida como o "cérebro" do computador, a CPU
-                        é responsável por interpretar e executar as instruções dos programas. Ela realiza operações aritméticas
-                        e lógicas e controla o fluxo de dados dentro do sistema.</li>
-                    <li><strong>Memória</strong>: A memória (como a RAM e a ROM) armazena temporariamente os dados e instruções
-                        dos programas enquanto estão em execução. A RAM, em especial, permite acesso rápido aos dados
-                        necessários para que a CPU processe as informações de forma eficiente.</li>
-                    <li><strong>Dispositivos de Entrada/Saída (I/O)</strong>: Esses dispositivos permitem a comunicação entre o
-                        usuário e o computador. Exemplos de dispositivos de entrada incluem o teclado e o mouse, enquanto a tela
-                        e a impressora são dispositivos de saída, permitindo visualizar ou imprimir os resultados das operações.
-                    </li>
-                </ul>
-        
-                <h3>Como o Computador Funciona em Conjunto</h3>
-                <p>
-                    O funcionamento de um computador depende do trabalho conjunto dessas unidades. A CPU, a memória e os
-                    dispositivos de I/O são coordenados pelo sistema operacional para realizar tarefas de forma eficiente.
-                    Quando uma tarefa é solicitada, a CPU processa as instruções, acessando a memória conforme necessário,
-                    enquanto os dispositivos de entrada/saída facilitam a interação com o usuário e a apresentação dos
-                    resultados. Este sistema coordenado permite ao computador executar operações complexas rapidamente, fazendo
-                    dele uma ferramenta poderosa para a realização de inúmeras atividades.
-            </div>
-        </div>
-
-        <div id="processador">
-            <h3>Processador</h3>
-            <header>
-                <h1>Processador de um Computador</h1>
-            </header>
-            <main>  
-                <section>
-                    <h2>Estrutura Básica do Processador</h2>
-                    <article>
-                        <h3>Unidade Lógica e Aritmética (ULA ou ALU)</h3>
-                        <p>A ULA é responsável por realizar as operações matemáticas, como adição e subtração, e também operações lógicas, como comparações.</p>
-                        <p>Exemplo: Se o processador precisa comparar dois números para ver qual é o maior, ou somar dois números, essa tarefa é executada pela ULA.</p>
-                    </article>
-                    <article>
-                        <h3>Unidade de Controle (UC ou CU)</h3>
-                        <p>A UC é o "cérebro" do processador. Ela coordena todas as operações, organizando a execução das instruções.</p>
-                        <p>A UC busca uma instrução na memória, decodifica para entender o que a ULA precisa fazer, e então executa a instrução.</p>
-                    </article>
-                </section>
-                <section>
-                    <h2>Funcionamento Interno de um Processador Simples</h2>
-                    <p>Imagine que o processador recebe a instrução para somar dois números (2 + 3):</p>
-                    <ol>
-                        <li><strong>Busca da Instrução:</strong> A UC busca na memória a instrução para realizar essa soma.</li>
-                        <li><strong>Decodificação:</strong> A UC decodifica a instrução, identificando que é uma operação de soma.</li>
-                        <li><strong>Execução:</strong> A ULA recebe os números e faz a operação, retornando o resultado (5).</li>
-                        <li><strong>Armazenamento do Resultado:</strong> A UC pode então armazenar o resultado em um registrador (área de memória dentro do processador).</li>
-                    </ol>
-                </section>
-                <section>
-                    <h2>Informações Adicionais</h2>
-                    <ul>
-                        <li><strong>Clock:</strong> O processador tem um "clock" que determina a velocidade com que ele processa as instruções. Quanto maior o clock, mais rápido o processador realiza tarefas.</li>
-                        <li><strong>Registradores:</strong> São pequenas áreas de memória dentro do processador que guardam dados temporários, como o resultado de uma soma.</li>
-                        <li><strong>Cache:</strong> Pequena memória dentro do processador que armazena dados acessados com frequência para agilizar o processamento.</li>
-                    </ul>
-                </section>
-                <section class="container">
-                <form action="/modulos/processamento/processador" method="POST">
-                    <input type="number" name="num1" placeholder="Primeiro número" required>
-                    <select name="operacao" required>
-                        <option value="+">Adição (+)</option>
-                        <option value="-">Subtração (-)</option>
-                        <option value="*">Multiplicação (*)</option>
-                        <option value="/">Divisão (/)</option>
-                        <option value="&">AND</option>
-                        <option value="|">OR</option>
-                    </select>
-                    <input type="number" name="num2" placeholder="Segundo número" required>
-                    <button type="submit">Simular Processamento</button>
-                </form>
-                <div class="simulation-steps">
-                    <h2>Passos do Processamento:</h2>
-                    <ul>
-                        {% for passo in passos %}
-                            <li>{{ passo }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </section>
-                </main>
-        </div>
-    </div>
-
-    <a href="/" class="button">Voltar para a página inicial</a>
->>>>>>> 781f514bae633f516a2795f644e735cfb2d90a1c
-{% endblock %} 
+    {% endif %}
+{% endblock %}
