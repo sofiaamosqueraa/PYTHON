@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Projeto Integrado de Saúde e Solidariedade{% endblock %}
+
+{% block content %}
+<!-- Add Tailwind CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Add Animation CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<div class="min-h-screen bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Hero Section with Animation -->
+        <h1 class="animate__animated animate__fadeIn text-5xl font-bold text-center bg-gradient-to-r from-green-500 to-blue-600 text-white p-6 rounded-xl shadow-xl mb-12 transform hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-heart animate__animated animate__heartBeat animate__infinite"></i> 
+            Projeto Integrado de Saúde e Solidariedade
+        </h1>
+
+        <!-- Quick Action Buttons -->
+        <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+            <a href="https://www.figma.com/board/TMKQJeJC7AjlvJiu8XX5Dq/Untitled?node-id=0-1&node-type=canvas&t=MhTsWEVLeMudleld-0" 
+               class="flex items-center justify-center bg-green-500 text-white py-3 px-6 rounded-lg transition duration-300 hover:bg-green-600 transform hover:-translate-y-1 shadow-md" 
+               target="_blank" rel="noopener">
+                <i class="fas fa-diagram-project mr-2"></i>
+                Ver UML em Português
+            </a>
+            <a href="https://www.figma.com/board/IZG4c1e4XvuLSsri1YNmhb/Untitled?node-id=0-1&node-type=canvas&t=JhE8qVWv5wnBWEkt-0" 
+               class="flex items-center justify-center bg-blue-500 text-white py-3 px-6 rounded-lg transition duration-300 hover:bg-blue-600 transform hover:-translate-y-1 shadow-md" 
+               target="_blank" rel="noopener">
+                <i class="fas fa-language mr-2"></i>
+                Ver UML em Inglês
+            </a>
+        </div>
+
+        <!-- Main Content - Vertical Layout -->
+        <!-- Vision and Objectives -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                <i class="fas fa-bullseye mr-2"></i> 1. Visão Geral e Objetivos
+            </h2>
+            <div class="space-y-4 text-gray-700">
+                <p class="leading-relaxed">
+                    O nosso projeto é uma plataforma inovadora que integra os serviços de saúde mental com um sistema de doação alimentar, utilizando uma combinação de tecnologias avançadas: Java, Python e C++.
+                </p>
+                <p class="leading-relaxed">
+                    O objetivo principal é criar um ecossistema digital que promova o acesso à saúde e combata a insegurança alimentar, alinhando-se com múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.
+                </p>
+                <p class="leading-relaxed">
+                    Durante o cadastro inicial, os doentes terão a opção de indicar se eles requerem assistência alimentar. Esta informação será enviada para o microserviço C++ (gerenciado por Vishwa) que processará pedidos de doação.
+                </p>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Objetivos Específicos:</h3>
+                    <ul class="list-none space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Facilitar o acesso a consultas médicas e orientação em saúde mental
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Criar um sistema eficiente de doação e distribuição de alimentos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Promover a solidariedade e o envolvimento da comunidade
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Desenvolver uma solução tecnológica escalável e segura
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ODS Alignment -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                <i class="fas fa-globe mr-2"></i> 2. Alinhamento com ODS da ONU
+            </h2>
+            <div class="space-y-4">
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="flex items-center text-yellow-700">
+                        <span class="font-bold mr-2">ODS 2:</span>
+                        <span>Fome Zero e Agricultura Sustentável: Sistema de doação de alimentos</span>
+                    </div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="flex items-center text-green-700">
+                        <span class="font-bold mr-2">ODS 3:</span>
+                        <span>Saúde e Bem-Estar: Acesso facilitado aos profissionais de saúde</span>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="flex items-center text-blue-700">
+                        <span class="font-bold mr-2">ODS 10:</span>
+                        <span>Redução das Desigualdades: Democratização do acesso à saúde e alimentação</span>
+                    </div>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <div class="flex items-center text-purple-700">
+                        <span class="font-bold mr-2">ODS 17:</span>
+                        <span>Parcerias para os Objetivos: Colaboração entre setores da sociedade</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Challenges -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                <i class="fas fa-cogs mr-2"></i> 3. Desafios Técnicos e Soluções
+            </h2>
+            <div class="space-y-4">
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-code text-green-500 mr-3"></i>
+                    <span><strong>Integração de Linguagens:</strong> Uso de microserviços e APIs bem definidas</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-server text-green-500 mr-3"></i>
+                    <span><strong>Escalabilidade:</strong> Arquitetura em nuvem com balanceamento de carga</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-mobile-alt text-green-500 mr-3"></i>
+                    <span><strong>UX/UI:</strong> Design responsivo e acessível para múltiplos dispositivos</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-shield-alt text-green-500 mr-3"></i>
+                    <span><strong>Verificação de Usuários:</strong> Sistema robusto de verificação para profissionais de saúde</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal Considerations -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                <i class="fas fa-balance-scale mr-2"></i> 4. Considerações Éticas e Legais
+            </h2>
+            <div class="space-y-4">
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-clipboard-check text-green-500 mr-3"></i>
+                    <span>Conformidade com regulamentações de saúde</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-shield-alt text-green-500 mr-3"></i>
+                    <span>Proteção de dados pessoais e médicos</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-hand-holding-heart text-green-500 mr-3"></i>
+                    <span>Transparência no uso e distribuição das doações</span>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-file-contract text-green-500 mr-3"></i>
+                    <span>Políticas de uso e termos de serviço claros</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Distribution -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <h2 class="text-2xl font-bold text-green-600 mb-6 flex items-center">
+                <i class="fas fa-users mr-2"></i> 5. Distribuição de Tarefas por Membro da Equipe
+            </h2>
+            <div class="space-y-6">
+                <!-- Sofia -->
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">5.1 Sofia (Java)</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Responsabilidade principal: Gerenciar o sistema de consultas psicológicas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Implementar agendamento de consultas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Criar canais de comunicação entre pacientes e psicólogos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
+                            <span>Integrar visualização de informações sobre doações de alimentos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Lara -->
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-700 mb-3">5.2 Lara (Python/Flask)</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Responsabilidade principal: Desenvolver interface e fluxo de registro</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Implementar registro para todos os tipos de usuários</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Conectar com API do Vishwa para gestão de doações</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Criar as interfaces</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Garantir fluxo de autenticação seguro</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vishwa -->
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-yellow-700 mb-3">5.3 Vishwa (C++)</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-600 mr-2 mt-1"></i>
+                            <span>Responsabilidade principal: Implementar sistema de doação de alimentos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-600 mr-2 mt-1"></i>
+                            <span>Desenvolver lógica de gestão de doações</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-600 mr-2 mt-1"></i>
+                            <span>Criar API para comunicação entre microserviços</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-600 mr-2 mt-1"></i>
+                            <span>Implementar lógica de solicitação de alimentos e relatórios</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+</style>
+{% endblock %} 
