@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Calculadora e Simulador de Processador{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-8">
+    <h1 class="text-3xl font-bold mb-6 text-center">Calculadora e Simulador de Processador</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Calculadora -->
+        <div class="bg-purple-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center">Calculadora</h2>
+            <form action="/teste" method="post">
+                <div class="mb-4">
+                    <label for="operacao" class="block text-gray-700 font-semibold mb-2">Operação:</label>
+                    <select name="operacao" id="operacao" required class="block w-full border border-purple-300 rounded-md p-2 bg-white text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="soma">Soma</option>
+                        <option value="subtracao">Subtração</option>
+                        <option value="multiplicacao">Multiplicação</option>
+                        <option value="divisao">Divisão</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="num1" class="block text-gray-700 font-semibold mb-2">Número 1:</label>
+                    <input type="number" name="num1" id="num1" required class="block w-full border border-purple-300 rounded-md p-2 bg-white text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                </div>
+
+                <div class="mb-4">
+                    <label for="num2" class="block text-gray-700 font-semibold mb-2">Número 2:</label>
+                    <input type="number" name="num2" id="num2" required class="block w-full border border-purple-300 rounded-md p-2 bg-white text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                </div>
+
+                <button type="submit" name="calcular" value="1" class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition duration-300">Calcular</button>
+            </form>
+
+            {% if calc_resultado is not none %}
+                <div class="mt-4 p-4 bg-purple-100 border-l-4 border-purple-500 text-purple-700 rounded-md">
+                    <h3 class="text-xl text-center font-bold">Resultado:</h3>
+                    <p class="text-center text-lg">{{ calc_resultado }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Simulador de Processador -->
+        <div class="bg-blue-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center">Simulador de Processador</h2>
+            <form action="/teste" method="post">
+                <div class="mb-4">
+                    <label for="instrucao" class="block text-gray-700 font-semibold mb-2">Instrução:</label>
+                    <select name="instrucao" id="instrucao" required class="block w-full border border-blue-300 rounded-md p-2 bg-white text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="MOV">MOV</option>
+                        <option value="ADD">ADD</option>
+                        <!-- Adicione mais instruções aqui -->
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="operandos" class="block text-gray-700 font-semibold mb-2">Operandos:</label>
+                    <input type="text" name="operandos" id="operandos" required class="block w-full border border-blue-300 rounded-md p-2 bg-white text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <small class="text-gray-500">Separe os operandos por vírgula (ex: AX,BX,DX)</small>
+                </div>
+
+                <button type="submit" name="executar" value="1" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300">Executar</button>
+            </form>
+
+{% if sim_resultado %}
+    <div class="mt-4 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded-md">
+        <h3 class="text-xl font-bold">Resultado:</h3>
+        <p>Resultado: {{ sim_resultado.resultado }}</p>
+        <p>Registradores:</p>
+        <ul>
+            {% for reg, valor in sim_resultado.registradores.items() %}
+                <li>{{ reg }}: {{ valor }}</li>
+            {% endfor %}
+        </ul>
+        <p>PC: {{ sim_resultado.pc }}</p>
+    </div>
+{% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
