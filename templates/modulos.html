@@ -1,140 +1,586 @@
 {% extends "base.html" %}
 
-{% block title %}Módulos{% endblock %}
-
 {% block content %}
-    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Módulos</h1>
-    <nav class="mb-6">
-        <ul class="flex justify-center space-x-6">
-            <li>
-                <a href="#" onclick="showContent('cpp')" class="flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    C++
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="showContent('python')" class="flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-green-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Python
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="showContent('java')" class="flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-red-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Java
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="showContent('redes')" class="flex items-center bg-gradient-to-r from-purple-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Administração de Redes Locais
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="showContent('banco-de-dados')" class="flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+<h1 class="text-4xl font-extrabold text-center mb-8 text-purple-700">Escolha um Módulo</h1>
+<div class="grid grid-cols-2 gap-6 mx-auto max-w-4xl">
+    <a href="{{ url_for('modulos', modulo='c++') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">C++</span>
+    </a>
+    <a href="{{ url_for('modulos', modulo='python') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://static.vecteezy.com/system/resources/previews/012/697/295/non_2x/3d-python-programming-language-logo-free-png.png" alt="Python Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">Python</span>
+    </a>
+    <a href="{{ url_for('modulos', modulo='java') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/181_Java-1024.png" alt="Java Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">Java</span>
+    </a>
+    <a href="{{ url_for('modulos', modulo='administracao') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/1167/1167057.png" alt="Administração de Redes Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">Administração de Redes Locais</span>
+    </a>
+    <a href="{{ url_for('modulos', modulo='base_dados') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/6376/6376458.png" alt="Base de Dados Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">Base de Dados</span>
+    </a>
+    <a href="{{ url_for('modulos', modulo='processamento') }}" class="flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 w-72 h-28 text-center p-4">
+        <img src="https://png.pngtree.com/png-clipart/20230417/original/pngtree-cpu-line-icon-png-image_9060685.png" alt="Processamento Icon" class="w-8 h-8 mr-2">
+        <span class="text-lg font-semibold">Processamento Computacional</span>
+    </a>
+</div>
+
+<div id="conteudo" style="margin-top: 20px;">
+    {% if modulo %}
+      
+        <p>
+            {% if modulo == 'c++' %}
+            <div id="cpp" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+                <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Icon" class="w-8 h-8 mr-2">
+                    C++: A Linguagem Mágica da Programação
+                </h2>
+                <div class="container">
+                    <section class="simple mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold text-gray-700">C++ para Iniciantes</h3>
+                        <p class="text-gray-600 mb-4">C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas! Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
+    
+                        <h4 class="text-xl font-semibold text-gray-700 mt-4">Com C++, podes:</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Criar jogos divertidos</li>
+                            <li>Fazer o computador desenhar coisas giras</li>
+                            <li>Ensinar o computador a contar histórias</li>
+                            <li>Construir aplicações úteis e inovadoras</li>
+                            <li>Explorar o mundo da programação de forma divertida!</li>
+                        </ul>
+    
+                        <p class="text-gray-600">É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis. Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
+                    </section>
+    
+                    <section class="technical mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold text-gray-700">C++: Uma Linguagem de Programação Multi-paradigma</h3>
+                        <p class="text-gray-600 mb-4">C++ é uma linguagem de programação de alto nível, estaticamente tipada, compilada e multi-paradigma, desenvolvida por Bjarne Stroustrup em 1979 como uma extensão da linguagem C.</p>
+    
+                        <h4 class="text-xl font-semibold text-gray-700 mt-4">Características Fundamentais:</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li><strong>Orientação a Objetos:</strong> Suporta encapsulamento, herança e polimorfismo, permitindo a criação de estruturas de dados complexas e reutilizáveis.</li>
+                            <li><strong>Programação Genérica:</strong> Utiliza templates para implementar algoritmos independentes de tipo, promovendo a reutilização de código.</li>
+                            <li><strong>Gerenciamento de Memória:</strong> Oferece controle de baixo nível sobre alocação e desalocação de memória, crucial para otimização de performance.</li>
+                            <li><strong>Sobrecarga de Operadores:</strong> Permite a redefinição do comportamento de operadores para tipos definidos pelo utilizador.</li>
+                            <li><strong>Portabilidade:</strong> O código C++ pode ser executado em diferentes plataformas com poucas ou nenhumas modificações.</li>
+                            <li><strong>Desempenho:</strong> C++ é conhecido pela sua eficiência e rapidez na execução.</li>
+                        </ul>
+    
+                        <h4 class="text-xl font-semibold text-gray-700 mt-4">Aspectos Técnicos Avançados:</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li><strong>Compilação e Linking:</strong> O código-fonte C++ passa por um processo de pré-processamento, compilação e linking para gerar código de máquina executável.</li>
+                            <li><strong>ABI (Application Binary Interface):</strong> Define como funções são chamadas e como dados são representados em código de máquina.</li>
+                            <li><strong>RAII (Resource Acquisition Is Initialization):</strong> Um paradigma de design que vincula o tempo de vida de recursos à duração do escopo dos objetos.</li>
+                            <li><strong>Metaprogramação de Templates:</strong> Permite a execução de computações em tempo de compilação, gerando código otimizado.</li>
+                            <li><strong>Padrões da Indústria:</strong> Utilizado em diversas áreas como desenvolvimento de jogos, sistemas operacionais e software embarcado.</li>
+                        </ul>
+    
+                        <p class="text-gray-600">C++ continua a ser uma das linguagens mais relevantes no desenvolvimento moderno devido à sua versatilidade e poder.</p>
+                    </section>
+                </div>
+    
+                <div class="back-button-container">
+                    <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+                </div>
+    
+                <footer class="mt-6">
+                    <p class="text-center text-gray-500">&copy; 2024 - Aprendendo C++</p>
+                </footer>
+            </div>
+            {% elif modulo == 'python' %}
+            <div id="python" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+                <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                    <img src="https://static.vecteezy.com/system/resources/previews/012/697/295/non_2x/3d-python-programming-language-logo-free-png.png" alt="Python Icon" class="w-8 h-8 mr-2">
+                    Python: A Linguagem que Capacita
+                </h2>
+                <div class="container">
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <header>
+                            <div class="header-content">
+                                <h1 class="text-2xl font-semibold text-gray-700">Introdução ao Python</h1>
+                                <p class="text-gray-600">Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Criada por Guido van Rossum em 1991, é conhecida por sua simplicidade e versatilidade.</p>
+                            </div>
+                        </header>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Sintaxe Básica</h3>
+                        <p class="text-gray-600">A sintaxe do Python é simples e clara. Aqui estão alguns exemplos básicos:</p>
+                        <pre><code>
+    # Isto é um comentário
+    print("Olá, Mundo!")
+    
+    # Variáveis e tipos de dados
+    x = 5
+    y = "Texto"
+    z = 3.14
+    
+    # Estruturas de controlo
+    if x > 0:
+        print("x é positivo")
+    elif x < 0:
+        print("x é negativo")
+    else:
+        print("x é zero")
+                        </code></pre>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Estruturas de Dados</h3>
+                        <p class="text-gray-600">Python oferece várias estruturas de dados embutidas, incluindo:</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Listas: Coleções ordenadas e mutáveis</li>
+                            <li>Tuplos: Coleções ordenadas e imutáveis</li>
+                            <li>Dicionários: Coleções não ordenadas de pares chave-valor</li>
+                            <li>Conjuntos: Coleções não ordenadas de elementos únicos</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Funções</h3>
+                        <p class="text-gray-600">As funções em Python são definidas usando a palavra-chave 'def'. Elas podem ter argumentos posicionais, argumentos nomeados e valores padrão.</p>
+                        <pre><code>
+    def saudacao(nome, saudacao="Olá"):
+        return f"{saudacao}, {nome}!"
+    
+    print(saudacao("Maria"))  # Saída: Olá, Maria!
+    print(saudacao("João", "Bom dia"))  # Saída: Bom dia, João!
+                        </code></pre>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Módulos</h3>
+                        <p class="text-gray-600">Os módulos permitem organizar o código Python em ficheiros separados. Você pode importar módulos inteiros ou funções específicas de módulos.</p>
+                        <pre><code>
+    # Importar um módulo inteiro
+    import math
+    
+    # Importar funções específicas
+    from random import randint, choice
+    
+    # Usar funções importadas
+    print(math.pi)
+    print(randint(1, 10))
+                        </code></pre>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Pip e PyPI</h3>
+                        <p class="text-gray-600">Pip é o gerenciador de pacotes para Python, usado para instalar e gerenciar pacotes adicionais que não fazem parte da biblioteca padrão. PyPI (Python Package Index) é o repositório de software para a comunidade Python.</p>
+                        <pre><code>
+    # Instalar um pacote usando pip
+    pip install nome_do_pacote
+                        </code></pre>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                        <p class="text-gray-600 mb-4">A documentação completa do Python, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
+                        <a href="https://www.python.org/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Download Python</h3>
+                        <p class="text-gray-600 mb-4">Baixe a versão mais recente do Python para o seu sistema operacional.</p>
+                        <a href="https://www.python.org/downloads/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Baixar Python</a>
+                    </section>
+                </div>
+    
+                <div class="back-button-container">
+                    <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+                </div>
+    
+                <footer class="mt-6">
+                    <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Python</p>
+                </footer>
+            </div>
+            {% elif modulo == 'java' %}
+                 <div id="java" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+            <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/181_Java-1024.png" alt="Java Icon" class="w-8 h-8 mr-2">
+                Java: A Linguagem Versátil
+            </h2>
+            <div class="container">
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <header>
+                        <div class="header-content">
+                            <h1 class="text-2xl font-semibold text-gray-700">Introdução ao Java</h1>
+                            <p class="text-gray-600">Java é uma linguagem de programação de alto nível, orientada a objetos, que foi criada por James Gosling e sua equipe na Sun Microsystems em 1995. É amplamente utilizada para desenvolvimento de aplicativos, especialmente em ambientes corporativos.</p>
+                        </div>
+                    </header>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Características do Java</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>Portabilidade: "Escreva uma vez, execute em qualquer lugar".</li>
+                        <li>Orientação a Objetos: Suporte a encapsulamento, herança e polimorfismo.</li>
+                        <li>Segurança: Mecanismos de segurança robustos para proteger aplicativos.</li>
+                        <li>Multithreading: Suporte para execução simultânea de múltiplas threads.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Sintaxe Básica</h3>
+                    <p class="text-gray-600">A sintaxe do Java é semelhante à do C++. Aqui estão alguns exemplos básicos:</p>
+                    <pre><code>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+                    </code></pre>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Estruturas de Controle</h3>
+                    <p class="text-gray-600">Java suporta várias estruturas de controle, como:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-4">
+                        <li>if, else if, else</li>
+                        <li>switch</li>
+                        <li>for, while, do-while</li>
+                    </ul>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Classes e Objetos</h3>
+                    <p class="text-gray-600">Java é uma linguagem orientada a objetos. Aqui está um exemplo de como definir uma classe e criar um objeto:</p>
+                    <pre><code>
+class Carro {
+    String modelo;
+    int ano;
+
+    Carro(String modelo, int ano) {
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    void mostrarDetalhes() {
+        System.out.println("Modelo: " + modelo + ", Ano: " + ano);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Carro meuCarro = new Carro("Fusca", 1970);
+        meuCarro.mostrarDetalhes();
+    }
+}
+                    </code></pre>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Pacotes e Importações</h3>
+                    <p class="text-gray-600">Java organiza classes em pacotes. Você pode importar pacotes usando a palavra-chave 'import'.</p>
+                    <pre><code>
+import java.util.ArrayList;
+
+public class Exemplo {
+    public static void main(String[] args) {
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add("Item 1");
+        System.out.println(lista);
+    }
+}
+                    </code></pre>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                    <p class="text-gray-600 mb-4">A documentação completa do Java, incluindo tutoriais, referência da linguagem e da biblioteca padrão, está disponível online.</p>
+                    <a href="https://docs.oracle.com/en/java/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                </section>
+
+                <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-700">Download Java</h3>
+                    <p class="text-gray-600 mb-4">Baixe a versão mais recente do Java para o seu sistema operacional.</p>
+                    <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Baixar Java</a>
+                </section>
+            </div>
+
+            <div class="back-button-container">
+                <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+            </div>
+
+            <footer class="mt-6">
+                <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Java</p>
+            </footer>
+        </div>
+               
+            {% elif modulo == 'administracao' %}
+            <div id="redes" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+                <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1167/1167057.png" alt="Administração de Redes Icon" class="w-8 h-8 mr-2">
+                    Administração de Redes: Conectando o Mundo
+                </h2>
+                <div class="container">
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <header>
+                            <div class="header-content">
+                                <h1 class="text-2xl font-semibold text-gray-700">Introdução à Administração de Redes</h1>
+                                <p class="text-gray-600">A administração de redes é o processo de gerenciar e manter uma rede de computadores. Isso inclui a configuração, monitoramento e manutenção de hardware e software de rede.</p>
+                            </div>
+                        </header>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Componentes de uma Rede</h3>
+                        <p class="text-gray-600">Os principais componentes de uma rede incluem:</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Roteadores</li>
+                            <li>Switches</li>
+                            <li>Firewalls</li>
+                            <li>Cabos e Conectores</li>
+                            <li>Pontos de Acesso</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Tipos de Redes</h3>
+                        <p class="text-gray-600">Existem vários tipos de redes, incluindo:</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>LAN (Rede Local)</li>
+                            <li>WAN (Rede de Longa Distância)</li>
+                            <li>MAN (Rede Metropolitana)</li>
+                            <li>VPN (Rede Privada Virtual)</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Protocolos de Rede</h3>
+                        <p class="text-gray-600">Os protocolos de rede são regras que definem como os dados são transmitidos em uma rede. Alguns dos principais protocolos incluem:</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>TCP/IP</li>
+                            <li>HTTP/HTTPS</li>
+                            <li>FTP</li>
+                            <li>DNS</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Segurança de Redes</h3>
+                        <p class="text-gray-600">A segurança de redes é crucial para proteger dados e recursos. Algumas práticas incluem:</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Uso de firewalls</li>
+                            <li>Criptografia de dados</li>
+                            <li>Autenticação de usuários</li>
+                            <li>Monitoramento de tráfego</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Ferramentas de Administração de Redes</h3>
+                        <p class="text-gray-600">Existem várias ferramentas que ajudam na administração de redes, como:</p>
+                        <ul class="list-disc list-inside text-gray-600 mb-4">
+                            <li>Wireshark</li>
+                            <li>SolarWinds</li>
+                            <li>Nagios</li>
+                            <li>PingPlotter</li>
+                        </ul>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Documentação</h3>
+                        <p class="text-gray-600 mb-4">A documentação sobre administração de redes é essencial para entender as melhores práticas e técnicas. Você pode encontrar recursos online e livros especializados.</p>
+                        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Documentação</a>
+                    </section>
+    
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-gray-700">Cursos de Administração de Redes</h3>
+                        <p class="text-gray-600 mb-4">Existem muitos cursos online que podem ajudá-lo a aprender sobre administração de redes. Considere plataformas como Coursera, Udemy e edX.</p>
+                        <a href="https://www.udemy.com/topic/networking/" class="button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" target="_blank">Ver Cursos</a>
+                    </section>
+                </div>
+    
+                <div class="back-button-container">
+                    <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+                </div>
+    
+                <footer class="mt-6">
+                    <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Administração de Redes</p>
+                </footer>
+            </div>
+            {% elif modulo == 'base_dados' %}
+            <div id="banco-de-dados" class="content-section p-6 bg-gradient-to-r from-purple-400 to-blue-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
+                <h2 class="text-3xl font-semibold text-white mb-4 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6376/6376458.png" alt="Base de Dados Icon" class="w-8 h-8 mr-2">
                     Base de Dados
-                </a>
-            </li>
-            <li>
-                <a href="#" onclick="showContent('processamento')" class="flex items-center bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Processamento Computacional
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <div id="content" class="container mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200 hidden">
-        <div id="cpp" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">C++</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">C++ para Iniciantes</h2>
-                <p class="mb-2">C++ é como um conjunto de instruções mágicas que usamos para fazer o computador realizar coisas fantásticas!</p>
-                <p class="mb-4">Imagina que tens um robô de brincar. Para fazeres o robô mexer-se ou dançar, precisas de lhe dar comandos especiais. C++ é como uma linguagem secreta que aprendes para falar com o computador, tal como darias comandos ao teu robô.</p>
-                <h3 class="text-lg font-semibold text-gray-700">Com C++, podes:</h3>
-                <ul class="list-disc pl-6 mb-4">
-                    <li class="mb-2">Criar jogos divertidos</li>
-                    <li class="mb-2">Fazer o computador desenhar coisas giras</li>
-                    <li class="mb-2">Ensinar o computador a contar histórias</li>
-                    <li class="mb-2">Construir aplicações úteis e inovadoras</li>
-                    <li class="mb-2">Explorar o mundo da programação de forma divertida!</li>
-                </ul>
-                <p class="mb-4">É como se tivesses uma varinha mágica que faz o computador obedecer aos teus desejos! Escreves as instruções mágicas (a que chamamos "código") e o computador segue-as para criar coisas incríveis.</p>
-                <p class="mb-4">Tal como aprendes novas palavras todos os dias, com C++ aprendes novos "feitiços" para fazer o computador fazer cada vez mais coisas fixes!</p>
-            </section>
-        </div>
-
-        <div id="python" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Python</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">Python para Iniciantes</h2>
-                <p class="mb-2">Python é uma linguagem de programação fácil de aprender e muito poderosa!</p>
-                <p class="mb-4">Com Python, você pode fazer muitas coisas legais, como criar jogos, sites e até mesmo inteligência artificial!</p>
-            </section>
-        </div>
-
-        <div id="java" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Java</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">Java para Iniciantes</h2>
-                <p class="mb-2">Java é uma linguagem de programação muito popular, usada em muitas aplicações!</p>
-                <p class="mb-4">Com Java, você pode desenvolver aplicativos para Android, jogos e muito mais!</p>
-            </section>
-        </div>
-
-        <div id="redes" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Administração de Redes Locais</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">Redes Locais para Iniciantes</h2>
-                <p class="mb-2">Aprender sobre redes é essencial para entender como os computadores se comunicam!</p>
-                <p class="mb-4">Compreender redes locais ajuda a resolver problemas e a configurar conexões.</p>
-            </section>
-        </div>
-
-        <div id="banco-de-dados" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Base de Dados</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">Bases de Dados para Iniciantes</h2>
-                <p class="mb-2">As bases de dados são essenciais para armazenar e gerenciar informações!</p>
-                <p class="mb-4">Aprender sobre bancos de dados ajuda a organizar dados de forma eficiente.</p>
-            </section>
-        </div>
-
-        <div id="processamento" class="content-section hidden">
-            <h2 class="text-3xl font-semibold text-gray-700 mb-4">Processamento Computacional</h2>
-            <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
-                <h2 class="text-2xl font-semibold text-gray-800">Processamento para Iniciantes</h2>
-                <p class="mb-2">O processamento computacional é fundamental para resolver problemas complexos!</p>
-                <p class="mb-4">Aprender sobre processamento ajuda a otimizar tarefas e a desenvolver soluções.</p>
-            </section>
-        </div>
-    </div>
-
-    <div class="back-button-container mb-6 text-center">
-        <a href="/" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition">Voltar para a página inicial</a>
-    </div>
-
-    <footer class="text-center mt-4 text-gray-600">
-        &copy; 2024 - Aprendendo C++
-    </footer>
-
-    <script>
-        function showContent(section) {
-            // Esconder todas as seções de conteúdo
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach((sec) => {
-                sec.classList.add('hidden');
-            });
-
-            // Mostrar a seção correspondente
-            const activeSection = document.getElementById(section);
-            if (activeSection) {
-                activeSection.classList.remove('hidden');
-            }
-
-            // Mostrar o contêiner de conteúdo
-            document.getElementById('content').classList.remove('hidden');
-        }
-    </script>
-{% endblock %} 
+                </h2>
+                <div class="container">
+                    <section class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                        <h1 class="text-2xl font-bold text-gray-800 mb-2">Administração de Bases de Dados para Programadores</h1>
+                        <nav>
+                            <ul>
+                                <li><a href="#fundamentos" class="text-blue-600 hover:underline">Fundamentos</a></li>
+                                <li><a href="#componentes" class="text-blue-600 hover:underline">Componentes</a></li>
+                                <li><a href="#boas-praticas" class="text-blue-600 hover:underline">Boas Práticas</a></li>
+                                <li><a href="#seguranca" class="text-blue-600 hover:underline">Segurança</a></li>
+                                <li><a href="#recuperacao" class="text-blue-600 hover:underline">Recuperação</a></li>
+                                <li><a href="#modelagem" class="text-blue-600 hover:underline">Modelagem</a></li>
+                                <li><a href="#linguagens" class="text-blue-600 hover:underline">Linguagens</a></li>
+                                <li><a href="#otimizacao" class="text-blue-600 hover:underline">Otimização</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+    
+                    <main>
+                        <section id="fundamentos" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">1. Fundamentos de Sistemas de Gestão de Bases de Dados (SGBD)</h2>
+                            <p><strong>Definição:</strong> Um SGBD é um software que gerencia o armazenamento, manipulação e pesquisa de dados.</p>
+                            <p><strong>Funções:</strong> Criar, proteger, atualizar e eliminar dados numa base de dados.</p>
+                            <p><strong>Vantagens:</strong> Integração de dados, redução de redundâncias, integridade dos dados, flexibilidade e segurança.</p>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma tabela em SQL</h3>
+                            <pre><code>
+    CREATE TABLE Clientes (
+        ID INT PRIMARY KEY,
+        Nome VARCHAR(100),
+        Email VARCHAR(100),
+        DataCadastro DATE
+    );
+                            </code></pre>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma coleção em MongoDB</h3>
+                            <pre><code>
+    db.createCollection("clientes")
+    db.clientes.insertOne({
+        nome: "João Silva",
+        email: "joao@example.com",
+        dataCadastro: new Date()
+    })
+                            </code></pre>
+                        </section>
+    
+                        <section id="componentes" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">2. Componentes Principais de um SGBD</h2>
+                            <ul>
+                                <li><strong>Motor:</strong> Responsável pelo armazenamento de dados a nível do sistema operativo.</li>
+                                <li><strong>Catálogo de Metadados:</strong> Armazena informações sobre objetos da base de dados.</li>
+                                <li><strong>Linguagem de Acesso:</strong> Geralmente SQL, para definir e manipular dados.</li>
+                                <li><strong>Motor de Otimização:</strong> Analisa e otimiza consultas.</li>
+                                <li><strong>Processador de Consultas:</strong> Executa consultas e retorna resultados.</li>
+                                <li><strong>Administrador de Bloqueio:</strong> Gerencia acessos simultâneos.</li>
+                                <li><strong>Administrador de Registos:</strong> Garante a integridade dos dados durante operações.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Consulta ao catálogo de metadados em PostgreSQL</h3>
+                            <pre><code>
+    SELECT * FROM information_schema.tables
+    WHERE table_schema = 'public';
+                            </code></pre>
+                        </section>
+    
+                        <section id="boas-praticas" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">3. Boas Práticas para Programadores</h2>
+                            <ul>
+                                <li><strong>Avaliação da Infraestrutura:</strong> Escolha entre sistemas on-premise, na nuvem ou híbridos.</li>
+                                <li><strong>Estratégia e Governança de Dados:</strong> Implemente uma estratégia clara e políticas de governança.</li>
+                                <li><strong>Otimização de Acesso:</strong> Facilite o acesso aos dados de forma segura e eficiente.</li>
+                                <li><strong>Automação:</strong> Automatize tarefas repetitivas para aumentar a eficiência.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Script de backup automatizado para PostgreSQL</h3>
+                            <pre><code>
+    #!/bin/bash
+    DATE=$(date +%Y%m%d)
+    tar -czf network_configs_$DATE.tar.gz /etc/network/
+                            </code></pre>
+                        </section>
+    
+                        <section id="seguranca" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">4. Segurança e Integridade</h2>
+                            <ul>
+                                <li>Implemente mecanismos de segurança para proteger contra acessos não autorizados.</li>
+                                <li>Garanta a integridade dos dados através de validações e controles.</li>
+                                <li>Gerencie o controle de concorrência para acessos simultâneos.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de um usuário com permissões limitadas em PostgreSQL</h3>
+                            <pre><code>
+    CREATE USER leitura_usuario WITH PASSWORD 'senha_segura';
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO leitura_usuario;
+                            </code></pre>
+                        </section>
+    
+                        <section id="recuperacao" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">5. Recuperação e Backup</h2>
+                            <ul>
+                                <li>Desenvolva estratégias de backup e recuperação de dados.</li>
+                                <li>Utilize logs de transações para restaurar a integridade após falhas.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Restauração de um backup PostgreSQL</h3>
+                            <pre><code>
+    psql -U seu_usuario -d sua_base < backup_20240101.sql
+                            </code></pre>
+                        </section>
+    
+                        <section id="modelagem" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">6. Modelagem de Dados</h2>
+                            <ul>
+                                <li>Compreenda modelos de dados, especialmente o modelo relacional.</li>
+                                <li>Utilize operações de álgebra relacional como projeção e junção.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de uma relação entre tabelas em SQL</h3>
+                            <pre><code>
+    CREATE TABLE Pedidos (
+        ID INT PRIMARY KEY,
+        ClienteID INT,
+        DataPedido DATE,
+        FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
+    );
+                            </code></pre>
+                        </section>
+    
+                        <section id="linguagens" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">7. Linguagens e Ferramentas</h2>
+                            <ul>
+                                <li>Domine SQL para definição (DDL) e manipulação (DML) de dados.</li>
+                                <li>Familiarize-se com interfaces gráficas como QBE para consultas.</li>
+                                <li>Aprenda linguagens de consulta para bancos NoSQL.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Consulta SQL com junção</h3>
+                            <pre><code>
+    SELECT c.Nome, p.DataPedido
+    FROM Clientes c
+    JOIN Pedidos p ON c.ID = p.ClienteID
+    WHERE p.DataPedido > '2024-01-01';
+                            </code></pre>
+                        </section>
+    
+                        <section id="otimizacao" class="mb-6 p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">8. Otimização de Desempenho</h2>
+                            <ul>
+                                <li>Aprenda a otimizar consultas e estruturas de dados para melhor performance.</li>
+                                <li>Utilize índices e outras técnicas de otimização de banco de dados.</li>
+                            </ul>
+                            <h3 class="text-lg font-semibold text-gray-700 mt-4">Exemplo: Criação de um índice em PostgreSQL</h3>
+                            <pre><code>
+    CREATE INDEX idx_cliente_nome ON Clientes(Nome);
+                            </code></pre>
+                        </section>
+                    </main>
+                </div>
+    
+                <div class="back-button-container">
+                    <a href="/" class="back-button bg-blue-400 text-white py-2 px-4 rounded-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">Voltar para a página inicial</a>
+                </div>
+    
+                <footer class="mt-6">
+                    <p class="text-center text-gray-500">&copy; 2024 - Aprendendo Base de Dados</p>
+                </footer>
+            </div>
+            {% elif modulo == 'processamento' %}
+            <div id="processamento" class="content-section">
+                <h2 class="text-3xl font-semibold text-gray-700 mb-4">Processamento Computacional</h2>
+                <section class="simple mb-6 p-4 bg-gray-50 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold text-gray-800">Processamento para Iniciantes</h2>
+                    <p class="mb-2">O processamento computacional é fundamental para resolver problemas complexos!</p>
+                    <p class="mb-4">Aprender sobre processamento ajuda a otimizar tarefas e a desenvolver soluções.</p>
+                </section>
+            </div>
+            {% endif %}
+        </p>
+    {% else %}
+     
+    {% endif %}
+</div>
+{% endblock %}
