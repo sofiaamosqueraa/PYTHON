@@ -51,6 +51,11 @@
                 </ul>
             </div>
     
+
+            <div class="section">
+                <h4>Vantagens:</h4>
+                <ul>
+
             <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
                 <h4 class="text-3xl font-semibold text-gray-800 mb-4">Vantagens:</h4>
                 <ul class="list-disc list-inside mt-2 text-gray-700">
@@ -62,6 +67,10 @@
                 </ul>
             </div>
     
+
+            <div class="section">
+                <h4>Desafios:</h4>
+                <ul>
             <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
                 <h4 class="text-3xl font-semibold text-gray-800 mb-4">Desafios:</h4>
                 <ul class="list-disc list-inside mt-2 text-gray-700">
@@ -72,14 +81,44 @@
                 </ul>
             </div>
     
+
+            <div class="section">
+                <h4>Implementação:</h4>
+                <ul>
+
             <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
                 <h4 class="text-3xl font-semibold text-gray-800 mb-4">Implementação:</h4>
                 <ul class="list-disc list-inside mt-2 text-gray-700">
+
                     <li>Frequentemente utiliza-se containerização (ex: Docker) para implantação.</li>
                     <li>Orquestração de containers (ex: Kubernetes) para gerenciamento.</li>
                 </ul>
             </div>
     
+
+            <div class="section">
+                <h4>Contraste com arquitetura monolítica:</h4>
+                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
+            </div>
+    
+            <div class="section">
+                <h4>Padrões comuns:</h4>
+                <p><li>API Gateway </li>
+                    <li> Service Discovery </li>
+                    <li> Circuit Breaker </li>
+                    <li>Event Sourcing</li></p>
+            </div>
+    
+            <div class="section">
+                <h4> Contraste com arquitetura monolítica:</h4>
+                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.
+                </p>
+            </div>
+    
+            <div class="section">
+                <h4>Ferramentas e tecnologias associadas:</h4>
+                <p>
+
             <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
                 <h4 class="text-3xl font-semibold text-gray-800 mb-4">Contraste com arquitetura monolítica:</h4>
                 <p class="mt-2 text-gray-700">Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
@@ -98,10 +137,28 @@
             <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
                 <h4 class="text-3xl font-semibold text-gray-800 mb-4">Ferramentas e tecnologias associadas:</h4>
                 <ul class="list-disc list-inside mt-2 text-gray-700">
+
                     <li>Spring Boot, Node.js (para desenvolvimento)</li>
                     <li>Docker, Kubernetes (para implantação e orquestração)</li>
                     <li>Kafka, RabbitMQ (para mensageria)</li>
                     <li>Prometheus, ELK Stack (para monitoramento e logging)</li>
+
+                </p>
+                
+                <div class="section">
+                    <h4> Evolução e manutenção:</h4>
+                    <p>Facilita a evolução contínua da aplicação
+                        Permite atualizações e substituições graduais de serviços</p>
+                    </div>
+    
+                    <div class="info-box">
+                        <h4>Quer saber mais?</h4>
+                        <p>Explore nossos recursos adicionais para aprofundar seu conhecimento em microserviços.</p>
+                        <a href="#" class="button">Recursos Adicionais</a>
+                    </div>
+    </div>
+
+
                 </ul>
             </div>
     
@@ -331,8 +388,12 @@
             </div>
         </div>
     </div>
+
+
+    <a href="/" class="btn btn-secondary mt-4">Voltar para a página inicial</a>
     {% endif %}
 
 </div>
 {% endif %}
+
 {% endblock %} 
