@@ -13,14 +13,15 @@ def documentacao():
     section_to_show = request.args.get('section')  # Não define um padrão
     return render_template('documentacao.html', section=section_to_show)
 
-@app.route('/modulos')
-def modulos():
-    return render_template('modulos.html')
-
 @app.route('/projeto')
 def projeto():
     return render_template('projeto.html')
 
+@app.route('/modulos', methods=['GET'])
+def modulos():
+    modulo = request.args.get('modulo')  # Obtém o módulo selecionado
+    return render_template('modulos.html', modulo=modulo)
+    
 @app.route('/teste', methods=['GET', 'POST'])
 def teste():
     calc_resultado = None
@@ -52,7 +53,6 @@ def teste():
             sim_resultado = executar(instrucao, operandos)
 
     return render_template('teste.html', calc_resultado=calc_resultado, sim_resultado=sim_resultado)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
