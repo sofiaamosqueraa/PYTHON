@@ -1,23 +1,23 @@
 {
-  "name": "python",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sofiaamosqueraa/PYTHON.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sofiaamosqueraa/PYTHON/issues"
-  },
-  "homepage": "https://github.com/sofiaamosqueraa/PYTHON#readme",
-  "dependencies": {
-    "bootstrap": "^5.3.3"
+    "name": "python",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sofiaamosqueraa/PYTHON.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/sofiaamosqueraa/PYTHON/issues"
+    },
+    "homepage": "https://github.com/sofiaamosqueraa/PYTHON#readme",
+    "dependencies": {
+      "bootstrap": "^5.3.3"
+    }
   }
-}
