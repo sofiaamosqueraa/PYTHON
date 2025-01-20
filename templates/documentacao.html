@@ -2,398 +2,496 @@
 
 {% block content %}
 <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800">Documentação do Projeto</h1>
+
 <nav class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 mt-8">
-    <a href="{{ url_for('documentacao', section='microservicos') }}" class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-blue-600 rounded-lg shadow-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-        </svg>
-        <span class="font-semibold">Microserviços</span>
+    <!-- Microserviços -->
+    <a href="{{ url_for('documentacao', section='microservicos') }}"
+        class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-purple-700 rounded-lg shadow-lg hover:bg-purple-100 transition-all transform hover:scale-105 ease-in-out duration-300">
+        <i class="fas fa-cogs w-6 h-6 mr-3 text-fuchsia-600"></i> <!-- Ícone de "configurações" para Microserviços -->
+        <span class="font-semibold text-purple-700">Microserviços</span>
     </a>
-    <a href="{{ url_for('documentacao', section='gateway') }}" class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-green-600 rounded-lg shadow-lg hover:bg-green-50 transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-        </svg>
-        <span class="font-semibold">Gateway</span>
+
+    <!-- Gateway -->
+    <a href="{{ url_for('documentacao', section='gateway') }}"
+        class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-purple-700 rounded-lg shadow-lg hover:bg-fuchsia-100 transition-all transform hover:scale-105 ease-in-out duration-300">
+        <i class="fas fa-shield-alt w-6 h-6 mr-3 text-fuchsia-600"></i> <!-- Ícone de "escudo" para Gateway -->
+        <span class="font-semibold text-fuchsia-600">Gateway</span>
     </a>
-    <a href="{{ url_for('documentacao', section='api') }}" class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-purple-600 rounded-lg shadow-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105">
-        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-        </svg>
-        <span class="font-semibold">API</span>
+
+    <!-- API -->
+    <a href="{{ url_for('documentacao', section='api') }}"
+        class="flex items-center w-full md:w-72 px-6 py-4 bg-white text-purple-700 rounded-lg shadow-lg hover:bg-purple-100 transition-all transform hover:scale-105 ease-in-out duration-300">
+        <i class="fas fa-plug w-6 h-6 mr-3 text-fuchsia-600"></i> <!-- Ícone de "plug" para API -->
+        <span class="font-semibold text-purple-700">API</span>
     </a>
 </nav>
 
+
+
+
+
+
+
 {% if section %}
-    
-<div class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12">
+
+<div
+    class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl shadow-lg">
     {% if section == 'microservicos' %}
-        <h2 class=" text-4xl md:text-6xl text-teal-600 mb-12 text-center relative mb-12">
-            Microserviços
-            <span class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-teal-600"></span>
-        </h2>
-        <div class="container mx-auto space-y-12">
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6">Introdução</h4>
-                <p class="mt-2 text-gray-700 leading-relaxed text-lg">
-                    Microserviços são um estilo de arquitetura de software onde uma aplicação é construída como uma coleção de <span class="highlight bg-yellow-100 px-1 rounded">pequenos serviços independentes</span>. Cada serviço se concentra em fazer uma coisa bem, executa em seu próprio processo e se comunica com outros serviços através de interfaces simples e bem definidas (geralmente APIs). Essa abordagem permite maior <span class="highlight bg-yellow-100 px-1 rounded">flexibilidade, escalabilidade e manutenção</span> mais fácil em comparação com arquiteturas monolíticas tradicionais.
-                </p>
-            </div>
-    
-    
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Pontos Principais:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-                    <li><span class="highlight">Serviços Independentes:</span> Cada serviço é responsável por uma função única, como gestão de usuários ou pagamentos.</li>
-                    <li><span class="highlight">Baixo Acoplamento:</span> Os serviços podem ser desenvolvidos, implantados e escalados de forma independente.</li>
-                    <li><span class="highlight">Comunicação:</span> Os serviços se comunicam entre si usando APIs (ex.: REST, gRPC).</li>
-                    <li><span class="highlight">Resiliência:</span> Se um serviço falhar, os outros continuam funcionando.</li>
-                    <li><span class="highlight">Escalabilidade:</span> Escale apenas os serviços que precisam, não a aplicação inteira.</li>
+    <h2
+        class="text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold py-8 text-center relative mb-16">
+        Microserviços
+        <span
+            class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></span>
+    </h2>
+    <div class="container mx-auto space-y-12 pb-12">
+        <div
+            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+            <h4 class="text-3xl font-semibold text-purple-800 mb-6">Introdução</h4>
+            <p class="mt-2 text-gray-700 leading-relaxed text-lg">
+                Microserviços são um estilo de arquitetura de software onde uma aplicação é construída como uma coleção
+                de pequenos serviços independentes</span>. Cada serviço se concentra em fazer uma coisa bem, executa em
+                seu próprio processo e se comunica com outros serviços através de interfaces simples e bem definidas
+                (geralmente APIs). Essa abordagem permite maior flexibilidade, escalabilidade e manutenção</span> mais
+                fácil em comparação com arquiteturas monolíticas tradicionais.
+            </p>
+        </div>
+
+        <div
+            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 mb-8">
+            <h4 class="text-3xl font-semibold text-purple-800 mb-4">Pontos Principais:</h4>
+            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                <li><span class="font-semibold text-pink-600">Serviços Independentes:</span> Cada serviço é responsável
+                    por uma função única, como gestão de usuários ou pagamentos.</li>
+                <li><span class="font-semibold text-pink-600">Baixo Acoplamento:</span> Os serviços podem ser
+                    desenvolvidos, implantados e escalados de forma independente.</li>
+                <li><span class="font-semibold text-pink-600">Comunicação:</span> Os serviços se comunicam entre si
+                    usando APIs (ex.: REST, gRPC).</li>
+                <li><span class="font-semibold text-pink-600">Resiliência:</span> Se um serviço falhar, os outros
+                    continuam funcionando.</li>
+                <li><span class="font-semibold text-pink-600">Escalabilidade:</span> Escale apenas os serviços que
+                    precisam, não a aplicação inteira.</li>
+            </ul>
+        </div>
+
+        <div
+            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 mb-8">
+            <h4 class="text-3xl font-semibold text-purple-800 mb-4">Vantagens:</h4>
+            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                <li><span class="font-semibold text-pink-600">Escalabilidade:</span> Serviços podem ser escalados
+                    individualmente.</li>
+                <li><span class="font-semibold text-pink-600">Flexibilidade tecnológica:</span> Diferentes serviços
+                    podem usar diferentes tecnologias.</li>
+                <li><span class="font-semibold text-pink-600">Implantação independente:</span> Cada serviço pode ser
+                    atualizado separadamente.</li>
+                <li><span class="font-semibold text-pink-600">Resiliência:</span> Falhas em um serviço não
+                    necessariamente afetam toda a aplicação.</li>
+                <li><span class="font-semibold text-pink-600">Manutenção simplificada:</span> Bases de código menores
+                    são mais fáceis de manter.</li>
+            </ul>
+        </div>
+
+        <div
+            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+            <h4 class="text-3xl font-semibold text-purple-800 mb-4">Desafios:</h4>
+            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                <li><span class="font-semibold text-pink-600">Complexidade distribuída:</span> Gerenciar múltiplos
+                    serviços pode ser desafiador.</li>
+                <li><span class="font-semibold text-pink-600">Consistência de dados:</span> Manter dados consistentes
+                    entre serviços requer atenção.</li>
+                <li><span class="font-semibold text-pink-600">Monitoramento:</span> É necessário monitorar múltiplos
+                    serviços.</li>
+                <li><span class="font-semibold text-pink-600">Testes:</span> Testar interações entre serviços pode ser
+                    complexo.</li>
+            </ul>
+        </div>
+
+        <div class="container mx-auto space-y-8">
+            <div
+                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                <h4 class="text-3xl font-semibold text-purple-800 mb-4">Implementação:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                    <li><span class="font-semibold text-pink-600">Containerização:</span> Frequentemente utiliza-se
+                        containerização (ex: Docker) para implantação.</li>
+                    <li><span class="font-semibold text-pink-600">Orquestração:</span> Orquestração de containers (ex:
+                        Kubernetes) para gerenciamento.</li>
                 </ul>
             </div>
-    
 
-            <div class="section">
-                <h4>Vantagens:</h4>
-                <ul>
+            <div
+                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                <h4 class="text-3xl font-semibold text-purple-800 mb-4">Contraste com arquitetura monolítica:</h4>
+                <p class="mt-2 text-gray-700">Em vez de uma única unidade, a aplicação é dividida em <span
+                        class="font-semibold text-pink-600">serviços menores e independentes</span>.</p>
+            </div>
 
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Vantagens:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-                    <li>Escalabilidade: Serviços podem ser escalados individualmente.</li>
-                    <li>Flexibilidade tecnológica: Diferentes serviços podem usar diferentes tecnologias.</li>
-                    <li>Implantação independente: Cada serviço pode ser atualizado separadamente.</li>
-                    <li>Resiliência: Falhas em um serviço não necessariamente afetam toda a aplicação.</li>
-                    <li>Manutenção simplificada: Bases de código menores são mais fáceis de manter.</li>
+            <div
+                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                <h4 class="text-3xl font-semibold text-purple-800 mb-4">Padrões comuns:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                    <li><span class="font-semibold text-pink-600">API Gateway</span></li>
+                    <li><span class="font-semibold text-pink-600">Service Discovery</span></li>
+                    <li><span class="font-semibold text-pink-600">Circuit Breaker</span></li>
+                    <li><span class="font-semibold text-pink-600">Event Sourcing</span></li>
                 </ul>
             </div>
-    
 
-            <div class="section">
-                <h4>Desafios:</h4>
-                <ul>
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Desafios:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-                    <li>Complexidade distribuída: Gerenciar múltiplos serviços pode ser desafiador.</li>
-                    <li>Consistência de dados: Manter dados consistentes entre serviços requer atenção.</li>
-                    <li>Monitoramento: É necessário monitorar múltiplos serviços.</li>
-                    <li>Testes: Testar interações entre serviços pode ser complexo.</li>
+            <div
+                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                <h4 class="text-3xl font-semibold text-purple-800 mb-4">Ferramentas e tecnologias associadas:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-700 space-y-2">
+                    <li><span class="font-semibold text-pink-600">Desenvolvimento:</span> Spring Boot, Node.js</li>
+                    <li><span class="font-semibold text-pink-600">Implantação e orquestração:</span> Docker, Kubernetes
+                    </li>
+                    <li><span class="font-semibold text-pink-600">Mensageria:</span> Kafka, RabbitMQ</li>
+                    <li><span class="font-semibold text-pink-600">Monitoramento e logging:</span> Prometheus, ELK Stack
+                    </li>
                 </ul>
             </div>
-    
 
-            <div class="section">
-                <h4>Implementação:</h4>
-                <ul>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Implementação:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-
-                    <li>Frequentemente utiliza-se containerização (ex: Docker) para implantação.</li>
-                    <li>Orquestração de containers (ex: Kubernetes) para gerenciamento.</li>
-                </ul>
-            </div>
-    
-
-            <div class="section">
-                <h4>Contraste com arquitetura monolítica:</h4>
-                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
-            </div>
-    
-            <div class="section">
-                <h4>Padrões comuns:</h4>
-                <p><li>API Gateway </li>
-                    <li> Service Discovery </li>
-                    <li> Circuit Breaker </li>
-                    <li>Event Sourcing</li></p>
-            </div>
-    
-            <div class="section">
-                <h4> Contraste com arquitetura monolítica:</h4>
-                <p>Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.
-                </p>
-            </div>
-    
-            <div class="section">
-                <h4>Ferramentas e tecnologias associadas:</h4>
-                <p>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Contraste com arquitetura monolítica:</h4>
-                <p class="mt-2 text-gray-700">Em vez de uma única unidade, a aplicação é dividida em serviços menores e independentes.</p>
-            </div>
-    
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Padrões comuns:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-                    <li>API Gateway</li>
-                    <li>Service Discovery</li>
-                    <li>Circuit Breaker</li>
-                    <li>Event Sourcing</li>
-                </ul>
-            </div>
-    
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Ferramentas e tecnologias associadas:</h4>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
-
-                    <li>Spring Boot, Node.js (para desenvolvimento)</li>
-                    <li>Docker, Kubernetes (para implantação e orquestração)</li>
-                    <li>Kafka, RabbitMQ (para mensageria)</li>
-                    <li>Prometheus, ELK Stack (para monitoramento e logging)</li>
-
-                </p>
-                
-                <div class="section">
-                    <h4> Evolução e manutenção:</h4>
-                    <p>Facilita a evolução contínua da aplicação
-                        Permite atualizações e substituições graduais de serviços</p>
-                    </div>
-    
-                    <div class="info-box">
-                        <h4>Quer saber mais?</h4>
-                        <p>Explore nossos recursos adicionais para aprofundar seu conhecimento em microserviços.</p>
-                        <a href="#" class="button">Recursos Adicionais</a>
-                    </div>
-    </div>
-
-
-                </ul>
-            </div>
-    
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-4">Evolução e manutenção:</h4>
-                <p class="mt-2 text-gray-700">Facilita a evolução contínua da aplicação, permitindo atualizações e substituições graduais de serviços.</p>
+            <div
+                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                <h4 class="text-3xl font-semibold text-purple-800 mb-4">Evolução e manutenção:</h4>
+                <p class="mt-2 text-gray-700">Facilita a <span class="font-semibold text-pink-600">evolução
+                        contínua</span> da aplicação, permitindo <span class="font-semibold text-pink-600">atualizações
+                        e substituições graduais</span> de serviços.</p>
             </div>
         </div>
-    {% elif section == 'gateway' %}
-    <div id="gateway" class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12">
-        <h2 class=" text-4xl md:text-6xl text-teal-600 mb-12 text-center relative mb-12">
-            Gateway
-            <span class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-teal-600"></span>
-        </h2>
-        <div class="container mx-auto space-y-12">
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Introdução ao Gateway</h4>
-                <p class="mb-4">Um gateway é um componente essencial em redes de computadores, atuando como um ponto de entrada e saída para dados entre diferentes redes. Ele permite a comunicação entre sistemas que utilizam protocolos diferentes.</p>
-            </div>
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Como Funciona um Gateway?</h4>
-                <p class="mb-4">Os gateways desempenham várias funções importantes:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Tradução de Protocolos:</strong> Converte dados de um protocolo para outro, permitindo que dispositivos diferentes se comuniquem.</li>
-                    <li><strong>Roteamento de Dados:</strong> Direciona pacotes de dados para o destino correto, garantindo que a informação chegue ao lugar certo.</li>
-                    <li><strong>Segurança:</strong> Monitora e filtra o tráfego de dados, protegendo as redes contra acessos não autorizados.</li>
-                    <li><strong>Gerenciamento de Tráfego:</strong> Controla o fluxo de dados entre redes, evitando congestionamentos e melhorando a eficiência.</li>
-                </ul>
-            </div>
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Exemplos de Gateways</h4>
-                <p class="mb-4">Os gateways podem ser encontrados em várias formas e funções:</p>
-                <div class="example-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="example-item p-4 bg-gray-50 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-wifi text-teal-600 text-4xl mb-2"></i>
-                        <h3 class="font-semibold text-lg text-gray-800">Router</h3>
-                        <p>Um router atua como um gateway, conectando diferentes redes e permitindo a comunicação entre elas.</p>
-                    </div>
-                    <div class="example-item p-4 bg-gray-50 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-gamepad text-teal-600 text-4xl mb-2"></i>
-                        <h3 class="font-semibold text-lg text-gray-800">Gateways IoT</h3>
-                        <p>Facilitam a comunicação entre dispositivos IoT e a internet, permitindo a troca de dados de forma eficiente.</p>
-                    </div>
-                    <div class="example-item p-4 bg-gray-50 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-lock text-teal-600 text-4xl mb-2"></i>
-                        <h3 class="font-semibold text-lg text-gray-800">Gateways de Segurança</h3>
-                        <p>Protegem redes contra ameaças externas, monitorando e filtrando o tráfego de dados.</p>
-                    </div>
+
+
+        {% elif section == 'gateway' %}
+        <div id="gateway"
+            class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl shadow-lg">
+            <h2
+                class="text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold py-8 text-center relative mb-16">
+                Gateway
+                <span
+                    class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></span>
+            </h2>
+
+            <div class="container mx-auto space-y-12 pb-12">
+                <div
+                    class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                    <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Introdução
+                        ao Gateway</h4>
+                    <p class="mb-4 text-gray-700">Um gateway é um componente essencial em redes de computadores, atuando
+                        como um <span class="font-semibold text-pink-600">ponto de entrada e saída</span> para dados
+                        entre diferentes redes. Ele permite a <span class="font-semibold text-pink-600">comunicação
+                            entre sistemas</span> que utilizam protocolos diferentes.</p>
                 </div>
-            </div>
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Aspectos Técnicos</h4>
-                <p class="mb-4">Os gateways são dispositivos complexos que desempenham várias funções técnicas:</p>
-                <div class="accordion space-y-4">
-                    <div class="accordion-item bg-gray-50 p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-lg text-teal-600">Definição Técnica <i class="fas fa-chevron-down"></i></h3>
-                        <div class="accordion-content mt-2">
-                            <p>Um gateway é um dispositivo de rede que atua como interface entre redes distintas, operando na camada de aplicação do modelo OSI.</p>
+
+
+                <div
+                    class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                    <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Como
+                        Funciona um Gateway?</h4>
+                    <p class="mb-4 text-gray-700">Os gateways desempenham várias funções importantes:</p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><span class="font-semibold text-pink-600">Tradução de Protocolos:</span> Converte dados de
+                            um protocolo para outro, permitindo que dispositivos diferentes se comuniquem.</li>
+                        <li><span class="font-semibold text-pink-600">Roteamento de Dados:</span> Direciona pacotes de
+                            dados para o destino correto, garantindo que a informação chegue ao lugar certo.</li>
+                        <li><span class="font-semibold text-pink-600">Segurança:</span> Monitora e filtra o tráfego de
+                            dados, protegendo as redes contra acessos não autorizados.</li>
+                        <li><span class="font-semibold text-pink-600">Gerenciamento de Tráfego:</span> Controla o fluxo
+                            de dados entre redes, evitando congestionamentos e melhorando a eficiência.</li>
+                    </ul>
+                </div>
+
+                <div class="container mx-auto space-y-12 pb-12">
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Exemplos
+                            de Gateways</h4>
+                        <p class="mb-4 text-gray-700">Os gateways podem ser encontrados em várias formas e funções:</p>
+                        <div class="example-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div
+                                class="example-item p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <i class="fas fa-wifi text-pink-600 text-4xl mb-2"></i>
+                                <h3 class="font-semibold text-lg text-purple-800">Router</h3>
+                                <p class="text-gray-700">Um router atua como um gateway, conectando diferentes redes e
+                                    permitindo a comunicação entre elas.</p>
+                            </div>
+                            <div
+                                class="example-item p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <i class="fas fa-gamepad text-pink-600 text-4xl mb-2"></i>
+                                <h3 class="font-semibold text-lg text-purple-800">Gateways IoT</h3>
+                                <p class="text-gray-700">Facilitam a comunicação entre dispositivos IoT e a internet,
+                                    permitindo a troca de dados de forma eficiente.</p>
+                            </div>
+                            <div
+                                class="example-item p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <i class="fas fa-lock text-pink-600 text-4xl mb-2"></i>
+                                <h3 class="font-semibold text-lg text-purple-800">Gateways de Segurança</h3>
+                                <p class="text-gray-700">Protegem redes contra ameaças externas, monitorando e filtrando
+                                    o tráfego de dados.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion-item bg-gray-50 p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-lg text-teal-600">Funções Principais <i class="fas fa-chevron-down"></i></h3>
-                        <div class="accordion-content mt-2">
-                            <ul class="list-disc pl-5">
-                                <li>Tradução de protocolos</li>
-                                <li>Roteamento de dados</li>
-                                <li>Encapsulamento e segmentação de pacotes</li>
-                                <li>Controle de fluxo</li>
+
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Aspectos
+                            Técnicos</h4>
+                        <p class="mb-4 text-gray-700">Os gateways são dispositivos complexos que desempenham várias
+                            funções técnicas:</p>
+                        <div class="accordion space-y-4">
+                            <div
+                                class="accordion-item bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg text-pink-600">Definição Técnica <i
+                                        class="fas fa-chevron-down text-purple-600"></i></h3>
+                                <div class="accordion-content mt-2">
+                                    <p class="text-gray-700">Um gateway é um dispositivo de rede que atua como interface
+                                        entre redes distintas, operando na camada de aplicação do modelo OSI.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="accordion-item bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg text-pink-600">Tipos de Gateways <i
+                                        class="fas fa-chevron-down text-purple-600"></i></h3>
+                                <div class="accordion-content mt-2">
+                                    <ul class="list-disc pl-5 text-gray-700">
+                                        <li>Gateways de Protocolo</li>
+                                        <li>Gateways de Segurança</li>
+                                        <li>Gateways de Mídia</li>
+                                        <li>Gateways IoT</li>
+                                    </ul>
+                                </div>
+                                <div class="progress-bar mt-4 bg-purple-200 rounded-full">
+                                    <div class="progress bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                                        style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {% elif section == 'api' %}
+            <div id="api"
+                class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl shadow-lg">
+                <h2
+                    class="text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold py-8 text-center relative mb-16">
+                    API
+                    <span
+                        class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></span>
+                </h2>
+                <div class="container mx-auto space-y-12 pb-12">
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">O que é
+                            uma API?</h4>
+                        <p class="mt-2 text-gray-700 leading-relaxed text-lg">Uma API (Interface de Programação de
+                            Aplicações) é como um garçom em um restaurante:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><span class="font-semibold text-pink-600">Você (cliente)</span> é como um cliente que
+                                quer algo, como um brinquedo ou um lanche.</li>
+                            <li><span class="font-semibold text-pink-600">O Garçom (API)</span> é quem leva seu pedido
+                                até a cozinha (o sistema) e traz de volta o que você pediu.</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Como
+                            Funciona?</h4>
+                        <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+                            <li><span class="font-semibold text-pink-600">Fazer um Pedido:</span> Quando você quer algo,
+                                você diz ao garçom (API) o que deseja.</li>
+                            <li><span class="font-semibold text-pink-600">Ir à Cozinha:</span> O garçom leva seu pedido
+                                para a cozinha (o sistema) e diz o que você quer.</li>
+                            <li><span class="font-semibold text-pink-600">Receber o Pedido:</span> A cozinha prepara o
+                                que você pediu e dá para o garçom, que traz de volta para você.</li>
+                        </ol>
+                    </div>
+
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Por Que
+                            Isso é Importante?</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><span class="font-semibold text-pink-600">Facilita a Vida:</span> Assim como o garçom
+                                ajuda você a conseguir sua comida sem precisar ir até a cozinha, a API ajuda programas
+                                de computador a se comunicarem entre si sem precisar saber como tudo funciona por trás.
+                            </li>
+                            <li><span class="font-semibold text-pink-600">Conexões:</span> APIs conectam diferentes
+                                aplicativos, como quando você usa um aplicativo de mapa para encontrar um lugar e ele
+                                pega informações de outro lugar.</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">Exemplos
+                            do Dia a Dia</h4>
+                        <div class="example mb-4">
+                            <p class="text-gray-700"><span class="font-semibold text-pink-600">Jogos:</span> Quando você
+                                joga um jogo no celular e precisa comprar algo dentro do jogo, a API ajuda a fazer essa
+                                compra.</p>
+                        </div>
+                        <div class="example">
+                            <p class="text-gray-700"><span class="font-semibold text-pink-600">Músicas:</span> Se você
+                                quer ouvir uma música de um aplicativo enquanto usa outro, a API faz essa conexão para
+                                você.</p>
+                        </div>
+                    </div>
+
+                    <div class="container mx-auto space-y-12 pb-12">
+                        <div
+                            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                            <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                Definição Técnica</h4>
+                            <p class="mt-2 text-gray-700">Uma API é um conjunto de <span
+                                    class="font-semibold text-pink-600">protocolos, rotinas e ferramentas</span> para
+                                construir aplicações de software. Ela especifica como os componentes de software devem
+                                interagir, definindo os tipos de requisições e respostas, convenções de nomeação,
+                                formatos de dados e outros detalhes necessários para a comunicação entre sistemas.</p>
+                        </div>
+
+                        <div
+                            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                            <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                Arquitetura e Funcionamento</h4>
+                            <h5 class="text-2xl font-semibold text-pink-600 mb-4">Modelo Cliente-Servidor</h5>
+                            <p class="text-gray-700">APIs geralmente seguem o modelo cliente-servidor, onde:</p>
+                            <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+                                <li>O <span class="font-semibold text-pink-600">cliente</span> faz uma solicitação à API
+                                    (servidor).</li>
+                                <li>O <span class="font-semibold text-pink-600">servidor</span> processa a solicitação.
+                                </li>
+                                <li>O <span class="font-semibold text-pink-600">servidor</span> retorna uma resposta ao
+                                    cliente.</li>
+                            </ol>
+
+                            <h5 class="text-2xl font-semibold text-pink-600 mb-4 mt-6">Protocolos de Comunicação</h5>
+                            <p class="text-gray-700">As APIs modernas frequentemente utilizam o protocolo HTTP/HTTPS
+                                para comunicação, empregando métodos como:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li><code class="bg-purple-100 text-purple-800 px-1 rounded">GET</code>: Recuperar dados
+                                </li>
+                                <li><code class="bg-purple-100 text-purple-800 px-1 rounded">POST</code>: Enviar dados
+                                    para criação</li>
+                                <li><code class="bg-purple-100 text-purple-800 px-1 rounded">PUT</code>: Atualizar dados
+                                    existentes</li>
+                                <li><code class="bg-purple-100 text-purple-800 px-1 rounded">DELETE</code>: Remover
+                                    dados</li>
+                            </ul>
+
+                            <h5 class="text-2xl font-semibold text-pink-600 mb-4 mt-6">Formatos de Dados</h5>
+                            <p class="text-gray-700">Os dados são comumente trocados em formatos como:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li><span class="font-semibold text-purple-600">JSON</span> (JavaScript Object Notation)
+                                </li>
+                                <li><span class="font-semibold text-purple-600">XML</span> (eXtensible Markup Language)
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="accordion-item bg-gray-50 p-4 rounded-lg shadow">
-                        <h3 class="font-semibold text-lg text-teal-600">Tipos de Gateways <i class="fas fa-chevron-down"></i></h3>
-                        <div class="accordion-content mt-2">
-                            <ul class="list-disc pl-5">
-                                <li>Gateways de Protocolo</li>
-                                <li>Gateways de Segurança</li>
-                                <li>Gateways de Mídia</li>
-                                <li>Gateways IoT</li>
+
+                        <div
+                            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                            <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                Tipos de APIs</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li><span class="font-semibold text-pink-600">APIs REST:</span> Utilizam URLs para
+                                    representar recursos e métodos HTTP para operações.</li>
+                                <li><span class="font-semibold text-pink-600">APIs SOAP:</span> Usam XML para formatação
+                                    de mensagens.</li>
+                                <li><span class="font-semibold text-pink-600">APIs RPC:</span> Permitem a execução de
+                                    procedimentos em sistemas remotos.</li>
+                                <li><span class="font-semibold text-pink-600">APIs WebSocket:</span> Fornecem
+                                    comunicação bidirecional em tempo real.</li>
                             </ul>
                         </div>
-                        <div class="progress-bar mt-4">
-                            <div class="progress" style="width: 75%;"></div>
+
+                        <div
+                            class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                            <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                Segurança</h4>
+                            <p class="text-gray-700">Implementações de segurança comuns incluem:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Autenticação via tokens (e.g., <span class="font-semibold text-pink-600">JWT</span>)
+                                </li>
+                                <li><span class="font-semibold text-pink-600">OAuth 2.0</span> para autorização</li>
+                                <li><span class="font-semibold text-pink-600">Rate limiting</span> para prevenir abuso
+                                </li>
+                                <li><span class="font-semibold text-pink-600">HTTPS</span> para criptografia de dados em
+                                    trânsito</li>
+                            </ul>
+                        </div>
+
+                        <div class="container mx-auto space-y-12 pb-12">
+                            <div
+                                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                                <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                    Versionamento e Documentação</h4>
+                                <p class="text-gray-700">O <span class="font-semibold text-pink-600">versionamento de
+                                        APIs</span> é crucial para manter a compatibilidade. A <span
+                                        class="font-semibold text-pink-600">documentação técnica</span> geralmente
+                                    inclui endpoints disponíveis, parâmetros, exemplos de código, autenticação e limites
+                                    de taxa.</p>
+                            </div>
+
+                            <div
+                                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                                <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                    Considerações de Design</h4>
+                                <p class="text-gray-700">Ao projetar APIs, deve-se considerar:</p>
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li><span class="font-semibold text-pink-600">Escalabilidade</span></li>
+                                    <li><span class="font-semibold text-pink-600">Desempenho</span></li>
+                                    <li><span class="font-semibold text-pink-600">Consistência</span></li>
+                                    <li><span class="font-semibold text-pink-600">Idempotência de operações</span></li>
+                                    <li><span class="font-semibold text-pink-600">Tratamento de erros</span></li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                                <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                    Ferramentas e Frameworks</h4>
+                                <p class="text-gray-700">Ferramentas populares para desenvolvimento e teste de APIs
+                                    incluem:</p>
+                                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                    <li><span class="font-semibold text-pink-600">Swagger/OpenAPI</span> para
+                                        documentação</li>
+                                    <li><span class="font-semibold text-pink-600">Postman</span> para testes</li>
+                                    <li><span class="font-semibold text-pink-600">Express.js</span> (Node.js) ou <span
+                                            class="font-semibold text-pink-600">Flask</span> (Python) para criação de
+                                        APIs</li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                                <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                    Dicas para Aprender</h4>
+                                <div class="tip space-y-2 text-gray-700">
+                                    <p><span class="font-semibold text-pink-600">Dica 1:</span> Comece com APIs simples
+                                        e gratuitas, como a API do GitHub ou a API de previsão do tempo.</p>
+                                    <p><span class="font-semibold text-pink-600">Dica 2:</span> Use ferramentas como
+                                        Postman para testar APIs sem escrever código.</p>
+                                    <p><span class="font-semibold text-pink-600">Dica 3:</span> Aprenda sobre
+                                        autenticação e segurança de APIs, como tokens JWT e OAuth.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="section p-8 bg-white rounded-2xl shadow-xl border-4 border-pink-300 hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2">
+                                <h4 class="text-3xl font-semibold text-purple-800 mb-6 border-b-2 border-pink-400 pb-2">
+                                    Conclusão</h4>
+                                <p class="text-gray-700">As APIs são <span
+                                        class="font-semibold text-pink-600">interfaces críticas</span> que permitem a
+                                    integração eficiente entre sistemas de software, fornecendo <span
+                                        class="font-semibold text-pink-600">abstração e encapsulamento</span> de
+                                    funcionalidades complexas, ao mesmo tempo que promovem a <span
+                                        class="font-semibold text-pink-600">modularidade e a reutilização de
+                                        código</span>.</p>
+                            </div>
                         </div>
                     </div>
+                    {% endif %}
+
                 </div>
-            </div>
-        </div>
-      
-    </div>
-
-    {% elif section == 'api' %}
-    <div id="api" class="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 ">
-        <h2 class=" text-4xl md:text-6xl text-teal-600 mb-12 text-center relative mb-12">
-            API
-            <span class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-teal-600"></span>
-        </h2>
-        <div class="container mx-auto space-y-12">
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">O que é uma API?</h4>
-                <p class="mt-2 text-gray-700 leading-relaxed text-lg">Uma API (Interface de Programação de Aplicações) é como um garçom em um restaurante:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Você (cliente) é como um cliente que quer algo, como um brinquedo ou um lanche.</li>
-                    <li>O Garçom (API) é quem leva seu pedido até a cozinha (o sistema) e traz de volta o que você pediu.</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Como Funciona?</h4>
-                <ol class="list-decimal pl-5 space-y-2">
-                    <li><strong>Fazer um Pedido:</strong> Quando você quer algo, você diz ao garçom (API) o que deseja.</li>
-                    <li><strong>Ir à Cozinha:</strong> O garçom leva seu pedido para a cozinha (o sistema) e diz o que você quer.</li>
-                    <li><strong>Receber o Pedido:</strong> A cozinha prepara o que você pediu e dá para o garçom, que traz de volta para você.</li>
-                </ol>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Por Que Isso é Importante?</h4>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Facilita a Vida:</strong> Assim como o garçom ajuda você a conseguir sua comida sem precisar ir até a cozinha, a API ajuda programas de computador a se comunicarem entre si sem precisar saber como tudo funciona por trás.</li>
-                    <li><strong>Conexões:</strong> APIs conectam diferentes aplicativos, como quando você usa um aplicativo de mapa para encontrar um lugar e ele pega informações de outro lugar.</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Exemplos do Dia a Dia</h4>
-                <div class="example">
-                    <p><strong>Jogos:</strong> Quando você joga um jogo no celular e precisa comprar algo dentro do jogo, a API ajuda a fazer essa compra.</p>
-                </div>
-                <div class="example">
-                    <p><strong>Músicas:</strong> Se você quer ouvir uma música de um aplicativo enquanto usa outro, a API faz essa conexão para você.</p>
-                </div>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Definição Técnica</h4>
-                <p class="mt-2 text-gray-700">Uma API é um conjunto de protocolos, rotinas e ferramentas para construir aplicações de software. Ela especifica como os componentes de software devem interagir, definindo os tipos de requisições e respostas, convenções de nomeação, formatos de dados e outros detalhes necessários para a comunicação entre sistemas.</p>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Arquitetura e Funcionamento</h4>
-                <h5 class="text-2xl font-semibold text-gray-800 mb-4">Modelo Cliente-Servidor</h5>
-                <p>APIs geralmente seguem o modelo cliente-servidor, onde:</p>
-                <ol class="list-decimal pl-5 space-y-2">
-                    <li>O cliente faz uma solicitação à API (servidor).</li>
-                    <li>O servidor processa a solicitação.</li>
-                    <li>O servidor retorna uma resposta ao cliente.</li>
-                </ol>
-
-                <h5 class="text-2xl font-semibold text-gray-800 mb-4">Protocolos de Comunicação</h5>
-                <p>As APIs modernas frequentemente utilizam o protocolo HTTP/HTTPS para comunicação, empregando métodos como:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><code>GET</code>: Recuperar dados</li>
-                    <li><code>POST</code>: Enviar dados para criação</li>
-                    <li><code>PUT</code>: Atualizar dados existentes</li>
-                    <li><code>DELETE</code>: Remover dados</li>
-                </ul>
-
-                <h5 class="text-2xl font-semibold text-gray-800 mb-4">Formatos de Dados</h5>
-                <p>Os dados são comumente trocados em formatos como:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>JSON (JavaScript Object Notation)</li>
-                    <li>XML (eXtensible Markup Language)</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Tipos de APIs</h4>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>APIs REST:</strong> Utilizam URLs para representar recursos e métodos HTTP para operações.</li>
-                    <li><strong>APIs SOAP:</strong> Usam XML para formatação de mensagens.</li>
-                    <li><strong>APIs RPC:</strong> Permitem a execução de procedimentos em sistemas remotos.</li>
-                    <li><strong>APIs WebSocket:</strong> Fornecem comunicação bidirecional em tempo real.</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Segurança</h4>
-                <p>Implementações de segurança comuns incluem:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Autenticação via tokens (e.g., JWT)</li>
-                    <li>OAuth 2.0 para autorização</li>
-                    <li>Rate limiting para prevenir abuso</li>
-                    <li>HTTPS para criptografia de dados em trânsito</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Versionamento e Documentação</h4>
-                <p>O versionamento de APIs é crucial para manter a compatibilidade. A documentação técnica geralmente inclui endpoints disponíveis, parâmetros, exemplos de código, autenticação e limites de taxa.</p>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Considerações de Design</h4>
-                <p>Ao projetar APIs, deve-se considerar:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Escalabilidade</li>
-                    <li>Desempenho</li>
-                    <li>Consistência</li>
-                    <li>Idempotência de operações</li>
-                    <li>Tratamento de erros</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Ferramentas e Frameworks</h4>
-                <p>Ferramentas populares para desenvolvimento e teste de APIs incluem:</p>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Swagger/OpenAPI para documentação</li>
-                    <li>Postman para testes</li>
-                    <li>Express.js (Node.js) ou Flask (Python) para criação de APIs</li>
-                </ul>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Dicas para Aprender</h4>
-                <div class="tip space-y-2">
-                    <p><strong>Dica 1:</strong> Comece com APIs simples e gratuitas, como a API do GitHub ou a API de previsão do tempo.</p>
-                    <p><strong>Dica 2:</strong> Use ferramentas como Postman para testar APIs sem escrever código.</p>
-                    <p><strong>Dica 3:</strong> Aprenda sobre autenticação e segurança de APIs, como tokens JWT e OAuth.</p>
-                </div>
-            </div>
-
-            <div class="section p-8 bg-white rounded-xl shadow-2xl border-2 border-teal-200 hover:border-teal-400 transition-all duration-300">
-                <h4 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2">Conclusão</h4>
-                <p>As APIs são interfaces críticas que permitem a integração eficiente entre sistemas de software, fornecendo abstração e encapsulamento de funcionalidades complexas, ao mesmo tempo que promovem a modularidade e a reutilização de código.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <a href="/" class="btn btn-secondary mt-4">Voltar para a página inicial</a>
-    {% endif %}
-
-</div>
-{% endif %}
-
-{% endblock %} 
+                {% endif %}
+                {% endblock %}
